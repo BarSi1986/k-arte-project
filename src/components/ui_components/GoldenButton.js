@@ -7,7 +7,7 @@ const GoldenBtn = styled.button`
     width: 200px;
     padding: 15px;
     font-family: ${props => props.theme.fonts.montserrat};
-    margin: 20px 0;
+    margin: 25px 0;
     cursor: pointer;
 `
 
