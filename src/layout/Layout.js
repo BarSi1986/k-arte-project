@@ -5,7 +5,20 @@ import '../styles/styles.css'
 
 
 const theme = {
-    montserrat: "'Montserrat', sans-serif"
+    fonts: {
+        montserrat: "'Montserrat', sans-serif",
+    },
+    colors: {
+        white: '#ffffff',
+        gold: '#DFBA7F',
+        grey: '#3F3F3F',
+        lightgrey: '#4D4D4D',
+    },
+    transitions: {
+        cubic_back: 'cubic-bezier(.07,1.25,.84,1.16)',
+        cubick_front: 'cubic-bezier(.01,1.01,.42,1.01)'
+    }
+
 }
 
 const Layout = ({ children }) => {

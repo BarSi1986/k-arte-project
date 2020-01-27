@@ -21,7 +21,7 @@ const HomeWrapper = styled.div`
 `
 const MixedBg = styled.div`
     position: absolute;
-    background: #444444;
+    background: ${props => props.theme.colors.grey};
     top: 0;
     left: 0;
     width: 100%;
@@ -30,23 +30,23 @@ const MixedBg = styled.div`
 `
 const Header1 = styled.h1`
     position: absolute;
-    font-family: ${props => props.theme.montserrat};
+    font-family: ${props => props.theme.fonts.montserrat};
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 18%);
-    color: #fff;
-    font-size: 53vw;
+    transform: translate(-50%, 19%);
+    color: ${props => props.theme.colors.white};
+    font-size: 51vw;
     margin: 0;
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
     position: absolute;
-    color: #fff;
+    color: ${props => props.theme.colors.white};
     font-size: 1.3em;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+    transition: all 1s ${props => props.theme.transitions.cubic_back};
 `
 
 const StyledBtn = styled.button`
@@ -54,15 +54,22 @@ const StyledBtn = styled.button`
     width: 50px;
     height: 50px;
     background: transparent;
-    border: 3px solid #fff;
+    border: 3px solid ${props => props.theme.colors.white};
     border-radius: 50%;
     cursor: pointer;
+    transition: all 1s ${props => props.theme.transitions.cubic_back};
+    &:hover{
+        border-color: ${props => props.theme.colors.gold};
+        transform: translateY(5px);
+        svg{
+            color: ${props => props.theme.colors.gold};
+        }
+    }
 `
 
 const Hero = () => {
     return (
         <HomeWrapper>
-
             <MixedBg>
                 <Header1><span>ar</span><span>te</span></Header1>
                 <StyledBtn style={{ top: '50px', right: '50px' }}>
