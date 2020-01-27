@@ -1,6 +1,6 @@
 {
   "name": "gatsby-starter-hello-world",
-  "private": false,
+  "private": true,
   "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
   "license": "MIT",
