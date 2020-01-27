@@ -12,6 +12,7 @@ const HomeWrapper = styled.div`
     position: relative;
     width: 100%;
     height: 90vh;
+    overflow: hidden;
 
     background: url(${background});
     background-size: cover;
