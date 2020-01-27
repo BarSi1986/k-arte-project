@@ -17,7 +17,7 @@ const HomeWrapper = styled.div`
     background: url(${background});
     background-size: cover;
     background-position: center;
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
 `
 const MixedBg = styled.div`
     position: absolute;
