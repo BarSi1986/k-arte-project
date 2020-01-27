@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import 'normalize.css'
 import '../styles/styles.css'
 
