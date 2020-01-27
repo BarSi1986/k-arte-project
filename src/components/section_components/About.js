@@ -36,7 +36,9 @@ const AboutHeader = styled.h2`
 const AboutPara = styled.p`
     font-family: ${props => props.theme.fonts.titillium};
     font-size: 1.3em;
+    font-weight: 200;
     color: ${props => props.theme.colors.white};
+    letter-spacing: 1px;
 `
 
 const Ornament = styled.img`
