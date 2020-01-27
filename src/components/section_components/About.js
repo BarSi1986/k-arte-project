@@ -5,8 +5,9 @@ import ornament from '../../images/ornament1.svg'
 import aboutImg from '../../images/about_img.jpg'
 
 import Button from '../ui_components/GoldenButton'
+import Header from '../ui_components/H2_header'
 
-const AboutWrapper = styled.div`
+const AboutWrapper = styled.section`
     height: 50vh;
     display: flex;
     justify-content: center;
@@ -23,14 +24,6 @@ const StoryWrapper = styled.div`
     /* align-items: center; */
 
     background: ${props => props.theme.colors.dark_red};
-`
-
-const AboutHeader = styled.h2`
-    margin: 0;
-    color: ${props => props.theme.colors.white};
-    font-family: ${props => props.theme.fonts.playfair};
-    font-size: 3em;
-    letter-spacing: 5px;
 `
 
 const AboutPara = styled.p`
@@ -60,7 +53,7 @@ const About = () => {
         <AboutWrapper>
             <AboutImage />
             <StoryWrapper>
-                <AboutHeader>Our Story</AboutHeader>
+                <Header text="Our Story" />
                 <Ornament src={ornament} />
                 <AboutPara>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel provident iste repellat dolorum, dolor hic perspiciatis facilis in porro delectus magnam adipisci, et fugit natus. Aliquid fuga explicabo natus odit veniam voluptas enim dolorum.</AboutPara>
                 <Button text="VIEW MORE" />

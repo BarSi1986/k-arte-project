@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
-const HomeWrapper = styled.div`
+const HomeWrapper = styled.section`
     position: relative;
     width: 100%;
     height: 90vh;
