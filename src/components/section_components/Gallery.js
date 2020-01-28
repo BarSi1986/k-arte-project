@@ -6,7 +6,7 @@ import Header from '../ui_components/H2_header'
 
 const GalleryWrapper = styled.section`
   overflow: hidden;
-  height: 90vh;
+  height: 112vh;
   @media (max-width: 750px){
     height: unset;
     margin-bottom: 30px;

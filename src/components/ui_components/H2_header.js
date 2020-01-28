@@ -7,6 +7,9 @@ const Header = styled.h2`
     font-family: ${props => props.theme.fonts.playfair};
     font-size: 2.3em;
     letter-spacing: 5px;
+    @media (max-width: 750px){
+    font-size: 1.5em;
+}
 `
 
 const H2_header = ({ text, className }) => {
