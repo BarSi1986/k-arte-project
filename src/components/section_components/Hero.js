@@ -3,10 +3,8 @@ import styled from 'styled-components'
 
 // images
 import background from '../../images/bg.jpg'
-// font awsome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faPhone } from '@fortawesome/free-solid-svg-icons'
-import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import logo from '../../images/logo.png'
+
 
 const HomeWrapper = styled.section`
     position: relative;
@@ -27,6 +25,12 @@ const MixedBg = styled.div`
     width: 100%;
     height: 100%;
     mix-blend-mode: multiply; 
+    @media (max-width: 750px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `
 const Header1 = styled.h1`
     position: absolute;
@@ -37,58 +41,37 @@ const Header1 = styled.h1`
     color: ${props => props.theme.colors.white};
     font-size: 51vw;
     margin: 0;
-`
 
-const StyledIcon = styled(FontAwesomeIcon)`
-    position: absolute;
-    color: ${props => props.theme.colors.beige};
-    font-size: 1.3em;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 1s ${props => props.theme.transitions.cubic_back};
-`
-
-const StyledBtn = styled.button`
-    position: absolute;
-    z-index: 50;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border: 3px solid ${props => props.theme.colors.beige};
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 1s ${props => props.theme.transitions.cubic_back};
-    &:hover{
-        border-color: ${props => props.theme.colors.gold};
-        transform: translateY(5px);
-        svg{
-            color: ${props => props.theme.colors.gold};
+    @media (max-width: 750px) {
+        position: static;
+        transform: translate(0%, -20%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 75vw;
+        span{
+            height: 240px;
         }
     }
+`
+
+const Logo = styled.img`
+    display: none;
+    width: 150px;
+    margin-top: 45px;
+    @media (max-width: 750px) {
+        display: initial;
+    }
+
 `
 
 const Hero = () => {
     return (
         <HomeWrapper>
-            <StyledBtn style={{ top: '50px', right: '50px' }}>
-                <StyledIcon icon={faBars} />
-            </StyledBtn>
-
-            <StyledBtn style={{ top: '50px', right: '250px' }}>
-                <StyledIcon icon={faFacebookF} />
-            </StyledBtn>
-
-            <StyledBtn style={{ top: '50px', right: '350px' }}>
-                <StyledIcon icon={faInstagram} />
-            </StyledBtn>
-
-            <StyledBtn style={{ top: '50px', right: '450px' }}>
-                <StyledIcon icon={faPhone} />
-            </StyledBtn>
             <MixedBg>
+                <Logo src={logo} />
                 <Header1><span>ar</span><span>te</span></Header1>
-
             </MixedBg>
         </HomeWrapper>
     )

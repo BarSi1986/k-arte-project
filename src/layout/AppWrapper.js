@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Nav from '../components/section_components/Nav'
 import Hero from '../components/section_components/Hero'
 import About from '../components/section_components/About'
 import Gallery from '../components/section_components/Gallery'
@@ -12,6 +13,7 @@ const Wrapper = styled.div`
 const AppWrapper = () => {
     return (
         <Wrapper>
+            <Nav />
             <Hero />
             <About />
             <Gallery />

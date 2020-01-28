@@ -26,6 +26,9 @@ const Form = styled.form`
     align-items: center;
     width: 80%;
     margin: auto;
+    @media (max-width: 750px){
+        width: 95%;
+    }
 `
 
 const OrnamentLeft = styled.img`
@@ -33,6 +36,9 @@ const OrnamentLeft = styled.img`
     top: 15px;
     left: -110px;
     width: 110px;
+    @media (max-width: 750px){
+display: none;
+}
 `
 
 const OrnamentRight = styled.img`
@@ -40,11 +46,18 @@ const OrnamentRight = styled.img`
     top: 15px;
     right: -110px;
     width: 110px;
+    @media (max-width: 750px){
+        display: none;
+}
 `
 
 const InputWrapper = styled.div`
     display: flex;
     position: relative;
+    @media (max-width: 750px){
+        flex-direction: column;
+        width: 100%;
+    } 
 `
 
 const Input = styled.input`
@@ -57,6 +70,9 @@ const Input = styled.input`
     border: 2px solid ${props => props.theme.colors.gold};
     width: 300px;
     margin: 10px 5px;
+    @media (max-width: 750px){
+        width: 100%;
+    }
 `
 
 const TextArea = styled.textarea`
@@ -71,6 +87,9 @@ const TextArea = styled.textarea`
     width: 920px;
     height: 300px;
     z-index: 1;
+    @media (max-width: 750px){
+        width: 100%;
+    }
 `
 
 const Submit = styled.input`

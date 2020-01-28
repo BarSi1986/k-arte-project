@@ -5,7 +5,7 @@ import logo from '../../images/logo.png'
 
 const FooterWrapper = styled.footer`
     width: 100%;
-    height: 40vh;
+    height: 45vh;
     background: #111;
 
     display: flex;

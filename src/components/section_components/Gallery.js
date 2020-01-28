@@ -6,7 +6,11 @@ import Header from '../ui_components/H2_header'
 
 const GalleryWrapper = styled.section`
   overflow: hidden;
-  height: 115vh;
+  height: 90vh;
+  @media (max-width: 750px){
+    height: unset;
+    margin-bottom: 30px;
+}
 `
 
 const StyledHeader = styled(Header)`
@@ -18,14 +22,27 @@ const StyledHeader = styled(Header)`
   transform: translateY(20px);
 `
 
+const GridOuterWrapper = styled.div`
+  width: 85%;
+  margin: auto;
+  position: relative;
+
+  @media (max-width: 750px){
+    height: unset;
+    width: 95%;
+}
+
+`
+
 const GridWrapper = styled.div`
   display: grid;
   border: 3px solid ${props => props.theme.colors.gold};
   padding: 10px;
   height: 90vh;
-  width: 85%;
+  width: 100%;
   margin: auto;
-  position: relative;
+  /* overflow: scroll; */
+
 
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -34,11 +51,26 @@ const GridWrapper = styled.div`
   grid-template-areas:
     "a a b b b e e e"
     "c c c d d e e e";
+
+    @media (max-width: 750px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+ 
+      grid-template-areas:
+        "a a"
+        "b b"
+        "c c"
+        "d d"
+        "e e";
+
+        height: unset;
+    }
 `
 
 const GridItem = styled.div`
   background-size: cover;
   background-position: center;
+  min-height: 300px;
   &:nth-of-type(1){
     background-image: url("https://images.unsplash.com/photo-1513161455079-7dc1de15ef3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
     grid-area: a;
@@ -114,17 +146,20 @@ const Gallery = () => {
         <StyledHeader text='Realizacje' />
         <Ornament src={ornament} />
       </HeaderWrapper>
-      <GridWrapper>
+      <GridOuterWrapper>
 
-        <GridItem />
-        <GridItem />
-        <GridItem />
-        <GridItem />
-        <GridItem />
+        <GridWrapper>
+          <GridItem />
+          <GridItem />
+          <GridItem />
+          <GridItem />
+          <GridItem />
+        </GridWrapper>
 
         <WordSkrojone>Skrojone</WordSkrojone>
         <WordNaMiare>Na miarę</WordNaMiare>
-      </GridWrapper>
+
+      </GridOuterWrapper>
     </GalleryWrapper>
 
   )

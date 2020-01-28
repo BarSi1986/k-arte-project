@@ -11,6 +11,14 @@ const AboutWrapper = styled.section`
     height: 50vh;
     display: flex;
     justify-content: center;
+
+    overflow: hidden;
+
+    @media (max-width: 750px) {
+        flex-direction: column;
+        align-items: center;
+        height: unset;
+    }
 `
 
 const StoryWrapper = styled.div`
@@ -24,6 +32,9 @@ const StoryWrapper = styled.div`
     /* align-items: center; */
 
     background: ${props => props.theme.colors.dark_red};
+    @media (max-width: 750px) {
+       width: 100%;
+    }
 `
 
 const AboutPara = styled.p`
@@ -55,6 +66,11 @@ const AboutImage = styled.div`
     background: url(${aboutImg});
     background-size: cover;
     background-position: center bottom;
+
+    @media (max-width: 750px) {
+        height: 30vh;
+        width: 100%;
+    }
 `
 
 
