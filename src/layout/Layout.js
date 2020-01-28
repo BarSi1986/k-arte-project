@@ -19,7 +19,7 @@ const theme = {
         grey: '#3F3F3F',
         lightgrey: '#4D4D4D',
         darkgrey: '#313131',
-        dark_red: '#8E0404',
+        dark_red: '#6A0B0B',
     },
     transitions: {
         cubic_back: 'cubic-bezier(.07,1.25,.84,1.16)',
