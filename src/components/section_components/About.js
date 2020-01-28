@@ -32,6 +32,7 @@ const AboutPara = styled.p`
     font-weight: 200;
     color: ${props => props.theme.colors.white};
     letter-spacing: 1px;
+    /* text-align: center; */
 `
 
 const HeaderWrapper = styled.div`
@@ -39,12 +40,12 @@ width: 100%;
 display: flex;
 flex-direction: column;
 justify-content: center;
-/* align-items: center; */
+align-items: flex-start;
 position: relative;
 `
 
 const Ornament = styled.img`
-    width: 250px;
+    width: 150px;
     margin: 20px 0;
 `
 
@@ -63,11 +64,11 @@ const About = () => {
             <AboutImage />
             <StoryWrapper>
                 <HeaderWrapper>
-                    <Header text="Our Story" />
+                    <Header text="Słowem wstępu" />
                     <Ornament src={ornament} />
                 </HeaderWrapper>
                 <AboutPara>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel provident iste repellat dolorum, dolor hic perspiciatis facilis in porro delectus magnam adipisci, et fugit natus. Aliquid fuga explicabo natus odit veniam voluptas enim dolorum.</AboutPara>
-                <Button text="VIEW MORE" />
+                <Button text="Dowiedz się więcej" />
             </StoryWrapper>
 
         </AboutWrapper>

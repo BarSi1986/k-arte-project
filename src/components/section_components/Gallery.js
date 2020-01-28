@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ornament from '../../images/ornament3.svg'
+import ornament from '../../images/ornament1.svg'
 import Header from '../ui_components/H2_header'
 
 const GalleryWrapper = styled.section`
@@ -13,8 +13,9 @@ const StyledHeader = styled(Header)`
   font-weight: 500;
   letter-spacing: 2px;
   color: ${props => props.theme.colors.grey};   
-  /* text-align: center; */
+  text-align: center;
   width: 100%;
+  transform: translateY(20px);
 `
 
 const GridWrapper = styled.div`
@@ -68,6 +69,7 @@ const WordSkrojone = styled.h2`
   top: 180px;
   left: -350px;
   transform: rotate(-90deg);
+  font-family: ${props => props.theme.fonts.playfair};
 `
 
 const WordNaMiare = styled.h2`
@@ -78,14 +80,15 @@ const WordNaMiare = styled.h2`
   bottom: 200px;
   right: -350px;
   transform: rotate(90deg);
+  font-family: ${props => props.theme.fonts.playfair};
 `
 const HeaderWrapper = styled.div`
 width: 100%;
 display: flex;
 flex-direction: column;
-height: 90px;
+height: 120px;
 
-justify-content: flex-end;
+justify-content: center;
 position: relative;
 width: 64%;
 margin: auto;
@@ -93,10 +96,12 @@ z-index: 1;
 `
 const Ornament = styled.img`
     width: 120px;
-    position: absolute;
-    left: 170px;
-    bottom: -20px;
+    /* position: absolute;
+    left: 50%;
+    top: 75px;
+    transform: translateX(-50%); */
     z-index: 1;
+    margin: auto;
 `
 
 

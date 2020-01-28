@@ -3,6 +3,8 @@ import { ThemeProvider } from 'styled-components'
 import 'normalize.css'
 import '../styles/styles.css'
 
+import Footer from '../components/section_components/Footer'
+
 
 const theme = {
     fonts: {
@@ -30,7 +32,10 @@ const Layout = ({ children }) => {
 
     return (
         <ThemeProvider theme={theme}>
-            {children}
+            <React.Fragment>
+                {children}
+                <Footer />
+            </React.Fragment>
         </ThemeProvider>
     )
 }
