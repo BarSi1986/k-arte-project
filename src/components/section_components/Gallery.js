@@ -14,12 +14,11 @@ const GalleryWrapper = styled.section`
 `
 
 const StyledHeader = styled(Header)`
-  font-weight: 500;
-  letter-spacing: 2px;
   color: ${props => props.theme.colors.grey};   
   text-align: center;
   width: 100%;
-  transform: translateY(20px);
+  transform: translateY(22px);
+  font-weight: bold;
 `
 
 const GridOuterWrapper = styled.div`
@@ -102,6 +101,9 @@ const WordSkrojone = styled.h2`
   left: -350px;
   transform: rotate(-90deg);
   font-family: ${props => props.theme.fonts.playfair};
+  @media (max-width: 750px) {
+    top: 250px;
+  }
 `
 
 const WordNaMiare = styled.h2`
@@ -115,25 +117,18 @@ const WordNaMiare = styled.h2`
   font-family: ${props => props.theme.fonts.playfair};
 `
 const HeaderWrapper = styled.div`
-width: 100%;
 display: flex;
 flex-direction: column;
-height: 120px;
-
-justify-content: center;
+height: 100px;
 position: relative;
 width: 64%;
-margin: auto;
 z-index: 1;
 `
 const Ornament = styled.img`
     width: 150px;
-    /* position: absolute;
-    left: 50%;
-    top: 75px;
-    transform: translateX(-50%); */
     z-index: 1;
     margin: auto;
+    transform: translateX(-5px);
 `
 
 

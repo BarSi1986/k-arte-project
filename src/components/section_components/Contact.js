@@ -17,6 +17,7 @@ const StyledHeader = styled(Header)`
     color: ${props => props.theme.colors.gold};
     margin: 20px 0;
     z-index: 2;
+    width: 85%;
 `
 
 const Form = styled.form`

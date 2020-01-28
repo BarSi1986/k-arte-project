@@ -54,6 +54,11 @@ const Arte = styled.p`
     color: ${props => props.theme.colors.grey};
     margin: 0;
     letter-spacing: 50px;
+
+    @media (max-width: 750px){
+       letter-spacing: 0;
+       font-size: 15em;
+    }
 `
 
 const Footer = () => {
