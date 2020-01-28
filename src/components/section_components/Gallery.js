@@ -6,7 +6,7 @@ import Header from '../ui_components/H2_header'
 
 const GalleryWrapper = styled.section`
   overflow: hidden;
-  height: 106vh;
+  height: 115vh;
 `
 
 const StyledHeader = styled(Header)`
@@ -95,7 +95,7 @@ margin: auto;
 z-index: 1;
 `
 const Ornament = styled.img`
-    width: 120px;
+    width: 150px;
     /* position: absolute;
     left: 50%;
     top: 75px;
