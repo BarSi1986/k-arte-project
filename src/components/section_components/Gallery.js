@@ -6,6 +6,7 @@ import Header from '../ui_components/H2_header'
 
 const GalleryWrapper = styled.section`
   overflow: hidden;
+  height: 110vh;
 `
 
 const StyledHeader = styled(Header)`
@@ -18,10 +19,10 @@ const StyledHeader = styled(Header)`
 
 const GridWrapper = styled.div`
   display: grid;
-  border: 3px solid #e3c26b;
+  border: 3px solid ${props => props.theme.colors.gold};
   padding: 10px;
   height: 90vh;
-  width: 80%;
+  width: 85%;
   margin: auto;
   position: relative;
 
@@ -82,18 +83,20 @@ const HeaderWrapper = styled.div`
 width: 100%;
 display: flex;
 flex-direction: column;
-height: 120px;
+height: 90px;
 
-justify-content: center;
-align-items: center;
+justify-content: flex-end;
+/* align-items: center; */
 position: relative;
-width: 70%;
+width: 64%;
 margin: auto;
 `
 const Ornament = styled.img`
-    width: 100px;
+    width: 120px;
     position: absolute;
-    left: 175px;
+    left: 170px;
+    bottom: -20px;
+    z-index: 1;
 `
 
 
