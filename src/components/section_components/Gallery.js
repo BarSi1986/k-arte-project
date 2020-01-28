@@ -12,10 +12,8 @@ const StyledHeader = styled(Header)`
   font-weight: 500;
   letter-spacing: 2px;
   color: #313131;
-  text-align: center;
+  /* text-align: center; */
   width: 100%;
-  margin-top: 30px;
-  margin-bottom: 60px;
 `
 
 const GridWrapper = styled.div`
@@ -84,21 +82,18 @@ const HeaderWrapper = styled.div`
 width: 100%;
 display: flex;
 flex-direction: column;
+height: 120px;
 
 justify-content: center;
 align-items: center;
 position: relative;
+width: 70%;
+margin: auto;
 `
 const Ornament = styled.img`
-    width: 250px;
-    margin: 20px 0;
+    width: 100px;
     position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-40%);
-    opacity: .4;
-
+    left: 175px;
 `
 
 

@@ -34,6 +34,15 @@ const AboutPara = styled.p`
     letter-spacing: 1px;
 `
 
+const HeaderWrapper = styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+/* align-items: center; */
+position: relative;
+`
+
 const Ornament = styled.img`
     width: 250px;
     margin: 20px 0;
@@ -53,8 +62,10 @@ const About = () => {
         <AboutWrapper>
             <AboutImage />
             <StoryWrapper>
-                <Header text="Our Story" />
-                <Ornament src={ornament} />
+                <HeaderWrapper>
+                    <Header text="Our Story" />
+                    <Ornament src={ornament} />
+                </HeaderWrapper>
                 <AboutPara>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel provident iste repellat dolorum, dolor hic perspiciatis facilis in porro delectus magnam adipisci, et fugit natus. Aliquid fuga explicabo natus odit veniam voluptas enim dolorum.</AboutPara>
                 <Button text="VIEW MORE" />
             </StoryWrapper>
