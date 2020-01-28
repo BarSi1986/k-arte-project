@@ -13,13 +13,7 @@ const GalleryWrapper = styled.section`
 }
 `
 
-const StyledHeader = styled(Header)`
-  color: ${props => props.theme.colors.grey};   
-  text-align: center;
-  width: 100%;
-  transform: translateY(22px);
-  font-weight: bold;
-`
+
 
 const GridOuterWrapper = styled.div`
   width: 85%;
@@ -30,9 +24,7 @@ const GridOuterWrapper = styled.div`
     height: unset;
     width: 95%;
 }
-
 `
-
 const GridWrapper = styled.div`
   display: grid;
   border: 3px solid ${props => props.theme.colors.gold};
@@ -117,18 +109,29 @@ const WordNaMiare = styled.h2`
   font-family: ${props => props.theme.fonts.playfair};
 `
 const HeaderWrapper = styled.div`
-display: flex;
-flex-direction: column;
-height: 100px;
-position: relative;
-width: 64%;
-z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
+  @media (max-width: 750px) {
+    width: 80%;
+  }
+`
+const StyledHeader = styled(Header)`
+  color: ${props => props.theme.colors.grey};   
+  text-align: center;
+  width: 100%;
+  transform: translateY(18px);
+  font-weight: bold;
 `
 const Ornament = styled.img`
     width: 150px;
     z-index: 1;
     margin: auto;
-    transform: translateX(-5px);
+    transform: translateX(-5px) translateY(5px);
 `
 
 

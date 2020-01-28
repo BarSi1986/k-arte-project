@@ -17,7 +17,12 @@ const StyledHeader = styled(Header)`
     color: ${props => props.theme.colors.gold};
     margin: 20px 0;
     z-index: 2;
-    width: 85%;
+    width: 100%;
+    text-align: center;
+    @media (max-width: 750px){
+        width: 95%;
+        text-align: left;
+    }
 `
 
 const Form = styled.form`
@@ -73,6 +78,7 @@ const Input = styled.input`
     margin: 10px 5px;
     @media (max-width: 750px){
         width: 100%;
+        margin: 10px 0px;
     }
 `
 
