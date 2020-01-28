@@ -16,6 +16,7 @@ const theme = {
         gold: '#DFBA7F',
         grey: '#3F3F3F',
         lightgrey: '#4D4D4D',
+        darkgrey: '#313131',
         dark_red: '#8E0404',
     },
     transitions: {

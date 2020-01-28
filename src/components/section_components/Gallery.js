@@ -6,13 +6,13 @@ import Header from '../ui_components/H2_header'
 
 const GalleryWrapper = styled.section`
   overflow: hidden;
-  height: 110vh;
+  height: 106vh;
 `
 
 const StyledHeader = styled(Header)`
   font-weight: 500;
   letter-spacing: 2px;
-  color: #313131;
+  color: ${props => props.theme.colors.grey};   
   /* text-align: center; */
   width: 100%;
 `
@@ -103,26 +103,26 @@ const Ornament = styled.img`
 
 
 const Gallery = () => {
-    return (
-        <GalleryWrapper>
-            <HeaderWrapper>
-                <StyledHeader text='Realizacje' />
-                <Ornament src={ornament} />
-            </HeaderWrapper>
-            <GridWrapper>
+  return (
+    <GalleryWrapper>
+      <HeaderWrapper>
+        <StyledHeader text='Realizacje' />
+        <Ornament src={ornament} />
+      </HeaderWrapper>
+      <GridWrapper>
 
-                <GridItem />
-                <GridItem />
-                <GridItem />
-                <GridItem />
-                <GridItem />
+        <GridItem />
+        <GridItem />
+        <GridItem />
+        <GridItem />
+        <GridItem />
 
-                <WordSkrojone>Skrojone</WordSkrojone>
-                <WordNaMiare>Na miarę</WordNaMiare>
-            </GridWrapper>
-        </GalleryWrapper>
+        <WordSkrojone>Skrojone</WordSkrojone>
+        <WordNaMiare>Na miarę</WordNaMiare>
+      </GridWrapper>
+    </GalleryWrapper>
 
-    )
+  )
 }
 
 export default Gallery
