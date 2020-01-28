@@ -86,10 +86,10 @@ flex-direction: column;
 height: 90px;
 
 justify-content: flex-end;
-/* align-items: center; */
 position: relative;
 width: 64%;
 margin: auto;
+z-index: 1;
 `
 const Ornament = styled.img`
     width: 120px;

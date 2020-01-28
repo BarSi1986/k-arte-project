@@ -12,6 +12,7 @@ const theme = {
     },
     colors: {
         white: '#ffffff',
+        beige: '#FDFCF4',
         gold: '#DFBA7F',
         grey: '#3F3F3F',
         lightgrey: '#4D4D4D',

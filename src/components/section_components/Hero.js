@@ -41,7 +41,7 @@ const Header1 = styled.h1`
 
 const StyledIcon = styled(FontAwesomeIcon)`
     position: absolute;
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.beige};
     font-size: 1.3em;
     top: 50%;
     left: 50%;
@@ -51,10 +51,11 @@ const StyledIcon = styled(FontAwesomeIcon)`
 
 const StyledBtn = styled.button`
     position: absolute;
+    z-index: 50;
     width: 50px;
     height: 50px;
     background: transparent;
-    border: 3px solid ${props => props.theme.colors.white};
+    border: 3px solid ${props => props.theme.colors.beige};
     border-radius: 50%;
     cursor: pointer;
     transition: all 1s ${props => props.theme.transitions.cubic_back};
@@ -70,23 +71,24 @@ const StyledBtn = styled.button`
 const Hero = () => {
     return (
         <HomeWrapper>
+            <StyledBtn style={{ top: '50px', right: '50px' }}>
+                <StyledIcon icon={faBars} />
+            </StyledBtn>
+
+            <StyledBtn style={{ top: '50px', right: '250px' }}>
+                <StyledIcon icon={faFacebookF} />
+            </StyledBtn>
+
+            <StyledBtn style={{ top: '50px', right: '350px' }}>
+                <StyledIcon icon={faInstagram} />
+            </StyledBtn>
+
+            <StyledBtn style={{ top: '50px', right: '450px' }}>
+                <StyledIcon icon={faPhone} />
+            </StyledBtn>
             <MixedBg>
                 <Header1><span>ar</span><span>te</span></Header1>
-                <StyledBtn style={{ top: '50px', right: '50px' }}>
-                    <StyledIcon icon={faBars} />
-                </StyledBtn>
 
-                <StyledBtn style={{ top: '50px', right: '250px' }}>
-                    <StyledIcon icon={faFacebookF} />
-                </StyledBtn>
-
-                <StyledBtn style={{ top: '50px', right: '350px' }}>
-                    <StyledIcon icon={faInstagram} />
-                </StyledBtn>
-
-                <StyledBtn style={{ top: '50px', right: '450px' }}>
-                    <StyledIcon icon={faPhone} />
-                </StyledBtn>
             </MixedBg>
         </HomeWrapper>
     )
