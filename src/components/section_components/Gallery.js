@@ -15,7 +15,7 @@ const StyledHeader = styled(Header)`
   text-align: center;
   width: 100%;
   margin-top: 30px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 `
 
 const GridWrapper = styled.div`
@@ -96,7 +96,7 @@ const Ornament = styled.img`
     z-index: -1;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-40%);
     opacity: .4;
 
 `
