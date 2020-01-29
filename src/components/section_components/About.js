@@ -34,6 +34,7 @@ const StoryWrapper = styled.div`
     background: ${props => props.theme.colors.dark_red};
     @media (max-width: 750px) {
        width: 100%;
+       padding: 20px;
     }
 `
 

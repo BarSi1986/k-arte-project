@@ -119,7 +119,7 @@ const HeaderWrapper = styled.div`
   @media (max-width: 750px) {
     width: 100%;
     height: 100px;
-    padding: 0 40px;
+    padding: 0 20px;
     align-items: flex-start;
   }
 `

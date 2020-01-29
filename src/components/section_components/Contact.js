@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import ornamentLeft from '../../images/ornament2_left.svg'
 import ornamentRight from '../../images/ornament2_right.svg'
+import ornament from '../../images/ornament1.svg'
 
 import Header from '../ui_components/H2_header'
 
@@ -21,7 +22,7 @@ const StyledHeader = styled(Header)`
     text-align: center;
     padding-top: 20px;
     @media (max-width: 750px){
-        padding: 20px 40px;
+        padding: 20px 0px;
         text-align: left;
     }
 `
@@ -34,7 +35,9 @@ const Form = styled.form`
     width: 80%;
     margin: auto;
     @media (max-width: 750px){
-        width: 95%;
+        width: 100%;
+        padding: 0 20px;
+        align-items: flex-start;
     }
 `
 
@@ -114,6 +117,10 @@ const Submit = styled.input`
     color: #000;
     cursor: pointer;
     z-index: 1;
+    @media (max-width: 750px){
+        width: 70%;
+        margin: 30px auto;
+    }
 `
 
 const Background = styled.div`
@@ -130,15 +137,22 @@ const Background = styled.div`
     /* background-attachment: fixed; */
 `
 
+const Ornament = styled.img`
+    width: 150px;
+    margin-bottom: 30px;
+`
+
 const Contact = () => {
     return (
         <FormWrapper>
             <Background />
             <Form>
                 <StyledHeader text='Napisz do nas' />
+                <Ornament src={ornament} />
                 <InputWrapper>
-                    <OrnamentLeft src={ornamentLeft} />
-                    <OrnamentRight src={ornamentRight} />
+                    {/* <OrnamentLeft src={ornamentLeft} />
+                    <OrnamentRight src={ornamentRight} /> */}
+
 
                     <Input type='text' placeholder="Twoje imię" />
                     <Input type='email' placeholder="Twój email" />

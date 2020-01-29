@@ -9,7 +9,7 @@ import background from '../../images/bg.jpg'
 const HomeWrapper = styled.section`
     position: relative;
     width: 100%;
-    height: 90vh;
+    height: 95vh;
     overflow: hidden;
 
     background: url(${background});
