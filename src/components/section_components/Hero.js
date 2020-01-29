@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 // images
 import background from '../../images/bg.jpg'
-import logo from '../../images/logo.png'
+// import logo from '../../images/logo.png'
 
 
 const HomeWrapper = styled.section`
@@ -41,36 +41,41 @@ const Header1 = styled.h1`
     color: ${props => props.theme.colors.white};
     font-size: 51vw;
     margin: 0;
+   
 
     @media (max-width: 750px) {
-        position: static;
-        transform: translate(0%, -20%);
+        position: absolute;
+        bottom: 50%;
+        transform: translate(-50%, 50%);
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        font-size: 75vw;
+        /* justify-content: flex-start;
+        align-items: center; */
+        font-size: 60vw;
+        padding: 20px;
+        border: 8px solid white;
         span{
-            height: 240px;
+            height: 180px;
+            transform: translateY(-50px);
         }
     }
 `
 
-const Logo = styled.img`
-    display: none;
-    width: 150px;
-    margin-top: 45px;
-    @media (max-width: 750px) {
-        display: initial;
-    }
+// const Logo = styled.img`
+//     display: none;
+//     width: 100px;
+//     margin-top: 45px;
+//     @media (max-width: 750px) {
+//         display: initial;
+//     }
 
-`
+// `
 
 const Hero = () => {
     return (
         <HomeWrapper>
             <MixedBg>
-                <Logo src={logo} />
+                {/* <Logo src={logo} /> */}
                 <Header1><span>ar</span><span>te</span></Header1>
             </MixedBg>
         </HomeWrapper>

@@ -7,6 +7,7 @@ import Header from '../ui_components/H2_header'
 const GalleryWrapper = styled.section`
   overflow: hidden;
   height: 112vh;
+  padding-top: 30px;
   @media (max-width: 750px){
     height: unset;
     margin-bottom: 30px;
@@ -111,27 +112,31 @@ const WordNaMiare = styled.h2`
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100px;
-  position: relative;
-  justify-content: center;
+  height: 120px;
+  align-items: center;
   width: 100%;
   z-index: 1;
   @media (max-width: 750px) {
-    width: 80%;
+    width: 100%;
+    height: 100px;
+    padding: 0 40px;
+    align-items: flex-start;
   }
 `
 const StyledHeader = styled(Header)`
   color: ${props => props.theme.colors.grey};   
-  text-align: center;
-  width: 100%;
-  transform: translateY(18px);
   font-weight: bold;
+  @media (max-width: 750px) {
+    margin-bottom: 20px;
+  }
 `
 const Ornament = styled.img`
     width: 150px;
-    z-index: 1;
+    position: static;
     margin: auto;
-    transform: translateX(-5px) translateY(5px);
+    @media (max-width: 750px) {
+    margin: 0;
+  }
 `
 
 

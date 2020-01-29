@@ -5,7 +5,7 @@ import logo from '../../images/logo.png'
 
 const FooterWrapper = styled.footer`
     width: 100%;
-    height: 45vh;
+    height: 30vh;
     background: #111;
 
     display: flex;
@@ -14,6 +14,10 @@ const FooterWrapper = styled.footer`
     padding: 20px;
 
     overflow: hidden;
+
+    @media (max-width: 750px){
+        height: 45vh;
+    }
 `
 
 const FootElement = styled.div`
@@ -58,6 +62,7 @@ const Arte = styled.p`
     @media (max-width: 750px){
        letter-spacing: 0;
        font-size: 15em;
+       opacity: .1;
     }
 `
 

@@ -19,8 +19,9 @@ const StyledHeader = styled(Header)`
     z-index: 2;
     width: 100%;
     text-align: center;
+    padding-top: 20px;
     @media (max-width: 750px){
-        width: 95%;
+        padding: 20px 40px;
         text-align: left;
     }
 `
