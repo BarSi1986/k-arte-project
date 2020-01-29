@@ -133,9 +133,11 @@ const StyledHeader = styled(Header)`
 const Ornament = styled.img`
     width: 150px;
     position: static;
+    transform: translateY(-10px);
     margin: auto;
     @media (max-width: 750px) {
     margin: 0;
+    transform: translateY(0px);
   }
 `
 
