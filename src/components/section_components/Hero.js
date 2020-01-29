@@ -56,7 +56,7 @@ const Header1 = styled.h1`
         border: 8px solid white;
         span{
             height: 180px;
-            transform: translateY(-50px);
+            transform: translateY(-60px);
         }
     }
 `
