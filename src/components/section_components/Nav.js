@@ -69,10 +69,7 @@ const StyledBtn = styled.button`
 
 const Nav = () => {
 
-    const { isNavOpen, setIsNavOpen } = useContext(AppContext)
-    const handleNavOpen = () => {
-        setIsNavOpen(!isNavOpen)
-    }
+    const { isNavOpen, handleNavOpen } = useContext(AppContext)
 
     return (
         <NavWrapper>

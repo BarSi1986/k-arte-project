@@ -11,7 +11,6 @@ const AboutWrapper = styled.section`
     height: 50vh;
     display: flex;
     justify-content: center;
-
     overflow: hidden;
 
     @media (max-width: 750px) {

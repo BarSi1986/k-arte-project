@@ -5,6 +5,8 @@ import 'normalize.css'
 import '../styles/styles.css'
 
 import Footer from '../components/section_components/Footer'
+import Nav from '../components/section_components/Nav'
+import SideMenu from '../components/section_components/SideMenu'
 
 
 const theme = {
@@ -30,13 +32,19 @@ const theme = {
 }
 
 const Layout = ({ children }) => {
-
+    // states
     const [isNavOpen, setIsNavOpen] = useState(false)
+    // functions
+    const handleNavOpen = () => {
+        setIsNavOpen(!isNavOpen)
+    }
 
     return (
-        <AppContext.Provider value={{ isNavOpen, setIsNavOpen }}>
+        <AppContext.Provider value={{ isNavOpen, setIsNavOpen, handleNavOpen }}>
             <ThemeProvider theme={theme}>
                 <React.Fragment>
+                    <SideMenu />
+                    <Nav />
                     {children}
                     <Footer />
                 </React.Fragment>
