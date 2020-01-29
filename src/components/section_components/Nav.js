@@ -15,7 +15,7 @@ const NavWrapper = styled.section`
         z-index: 50;
         height: 10vh;
         background: #111;
-        opacity: .9;
+        /* opacity: .9; */
         width: 100%;
 
         display: flex;
