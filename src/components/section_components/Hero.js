@@ -46,7 +46,7 @@ const Header1 = styled.h1`
     @media (max-width: 750px) {
         position: absolute;
         bottom: 50%;
-        transform: translate(-50%, 50%);
+        transform: translate(-50%, 45%);
         display: flex;
         flex-direction: column;
         /* justify-content: flex-start;

@@ -139,7 +139,8 @@ const Background = styled.div`
 
 const Ornament = styled.img`
     width: 150px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    transform: translateY(-10px);
 `
 
 const Contact = () => {
