@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
+import AppContext from '../context/AppContext'
 import 'normalize.css'
 import '../styles/styles.css'
 
@@ -30,13 +31,17 @@ const theme = {
 
 const Layout = ({ children }) => {
 
+    const [isNavOpen, setIsNavOpen] = useState(false)
+
     return (
-        <ThemeProvider theme={theme}>
-            <React.Fragment>
-                {children}
-                <Footer />
-            </React.Fragment>
-        </ThemeProvider>
+        <AppContext.Provider value={{ isNavOpen, setIsNavOpen }}>
+            <ThemeProvider theme={theme}>
+                <React.Fragment>
+                    {children}
+                    <Footer />
+                </React.Fragment>
+            </ThemeProvider>
+        </AppContext.Provider>
     )
 }
 

@@ -1,13 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ornamentLeft from '../../images/ornament2_left.svg'
-import ornamentRight from '../../images/ornament2_right.svg'
 import ornament from '../../images/ornament1.svg'
+import background from '../../images/contact_bg.jpg'
 
 import Header from '../ui_components/H2_header'
-
-import background from '../../images/contact_bg.jpg'
 
 const FormWrapper = styled.section`
     background: ${props => props.theme.colors.darkgrey};
@@ -39,26 +36,6 @@ const Form = styled.form`
         padding: 0 20px;
         align-items: flex-start;
     }
-`
-
-const OrnamentLeft = styled.img`
-    position: absolute;
-    top: 15px;
-    left: -110px;
-    width: 110px;
-    @media (max-width: 750px){
-display: none;
-}
-`
-
-const OrnamentRight = styled.img`
-    position: absolute; 
-    top: 15px;
-    right: -110px;
-    width: 110px;
-    @media (max-width: 750px){
-        display: none;
-}
 `
 
 const InputWrapper = styled.div`
@@ -154,10 +131,6 @@ const Contact = () => {
                 <StyledHeader text='Napisz do nas' />
                 <Ornament src={ornament} />
                 <InputWrapper>
-                    {/* <OrnamentLeft src={ornamentLeft} />
-                    <OrnamentRight src={ornamentRight} /> */}
-
-
                     <Input type='text' placeholder="Twoje imię" />
                     <Input type='email' placeholder="Twój email" />
                     <Input type='text' placeholder="Tytuł wiadomości" />

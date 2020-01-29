@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faPhone, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const NavWrapper = styled.section`
@@ -46,6 +47,7 @@ const StyledBtn = styled.button`
     background: transparent;
     border: 3px solid ${props => props.theme.colors.beige};
     border-radius: 50%;
+    outline: none;
     cursor: pointer;
     transition: all 1s ${props => props.theme.transitions.cubic_back};
     &:hover{
@@ -59,14 +61,25 @@ const StyledBtn = styled.button`
         position: initial;
         text-align: center;
         border: 2px solid ${props => props.theme.colors.beige};
+        &:hover{
+            transform: translateY(0px);
+        }
     }
 `
 
 const Nav = () => {
+
+    const { isNavOpen, setIsNavOpen } = useContext(AppContext)
+    const handleNavOpen = () => {
+        setIsNavOpen(!isNavOpen)
+    }
+
     return (
         <NavWrapper>
-            <StyledBtn style={{ top: '50px', right: '50px' }}>
-                <StyledIcon icon={faBars} />
+            <StyledBtn
+                onClick={handleNavOpen}
+                style={{ top: '50px', right: '50px' }}>
+                <StyledIcon icon={isNavOpen ? faTimes : faBars} />
             </StyledBtn>
 
             <StyledBtn style={{ top: '50px', right: '250px' }}>
