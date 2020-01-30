@@ -5,8 +5,8 @@ import 'normalize.css'
 import '../styles/styles.css'
 
 import Footer from '../components/section_components/Footer'
-import Nav from '../components/section_components/Nav'
 import SideMenu from '../components/section_components/SideMenu'
+import Nav from '../components/section_components/Nav'
 
 
 const theme = {
