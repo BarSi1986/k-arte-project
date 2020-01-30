@@ -44,6 +44,7 @@ const SideMeuButton = styled.button`
         font-weight: 100;
         color: ${props => props.theme.colors.white};
         text-decoration: none;
+        padding: 10px 40px;
     }
     &:hover{
         a{

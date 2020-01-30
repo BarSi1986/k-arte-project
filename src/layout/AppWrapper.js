@@ -1,5 +1,5 @@
-import React from 'react'
-// import AppContext from '../context/AppContext'
+import React, { useContext } from 'react'
+import AppContext from '../context/AppContext'
 import styled from 'styled-components'
 
 // import Nav from '../components/section_components/Nav'
@@ -13,14 +13,36 @@ const Wrapper = styled.div`
 
 `
 
+const SectionsWrapper = styled.div`
+    transition: 1s ${props => props.theme.transitions.cubic_front};
+    &.blurred{
+        transform: translateX(35px);
+        opacity: .3;
+    }
+    @media (max-width: 750px) {
+        &.blurred{
+        transform: translateY(-35px);
+        opacity: .3;
+    }
+    }
+
+`
+
 
 const AppWrapper = () => {
+
+    const { isNavOpen } = useContext(AppContext)
+
     return (
         <Wrapper>
-            <Hero />
-            <About />
-            <Gallery />
-            <Contact />
+            {/* <SideMenu />
+            <Nav /> */}
+            <SectionsWrapper className={isNavOpen && 'blurred'}>
+                <Hero />
+                <About />
+                <Gallery />
+                <Contact />
+            </SectionsWrapper>
         </Wrapper>
     )
 }
