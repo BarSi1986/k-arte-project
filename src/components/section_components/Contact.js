@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 
 import ornament from '../../images/ornament1.svg'
@@ -9,6 +10,19 @@ import Header from '../ui_components/H2_header'
 const FormWrapper = styled.section`
     background: ${props => props.theme.colors.darkgrey};
     position: relative;
+
+
+    transition: 1s ${props => props.theme.transitions.cubic_front};
+    &.blurred{
+        transform: translateX(35px);
+        opacity: .3;
+    }
+    @media (max-width: 750px) {
+        &.blurred{
+        transform: translateY(-35px);
+        opacity: .3;
+    }
+    }
 `
 
 const StyledHeader = styled(Header)`
@@ -124,8 +138,9 @@ const Ornament = styled.img`
 `
 
 const Contact = () => {
+    const { isNavOpen } = useContext(AppContext)
     return (
-        <FormWrapper>
+        <FormWrapper className={isNavOpen && 'blurred'}>
             <Background />
             <Form>
                 <StyledHeader text='Napisz do nas' />
