@@ -46,6 +46,7 @@ const StyledBtn = styled.button`
     height: 50px;
     background: transparent;
     border: 3px solid ${props => props.theme.colors.beige};
+    opacity: .7;
     border-radius: 50%;
     outline: none;
     cursor: pointer;

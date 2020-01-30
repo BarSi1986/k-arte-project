@@ -123,9 +123,9 @@ const Ornament = styled.img`
     }
 `
 
-const Contact = () => {
+const Contact = ({ className }) => {
     return (
-        <FormWrapper>
+        <FormWrapper className={className}>
             <Background />
             <Form>
                 <StyledHeader text='Napisz do nas' />

@@ -29,12 +29,12 @@ const SectionsWrapper = styled.div`
 `
 
 
-const AppWrapper = () => {
+const AppWrapper = ({ className }) => {
 
     const { isNavOpen } = useContext(AppContext)
 
     return (
-        <Wrapper>
+        <Wrapper className={className}>
             {/* <SideMenu />
             <Nav /> */}
             <SectionsWrapper className={isNavOpen && 'blurred'}>

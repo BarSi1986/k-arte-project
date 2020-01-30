@@ -1,10 +1,9 @@
 import React from "react"
 
-import Layout from '../layout/Layout'
 import AppWrapper from '../layout/AppWrapper'
 
 export default () => (
-    <Layout>
+    <React.Fragment>
         <AppWrapper />
-    </Layout >
+    </React.Fragment>
 )
