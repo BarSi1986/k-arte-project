@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import AppContext from '../context/AppContext'
+import React from 'react'
+// import AppContext from '../context/AppContext'
 import styled from 'styled-components'
 
 // import Nav from '../components/section_components/Nav'
@@ -31,13 +31,13 @@ const SectionsWrapper = styled.div`
 
 const AppWrapper = () => {
 
-    const { isNavOpen } = useContext(AppContext)
+    // const { isNavOpen } = useContext(AppContext)
 
     return (
         <Wrapper>
             {/* <SideMenu />
             <Nav /> */}
-            <SectionsWrapper className={isNavOpen && 'blurred'}>
+            <SectionsWrapper>
                 <Hero />
                 <About />
                 <Gallery />
