@@ -80,15 +80,15 @@ const Nav = () => {
                 <StyledIcon icon={isNavOpen ? faTimes : faBars} />
             </StyledBtn>
 
-            <StyledBtn style={{ top: '50px', right: '250px' }}>
+            <StyledBtn style={{ top: '130px', right: '50px' }}>
                 <StyledIcon icon={faFacebookF} />
             </StyledBtn>
 
-            <StyledBtn style={{ top: '50px', right: '350px' }}>
+            <StyledBtn style={{ top: '210px', right: '50px' }}>
                 <StyledIcon icon={faInstagram} />
             </StyledBtn>
 
-            <StyledBtn style={{ top: '50px', right: '450px' }}>
+            <StyledBtn style={{ top: '50px', right: '130px' }}>
                 <StyledIcon icon={faPhone} />
             </StyledBtn>
         </NavWrapper>
