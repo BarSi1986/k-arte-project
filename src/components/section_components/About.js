@@ -2,6 +2,9 @@ import React, { useContext } from 'react'
 import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+
 import ornament from '../../images/ornament1.svg'
 import aboutImg from '../../images/about_img.jpg'
 
@@ -75,9 +78,7 @@ const Ornament = styled.img`
 const AboutImage = styled.div`
     width: 50%;
     height: 100%;
-    background: url(${aboutImg});
-    background-size: cover;
-    background-position: center bottom;
+    position: relative;
 
     @media (max-width: 750px) {
         height: 30vh;
@@ -85,12 +86,37 @@ const AboutImage = styled.div`
     }
 `
 
+const StyledImg = styled(Img)`
+position: absolute !important;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+`
+
 
 const About = () => {
+    const data = useStaticQuery(graphql`
+    query GalleryImagesQuery {
+            file(relativePath: { eq: "about_img.jpg" }) {
+                childImageSharp {
+                    fluid(quality: 100 maxWidth: 600){
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+        `)
+
     const { isNavOpen } = useContext(AppContext)
     return (
         <AboutWrapper className={isNavOpen && 'blurred'}>
-            <AboutImage />
+            <AboutImage>
+                <StyledImg
+                    fluid={data.file.childImageSharp.fluid}
+                />
+            </AboutImage>
             <StoryWrapper>
                 <HeaderWrapper>
                     <Header text="Słowem wstępu" />

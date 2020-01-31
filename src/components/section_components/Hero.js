@@ -1,22 +1,14 @@
 import React, { useContext } from 'react'
 import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
-
-// images
-import background from '../../images/bg.jpg'
-// import logo from '../../images/logo.png'
-
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 const HomeWrapper = styled.section`
     position: relative;
     width: 100%;
     height: 95vh;
     overflow: hidden;
-
-    background: url(${background});
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 
     transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
@@ -74,22 +66,34 @@ const Header1 = styled.h1`
     }
 `
 
-// const Logo = styled.img`
-//     display: none;
-//     width: 100px;
-//     margin-top: 45px;
-//     @media (max-width: 750px) {
-//         display: initial;
-//     }
-
-// `
+const StyldImg = styled(Img)`
+position: absolute !important;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+`
 
 const Hero = () => {
+    const data = useStaticQuery(graphql`
+    query HeroImageQuery {
+        file(relativePath: { eq: "bg.jpg" }) {
+            childImageSharp {
+                fluid(quality: 100 maxWidth: 1440){
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+    `)
     const { isNavOpen } = useContext(AppContext)
     return (
         <HomeWrapper className={isNavOpen && 'blurred'}>
+            <StyldImg
+                fluid={data.file.childImageSharp.fluid}
+            />
             <MixedBg>
-                {/* <Logo src={logo} /> */}
                 <Header1><span>ar</span><span>te</span></Header1>
             </MixedBg>
         </HomeWrapper>
