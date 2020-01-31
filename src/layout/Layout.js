@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
     // functions
     const handleNavOpen = () => {
         setIsNavOpen(!isNavOpen)
-        window.navigator.vibrate(200);
+        window.navigator.vibrate(100);
     }
 
     return (
