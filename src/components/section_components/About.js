@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 
 import ornament from '../../images/ornament1.svg'
@@ -17,6 +18,17 @@ const AboutWrapper = styled.section`
         flex-direction: column;
         align-items: center;
         height: unset;
+    }
+    transition: 1s ${props => props.theme.transitions.cubic_front};
+    &.blurred{
+        transform: translateX(35px);
+        opacity: .3;
+    }
+    @media (max-width: 750px) {
+        &.blurred{
+        transform: translateY(-35px);
+        opacity: .3;
+    }
     }
 `
 
@@ -75,8 +87,9 @@ const AboutImage = styled.div`
 
 
 const About = () => {
+    const { isNavOpen } = useContext(AppContext)
     return (
-        <AboutWrapper>
+        <AboutWrapper className={isNavOpen && 'blurred'}>
             <AboutImage />
             <StoryWrapper>
                 <HeaderWrapper>

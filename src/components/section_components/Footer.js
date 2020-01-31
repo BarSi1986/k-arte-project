@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 
 import logo from '../../images/logo.png'
@@ -18,6 +19,17 @@ const FooterWrapper = styled.footer`
     @media (max-width: 750px){
         height: 45vh;
     }
+
+    transition: 1s ${props => props.theme.transitions.cubic_front};
+    &.blurred{
+        transform: translateX(35px);
+        opacity: .3;
+    }
+    @media (max-width: 750px) {
+        &.blurred{
+        transform: translateY(-35px);
+        opacity: .3;
+    }}
 `
 
 const FootElement = styled.div`
@@ -67,8 +79,9 @@ const Arte = styled.p`
 `
 
 const Footer = () => {
+    const { isNavOpen } = useContext(AppContext)
     return (
-        <FooterWrapper>
+        <FooterWrapper className={isNavOpen && 'blurred'}>
             <FootElement>
                 <FootLogo src={logo} />
                 <p>biuro.karte@gmail.com</p>

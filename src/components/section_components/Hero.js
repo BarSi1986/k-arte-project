@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useContext } from 'react'
+import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 
 // images
@@ -16,6 +17,18 @@ const HomeWrapper = styled.section`
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
+    transition: 1s ${props => props.theme.transitions.cubic_front};
+    &.blurred{
+        transform: translateX(35px);
+        opacity: .3;
+    }
+    @media (max-width: 750px) {
+        &.blurred{
+        transform: translateY(-35px);
+        opacity: .3;
+    }
+    }
 `
 const MixedBg = styled.div`
     position: absolute;
@@ -72,8 +85,9 @@ const Header1 = styled.h1`
 // `
 
 const Hero = () => {
+    const { isNavOpen } = useContext(AppContext)
     return (
-        <HomeWrapper>
+        <HomeWrapper className={isNavOpen && 'blurred'}>
             <MixedBg>
                 {/* <Logo src={logo} /> */}
                 <Header1><span>ar</span><span>te</span></Header1>
