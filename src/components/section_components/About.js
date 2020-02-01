@@ -6,7 +6,6 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 import ornament from '../../images/ornament1.svg'
-import aboutImg from '../../images/about_img.jpg'
 
 import Button from '../ui_components/GoldenButton'
 import Header from '../ui_components/H2_header'
@@ -98,7 +97,7 @@ z-index: -1;
 
 const About = () => {
     const data = useStaticQuery(graphql`
-    query GalleryImagesQuery {
+    query AboutImagesQuery {
             file(relativePath: { eq: "about_img.jpg" }) {
                 childImageSharp {
                     fluid(quality: 100 maxWidth: 600){

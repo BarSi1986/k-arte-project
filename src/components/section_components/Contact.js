@@ -3,9 +3,11 @@ import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 
 import ornament from '../../images/ornament1.svg'
-import background from '../../images/contact_bg.jpg'
 
 import Header from '../ui_components/H2_header'
+
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 const FormWrapper = styled.section`
     background: ${props => props.theme.colors.darkgrey};
@@ -121,9 +123,6 @@ const Background = styled.div`
     top: 0;
     left: 0;
     z-index: 0;
-    background: url(${background});
-    background-size: cover;
-    background-position: center;
     opacity: .1;
     /* background-attachment: fixed; */
 `
@@ -137,11 +136,35 @@ const Ornament = styled.img`
     }
 `
 
+const StyldImg = styled(Img)`
+position: absolute !important;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+`
+
 const Contact = () => {
+    const data = useStaticQuery(graphql`
+    query ContactImageQuery {
+        file(relativePath: { eq: "contact_bg.jpg" }) {
+            childImageSharp {
+                fluid(quality: 100 maxWidth: 1440){
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+    `)
     const { isNavOpen } = useContext(AppContext)
     return (
         <FormWrapper className={isNavOpen && 'blurred'}>
-            <Background />
+            <Background>
+                <StyldImg
+                    fluid={data.file.childImageSharp.fluid}
+                />
+            </Background>
             <Form>
                 <StyledHeader text='Napisz do nas' />
                 <Ornament src={ornament} />

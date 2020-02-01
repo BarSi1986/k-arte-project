@@ -5,6 +5,9 @@ import styled from 'styled-components'
 import ornament from '../../images/ornament1.svg'
 import Header from '../ui_components/H2_header'
 
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+
 const GalleryWrapper = styled.section`
   overflow: hidden;
   height: 112vh;
@@ -54,8 +57,8 @@ const GridWrapper = styled.div`
   grid-gap: 10px;
 
   grid-template-areas:
-    "a a b b b e e e"
-    "c c c d d e e e";
+    "a a b b b b e e"
+    "c c c d d f f f";
 
     @media (max-width: 750px) {
       grid-template-columns: repeat(2, 1fr);
@@ -76,25 +79,24 @@ const GridItem = styled.div`
   background-size: cover;
   background-position: center;
   min-height: 300px;
+  position: relative;
   &:nth-of-type(1){
-    background-image: url("https://images.unsplash.com/photo-1513161455079-7dc1de15ef3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
     grid-area: a;
   }
   &:nth-of-type(2) {
-  background-image: url("https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80");
   grid-area: b;
 }
   &:nth-of-type(3) {
-  background-image: url("https://images.unsplash.com/photo-1499916078039-922301b0eb9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80");
   grid-area: c;
 }
 &:nth-of-type(4) {
-  background-image: url("https://images.unsplash.com/photo-1544207240-8b1025eb7aeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
   grid-area: d;
 }
 &:nth-of-type(5) {
-  background-image: url("https://images.unsplash.com/photo-1560440021-33f9b867899d?ixlib=rb-1.2.1&auto=format&fit=crop&w=609&q=80");
   grid-area: e;
+}
+&:nth-of-type(6) {
+  grid-area: f;
 }
 `
 
@@ -154,10 +156,65 @@ const Ornament = styled.img`
   }
 `
 
+const StyledImg = styled(Img)`
+position: absolute !important;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+`
+
 
 
 
 const Gallery = () => {
+  const data = useStaticQuery(graphql`
+  query GalleryImagesQuery {
+      image1: file(relativePath: {eq: "gallery1.jpg"}) {
+        childImageSharp {
+          fluid (quality: 100, maxWidth: 1440) {
+              ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      image2: file(relativePath: {eq: "gallery3.jpg"}) {
+        childImageSharp {
+          fluid (quality: 100, maxWidth: 1440) {
+              ...GatsbyImageSharpFluid    
+          }
+        }
+      },
+      image3: file(relativePath: {eq: "gallery4.jpg"}) {
+          childImageSharp {
+            fluid (quality: 100, maxWidth: 1440) {
+                ...GatsbyImageSharpFluid    
+            }
+          }
+        },
+        image4: file(relativePath: {eq: "gallery4b.jpg"}) {
+          childImageSharp {
+            fluid (quality: 100, maxWidth: 1440) {
+                ...GatsbyImageSharpFluid    
+            }
+          }
+        },
+        image5: file(relativePath: {eq: "gallery5f.jpg"}) {
+          childImageSharp {
+            fluid (quality: 100, maxWidth: 1440) {
+                ...GatsbyImageSharpFluid    
+            }
+          }
+        },
+        image6: file(relativePath: {eq: "gallery6c.jpg"}) {
+          childImageSharp {
+            fluid (quality: 100, maxWidth: 1440) {
+                ...GatsbyImageSharpFluid    
+            }
+          }
+        },
+    }
+  `)
   const { isNavOpen } = useContext(AppContext)
   return (
     <GalleryWrapper className={isNavOpen && 'blurred'}>
@@ -168,11 +225,42 @@ const Gallery = () => {
       <GridOuterWrapper>
 
         <GridWrapper>
-          <GridItem />
-          <GridItem />
-          <GridItem />
-          <GridItem />
-          <GridItem />
+          <GridItem>
+            <StyledImg
+              fluid={data.image1.childImageSharp.fluid}
+            />
+          </GridItem>
+
+          <GridItem>
+            <StyledImg
+              fluid={data.image2.childImageSharp.fluid}
+            />
+          </GridItem>
+
+          <GridItem>
+            <StyledImg
+              fluid={data.image3.childImageSharp.fluid}
+            />
+          </GridItem>
+
+          <GridItem>
+            <StyledImg
+              fluid={data.image4.childImageSharp.fluid}
+            />
+          </GridItem>
+
+          <GridItem>
+            <StyledImg
+              fluid={data.image5.childImageSharp.fluid}
+            />
+          </GridItem>
+
+          <GridItem>
+            <StyledImg
+              fluid={data.image6.childImageSharp.fluid}
+            />
+          </GridItem>
+
         </GridWrapper>
 
         <WordSkrojone>Skrojone</WordSkrojone>
