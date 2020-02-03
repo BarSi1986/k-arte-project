@@ -4,11 +4,11 @@ import styled from 'styled-components'
 import { Link } from "gatsby"
 
 const SideMenuWrapper = styled.div`
-padding-top: 30px;
+    padding-top: 30px;
     position: fixed;
     width: 25%;
     height: 100vh;
-    z-index: 30;
+    z-index: 70;
     bottom:0;
     left:0;
     background: #111;
@@ -73,9 +73,6 @@ const SideMenu = () => {
             </SideMeuButton>
             <SideMeuButton onClick={handleNavOpen}>
                 <Link to="/portfolio" activeStyle={{ color: '#6A0B0B' }}>portfolio</Link>
-            </SideMeuButton>
-            <SideMeuButton onClick={handleNavOpen}>
-                <Link to="/kontakt" activeStyle={{ color: '#6A0B0B' }}>kontakt</Link>
             </SideMeuButton>
 
         </SideMenuWrapper >

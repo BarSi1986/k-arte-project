@@ -1,16 +1,18 @@
 import React, { useContext } from 'react'
 import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 import ornament from '../../images/ornament1.svg'
 import Header from '../ui_components/H2_header'
+import Button from '../ui_components/GoldenButton'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 const GalleryWrapper = styled.section`
   overflow: hidden;
-  height: 112vh;
+  /* height: 112vh; */
   padding-top: 30px;
   @media (max-width: 750px){
     height: unset;
@@ -28,6 +30,7 @@ transition: 1s ${props => props.theme.transitions.cubic_front};
         opacity: .3;
     }
     }
+   text-align: center;
 `
 
 
@@ -166,6 +169,10 @@ height: 100%;
 z-index: -1;
 `
 
+const StyledBtn = styled(Button)`
+  margin: 45px;
+`
+
 
 
 
@@ -220,7 +227,7 @@ const Gallery = () => {
   return (
     <GalleryWrapper className={isNavOpen && 'blurred'}>
       <HeaderWrapper>
-        <StyledHeader text='Realizacje' />
+        <StyledHeader text='Wybrane Realizacje' />
         <Ornament src={ornament} />
       </HeaderWrapper>
       <GridOuterWrapper>
@@ -268,7 +275,10 @@ const Gallery = () => {
         <WordNaMiare>Na miarę</WordNaMiare>
 
       </GridOuterWrapper>
-    </GalleryWrapper>
+      <Link to="/portfolio">
+        <StyledBtn text="Zobacz wszystkie" />
+      </Link>
+    </GalleryWrapper >
 
   )
 }

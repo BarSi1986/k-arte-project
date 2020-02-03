@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import AppContext from '../../context/AppContext'
+import { Link } from "gatsby"
 import styled from 'styled-components'
 
 import { graphql, useStaticQuery } from 'gatsby'
@@ -122,7 +123,9 @@ const About = () => {
                     <Ornament src={ornament} />
                 </HeaderWrapper>
                 <AboutPara>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel provident iste repellat dolorum, dolor hic perspiciatis facilis in porro delectus magnam adipisci, et fugit natus. Aliquid fuga explicabo natus odit veniam voluptas enim dolorum.</AboutPara>
-                <Button text="Dowiedz się więcej" />
+                <Link to="/o-mnie">
+                    <Button text="Dowiedz się więcej" />
+                </Link>
             </StoryWrapper>
 
         </AboutWrapper>

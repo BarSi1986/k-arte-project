@@ -7,7 +7,12 @@ import { faBars, faPhone, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const NavWrapper = styled.section`
-    position: relative;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background: rgba(1, 1, 1, 0);
+    bottom: calc(100%-70px);
+    right: 0;
     @media (max-width: 750px) {
         position: fixed;
         left: 0;
@@ -23,6 +28,7 @@ const NavWrapper = styled.section`
         justify-content: space-around;
         align-items: center;
     }
+    z-index: 50;
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -76,19 +82,19 @@ const Nav = () => {
         <NavWrapper>
             <StyledBtn
                 onClick={handleNavOpen}
-                style={{ top: '50px', right: '50px' }}>
+                style={{ top: '10px', right: '50px' }}>
                 <StyledIcon icon={isNavOpen ? faTimes : faBars} />
             </StyledBtn>
 
-            <StyledBtn style={{ top: '130px', right: '50px' }}>
+            <StyledBtn style={{ top: '10px', right: '150px' }}>
                 <StyledIcon icon={faFacebookF} />
             </StyledBtn>
 
-            <StyledBtn style={{ top: '210px', right: '50px' }}>
+            <StyledBtn style={{ top: '10px', right: '250px' }}>
                 <StyledIcon icon={faInstagram} />
             </StyledBtn>
 
-            <StyledBtn style={{ top: '50px', right: '130px' }}>
+            <StyledBtn style={{ top: '10px', right: '350px' }}>
                 <StyledIcon icon={faPhone} />
             </StyledBtn>
         </NavWrapper>

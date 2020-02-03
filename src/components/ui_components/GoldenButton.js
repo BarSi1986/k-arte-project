@@ -11,9 +11,9 @@ const GoldenBtn = styled.button`
     cursor: pointer;
 `
 
-const GoldenButton = ({ text }) => {
+const GoldenButton = ({ text, className }) => {
     return (
-        <GoldenBtn>
+        <GoldenBtn className={className}>
             {text}
         </GoldenBtn>
     )
