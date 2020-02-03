@@ -13,6 +13,7 @@ const NavWrapper = styled.section`
     background: rgba(1, 1, 1, 0);
     bottom: calc(100%-70px);
     right: 0;
+    z-index: 50;
     @media (max-width: 750px) {
         position: fixed;
         left: 0;
@@ -28,7 +29,7 @@ const NavWrapper = styled.section`
         justify-content: space-around;
         align-items: center;
     }
-    z-index: 50;
+   
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`

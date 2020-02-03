@@ -8,7 +8,7 @@ const SideMenuWrapper = styled.div`
     position: fixed;
     width: 25%;
     height: 100vh;
-    z-index: 70;
+    z-index: 40;
     bottom:0;
     left:0;
     background: #111;
@@ -28,7 +28,7 @@ const SideMenuWrapper = styled.div`
 
     display: flex;
     flex-direction: column;
-    opacity: .95;
+    /* opacity: .95; */
 `
 
 const SideMeuButton = styled.button`

@@ -20,21 +20,27 @@ const HomeWrapper = styled.section`
         transform: translateY(-35px);
         opacity: .3;
     }
+    margin-bottom: -60px;
     }
 `
 const MixedBg = styled.div`
     position: absolute;
-    background: ${props => props.theme.colors.grey};
+    background: #000;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    mix-blend-mode: multiply; 
+    z-index: -1;
+     
+    @media (min-width: 750px) {
+        mix-blend-mode: multiply;
+    }
     @media (max-width: 750px) {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        opacity: .7;
     }
 `
 const Header1 = styled.h1`
@@ -46,8 +52,6 @@ const Header1 = styled.h1`
     color: ${props => props.theme.colors.white};
     font-size: 51vw;
     margin: 0;
-   
-
     @media (max-width: 750px) {
         position: absolute;
         bottom: 50%;
@@ -59,6 +63,7 @@ const Header1 = styled.h1`
         font-size: 60vw;
         padding: 20px;
         border: 8px solid white;
+        opacity: .9;
         span{
             height: 180px;
             transform: translateY(-60px);

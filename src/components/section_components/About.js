@@ -32,6 +32,7 @@ const AboutWrapper = styled.section`
         transform: translateY(-35px);
         opacity: .3;
     }
+    border-radius: 40px 40px 0 0;
     }
 `
 

@@ -170,7 +170,7 @@ z-index: -1;
 `
 
 const StyledBtn = styled(Button)`
-  margin: 45px;
+  margin: 30px;
 `
 
 
