@@ -36,17 +36,10 @@ const AppWrapper = styled.div`
 `;
 
 const AboutImage = styled.div`
-  width: 80%;
-  height: 60%;
-  position: absolute;
-  right: 0px;
-  top:  0px;
-  @media (max-width: 750px) {
-    width: 100%;
+  width: 100%;
     position: relative;
     height: 400px;
     margin-bottom: -40px;
-  }
 `;
 
 const AboutTxt = styled.div`
@@ -74,9 +67,9 @@ const AboutTxt = styled.div`
 `;
 
 const BgLinearGradient = styled.div`
-  width: 100px;
-  height: 100%;
-  background: linear-gradient(0.25turn, #fff, #fff, rgba(255,255,255, .95), transparent);
+    width: 100%;
+    height: 100px;
+    background: linear-gradient( #fff, transparent);
   position: absolute;
 
   @media (max-width: 750px) {
@@ -94,7 +87,7 @@ const BigHeader = styled.h1`
   position: absolute;
   z-index: 1;
   right: -190px;
-  bottom: -120px;
+  bottom: -150px;
   transform: rotate(-90deg);
   @media (max-width: 750px) {
     font-size: 80px;
@@ -169,7 +162,7 @@ const MoreAboutMe = () => {
         `)
   return (
     <AppWrapper className={isNavOpen && 'blurred'}>
-      <Parallax y={[-20, 20]}>
+      <Parallax y={[-45, 20]}>
         <AboutImage>
           <StyledImg
             fluid={data.file.childImageSharp.fluid}
