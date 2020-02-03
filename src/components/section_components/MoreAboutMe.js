@@ -7,6 +7,8 @@ import Img from 'gatsby-image'
 import Header from '../ui_components/H2_header'
 import ornament from '../../images/ornament1.svg'
 
+import { Parallax } from 'react-scroll-parallax'
+
 const AppWrapper = styled.div`
   height: 95vh;
   position: relative;
@@ -24,7 +26,11 @@ const AppWrapper = styled.div`
         transform: translateY(-35px);
         opacity: .3;
     }
-    height: 110vh;
+    height: unset;
+
+    position: initial;
+      display: flex;
+      flex-direction: column;
     
     }
 `;
@@ -37,6 +43,9 @@ const AboutImage = styled.div`
   top:  0px;
   @media (max-width: 750px) {
     width: 100%;
+    position: relative;
+    height: 400px;
+    margin-bottom: -40px;
   }
 `;
 
@@ -55,11 +64,12 @@ const AboutTxt = styled.div`
   }
   @media (max-width: 750px) {
     width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    height: inherit;
     padding: 40px 20px;
     border-radius: 40px 40px 0 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: none;
   }
 `;
 
@@ -159,13 +169,15 @@ const MoreAboutMe = () => {
         `)
   return (
     <AppWrapper className={isNavOpen && 'blurred'}>
-      <AboutImage>
-        <StyledImg
-          fluid={data.file.childImageSharp.fluid}
-        />
-        <BgLinearGradient />
-        <BigHeader>o mnie</BigHeader>
-      </AboutImage>
+      <Parallax y={[-20, 20]}>
+        <AboutImage>
+          <StyledImg
+            fluid={data.file.childImageSharp.fluid}
+          />
+          <BgLinearGradient />
+          <BigHeader>o mnie</BigHeader>
+        </AboutImage>
+      </Parallax>
       <AboutTxt>
         <GoldLine2 />
         <TextWrapper>

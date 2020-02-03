@@ -48,7 +48,7 @@ const MixedBg = styled.div`
     }
 `
 const Header1 = styled.h1`
-    position: relative;
+    position: absolute;
     font-family: ${props => props.theme.fonts.montserrat};
     bottom: 0;
     left: 50%;
