@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import AppContext from '../context/AppContext'
+import { ParallaxProvider } from 'react-scroll-parallax';
 import 'normalize.css'
 import '../styles/styles.css'
 
@@ -43,12 +44,12 @@ const Layout = ({ children }) => {
     return (
         <AppContext.Provider value={{ isNavOpen, setIsNavOpen, handleNavOpen }}>
             <ThemeProvider theme={theme}>
-                <React.Fragment>
+                <ParallaxProvider>
                     <SideMenu />
                     <Nav />
                     {children}
                     <Footer />
-                </React.Fragment>
+                </ParallaxProvider>
             </ThemeProvider>
         </AppContext.Provider>
     )

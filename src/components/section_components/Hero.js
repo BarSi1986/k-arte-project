@@ -3,13 +3,14 @@ import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import { Parallax } from 'react-scroll-parallax'
 
 const HomeWrapper = styled.section`
     position: relative;
     width: 100%;
     height: 95vh;
     overflow: hidden;
-
+    margin-bottom: -20px;
     transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
         transform: translateX(35px);
@@ -20,17 +21,18 @@ const HomeWrapper = styled.section`
         transform: translateY(-35px);
         opacity: .3;
     }
-    margin-bottom: -60px;
+    margin-bottom: -40px;
     }
+    
+   
 `
 const MixedBg = styled.div`
     position: absolute;
-    background: #000;
+    background: ${props => props.theme.colors.grey};
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
      
     @media (min-width: 750px) {
         mix-blend-mode: multiply;
@@ -40,11 +42,13 @@ const MixedBg = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        opacity: .7;
+        opacity: .8;
+        z-index: -1;
+        background: #000;
     }
 `
 const Header1 = styled.h1`
-    position: absolute;
+    position: relative;
     font-family: ${props => props.theme.fonts.montserrat};
     bottom: 0;
     left: 50%;
@@ -94,14 +98,16 @@ const Hero = () => {
     `)
     const { isNavOpen } = useContext(AppContext)
     return (
-        <HomeWrapper className={isNavOpen && 'blurred'}>
-            <StyldImg
-                fluid={data.file.childImageSharp.fluid}
-            />
-            <MixedBg>
-                <Header1><span>ar</span><span>te</span></Header1>
-            </MixedBg>
-        </HomeWrapper>
+        <Parallax y={[-25, 20]}>
+            <HomeWrapper className={isNavOpen && 'blurred'}>
+                <StyldImg
+                    fluid={data.file.childImageSharp.fluid}
+                />
+                <MixedBg>
+                    <Header1><span>ar</span><span>te</span></Header1>
+                </MixedBg>
+            </HomeWrapper>
+        </Parallax>
     )
 }
 

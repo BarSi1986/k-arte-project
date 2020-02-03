@@ -97,10 +97,9 @@ const TextArea = styled.textarea`
 `
 
 const Submit = styled.input`
-    background: transparent;
     color: ${props => props.theme.colors.white};
     font-family: ${props => props.theme.fonts.montserrat};
-    padding: 10px 20px;
+    padding: 15px 0px;
     outline-color: ${props => props.theme.colors.gold};
     border: none;
     background:${props => props.theme.colors.gold};

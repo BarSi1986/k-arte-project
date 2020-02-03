@@ -12,6 +12,7 @@ import Button from '../ui_components/GoldenButton'
 import Header from '../ui_components/H2_header'
 
 const AboutWrapper = styled.section`
+    position: relative;
     height: 50vh;
     display: flex;
     justify-content: center;
@@ -93,7 +94,7 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-z-index: -1;
+z-index: 1;
 `
 
 
