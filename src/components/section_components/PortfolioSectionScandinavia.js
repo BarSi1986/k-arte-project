@@ -103,7 +103,7 @@ const PortfolioSectionScandinavia = () => {
     query ScandinaviaImagesQuery {
         image1: file(relativePath: {eq: "SCANDI (full) (30 of 50).jpg"}) {
           childImageSharp {
-            fluid (quality: 100, maxWidth: 14400) {
+            fluid (quality: 100, maxWidth: 1300) {
                 ...GatsbyImageSharpFluid
             }
           }
@@ -124,7 +124,7 @@ const PortfolioSectionScandinavia = () => {
           },
           image4: file(relativePath: {eq: "SCANDI  (www) (14 of 50).jpg"}) {
             childImageSharp {
-              fluid (quality: 100, maxWidth: 1440) {
+              fluid (quality: 100, maxWidth: 500) {
                   ...GatsbyImageSharpFluid    
               }
             }
