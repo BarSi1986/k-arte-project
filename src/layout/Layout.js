@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import AppContext from '../context/AppContext'
 import { ParallaxProvider } from 'react-scroll-parallax';

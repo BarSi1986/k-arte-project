@@ -36,10 +36,13 @@ const AppWrapper = styled.div`
 `;
 
 const AboutImage = styled.div`
-  width: 100%;
+    width: 100%;
     position: relative;
-    height: 400px;
+    height: 500px;
     margin-bottom: -40px;
+    @media (max-width: 750px) {
+      height: 400px
+    }
 `;
 
 const AboutTxt = styled.div`
@@ -67,10 +70,10 @@ const AboutTxt = styled.div`
 `;
 
 const BgLinearGradient = styled.div`
-    width: 100%;
+    /* width: 100%;
     height: 100px;
     background: linear-gradient( #fff, transparent);
-  position: absolute;
+  position: absolute; */
 
   @media (max-width: 750px) {
     width: 100%;

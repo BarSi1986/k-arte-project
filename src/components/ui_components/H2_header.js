@@ -5,7 +5,7 @@ const Header = styled.h2`
     margin: 0;
     color: ${props => props.theme.colors.white};
     font-family: ${props => props.theme.fonts.playfair};
-    font-size: 2.3em;
+    font-size: 2em;
     letter-spacing: 5px;
     @media (max-width: 750px){
     font-size: 1.5em;

@@ -8,7 +8,7 @@ import { Parallax } from 'react-scroll-parallax'
 const HomeWrapper = styled.section`
     position: relative;
     width: 100%;
-    height: 95vh;
+    height: 100vh;
     overflow: hidden;
     margin-bottom: -20px;
     transition: 1s ${props => props.theme.transitions.cubic_front};
@@ -97,6 +97,8 @@ const Hero = () => {
     }
     `)
     const { isNavOpen } = useContext(AppContext)
+
+
     return (
         <Parallax y={[-25, 20]}>
             <HomeWrapper className={isNavOpen && 'blurred'}>
