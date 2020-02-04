@@ -10,7 +10,7 @@ const HomeWrapper = styled.section`
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    margin-bottom: -20px;
+    margin-bottom: -30px;
     transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
         transform: translateX(35px);
@@ -21,7 +21,7 @@ const HomeWrapper = styled.section`
         transform: translateY(-35px);
         opacity: .3;
     }
-    margin-bottom: -40px;
+    margin-bottom: -50px;
     }
     
    

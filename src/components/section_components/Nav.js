@@ -13,7 +13,7 @@ const NavWrapper = styled.section`
     background: rgba(1, 1, 1, 0);
     bottom: calc(100%-70px);
     right: 0;
-    z-index: 50;
+    z-index: 20;
     @media (max-width: 750px) {
         position: fixed;
         left: 0;

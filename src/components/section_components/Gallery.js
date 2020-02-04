@@ -49,20 +49,20 @@ const GridWrapper = styled.div`
   display: grid;
   border: 3px solid ${props => props.theme.colors.gold};
   padding: 10px;
-  height: 90vh;
+  /* height: 90vh; */
   width: 100%;
   margin: auto;
   /* overflow: scroll; */
 
 
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 10px;
 
   grid-template-areas:
     "a a b b b b e e"
-    "c c c d d f f f";
-
+    "c c c d d f f f"
+    "g g g g g g h h";
     @media (max-width: 750px) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(5, 1fr);
@@ -73,7 +73,9 @@ const GridWrapper = styled.div`
         "c c"
         "d d"
         "e e"
-        "f f";
+        "f f"
+        "g g"
+        "h h";
 
         height: unset;
     }
@@ -82,26 +84,16 @@ const GridWrapper = styled.div`
 const GridItem = styled.div`
   background-size: cover;
   background-position: center;
-  min-height: 300px;
+  min-height: 400px;
   position: relative;
-  &:nth-of-type(1){
-    grid-area: a;
-  }
-  &:nth-of-type(2) {
-  grid-area: b;
-}
-  &:nth-of-type(3) {
-  grid-area: c;
-}
-&:nth-of-type(4) {
-  grid-area: d;
-}
-&:nth-of-type(5) {
-  grid-area: e;
-}
-&:nth-of-type(6) {
-  grid-area: f;
-}
+  &:nth-of-type(1){grid-area: a;}
+  &:nth-of-type(2) {grid-area: b;}
+  &:nth-of-type(3) {grid-area: c;}
+  &:nth-of-type(4) {grid-area: d;}
+  &:nth-of-type(5) {grid-area: e;}
+  &:nth-of-type(6) {grid-area: f;}
+  &:nth-of-type(7) {grid-area: g;}
+  &:nth-of-type(8) {grid-area: h;}
 `
 
 const WordSkrojone = styled.h2`
@@ -221,13 +213,27 @@ const Gallery = () => {
             }
           }
         },
+        image7: file(relativePath: {eq: "Francuska Park (full)-33.jpg"}) {
+          childImageSharp {
+            fluid (quality: 100, maxWidth: 1440) {
+                ...GatsbyImageSharpFluid    
+            }
+          }
+        },
+        image8: file(relativePath: {eq: "IMG_9699.jpg"}) {
+          childImageSharp {
+            fluid (quality: 100, maxWidth: 1440) {
+                ...GatsbyImageSharpFluid    
+            }
+          }
+        },
     }
   `)
   const { isNavOpen } = useContext(AppContext)
   return (
     <GalleryWrapper className={isNavOpen && 'blurred'}>
       <HeaderWrapper>
-        <StyledHeader text='Wybrane Realizacje' />
+        <StyledHeader text='Realizacje' />
         <Ornament src={ornament} />
       </HeaderWrapper>
       <GridOuterWrapper>
@@ -269,6 +275,18 @@ const Gallery = () => {
             />
           </GridItem>
 
+          <GridItem>
+            <StyledImg
+              fluid={data.image7.childImageSharp.fluid}
+            />
+          </GridItem>
+
+          <GridItem>
+            <StyledImg
+              fluid={data.image8.childImageSharp.fluid}
+            />
+          </GridItem>
+
         </GridWrapper>
 
         <WordSkrojone>Skrojone</WordSkrojone>
@@ -276,7 +294,7 @@ const Gallery = () => {
 
       </GridOuterWrapper>
       <Link to="/portfolio">
-        <StyledBtn text="Zobacz wszystkie" />
+        <StyledBtn text="Zobacz więcej" />
       </Link>
     </GalleryWrapper >
 
