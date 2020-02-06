@@ -52,6 +52,7 @@ const DekorialoveHero = styled.div`
 const ScandiTitle = styled.div`
   padding: 40px 0;
   width: 40%;
+  text-align: center;
   div{
     display: flex;
     flex-direction: column;
@@ -66,7 +67,7 @@ const ScandiTitle = styled.div`
     }
   }
   @media (max-width: 750px) {
-    padding: 20px 10px;
+    padding: 20px 20px;
     width: 100%;
     div{
       p{
