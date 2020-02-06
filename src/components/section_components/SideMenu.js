@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 import { Link } from "gatsby"
+import logo from '../../images/logo.png'
 
 const SideMenuWrapper = styled.div`
     position: fixed;
@@ -59,6 +60,19 @@ const SideMeuButton = styled.button`
     }
 `
 
+const Logo = styled.img`
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    @media (max-width: 750px){
+        bottom: unset;
+        top: 50px;
+    }
+`
+
 const SideMenu = () => {
     const { isNavOpen, handleNavOpen } = useContext(AppContext)
 
@@ -73,6 +87,7 @@ const SideMenu = () => {
             <SideMeuButton onClick={handleNavOpen}>
                 <Link to="/portfolio" activeStyle={{ color: '#6A0B0B' }}>portfolio</Link>
             </SideMeuButton>
+            <Logo src={logo} />
 
         </SideMenuWrapper >
     )

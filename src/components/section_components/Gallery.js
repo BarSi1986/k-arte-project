@@ -168,7 +168,7 @@ const StyledBtn = styled(Button)`
 const Gallery = () => {
   const data = useStaticQuery(graphql`
   query GalleryImagesQuery {
-      image1: file(relativePath: {eq: "gallery1.jpg"}) {
+      image1: file(relativePath: {eq: "SCANDI  (www) (22 of 50).jpg"}) {
         childImageSharp {
           fluid (quality: 100, maxWidth: 1440) {
               ...GatsbyImageSharpFluid

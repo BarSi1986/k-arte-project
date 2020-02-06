@@ -84,7 +84,7 @@ const ScandiTitle = styled.div`
       }
 `
 const ScandiGrid = styled.div`
-  width: 90%;
+  width: 92%;
   display: grid;
   grid-gap: 10px;
   margin: auto;
