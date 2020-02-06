@@ -4,16 +4,15 @@ import styled from 'styled-components'
 import { Link } from "gatsby"
 
 const SideMenuWrapper = styled.div`
-    padding-top: 30px;
     position: fixed;
-    width: 25%;
+    width: 450px;
     height: 100vh;
     z-index: 40;
     bottom:0;
-    left:0;
+    right:0;
     background: #111;
     transition: transform .5s ${props => props.theme.transitions.cubic_front};
-    transform: translateX(-100%);
+    transform: translateX(100%);
     @media (max-width: 750px){
         transform: translateY(100%);
         width: 100%;
@@ -23,23 +22,23 @@ const SideMenuWrapper = styled.div`
     }
     }
     &.nav__open{
-        transform: translateX(0);
+        transform: translateX(0%);
     }
 
     display: flex;
     flex-direction: column;
-    /* opacity: .95; */
+    justify-content: center;
 `
 
 const SideMeuButton = styled.button`
     background: none;
     border: none;
-    margin: 20px;
+    margin: 15px;
     cursor: pointer;
     outline-color: ${props => props.theme.colors.gold};
     a{
         font-family: ${props => props.theme.fonts.montserrat};
-        font-size: 3em;
+        font-size: 2em;
         letter-spacing: 0px;
         font-weight: 100;
         color: ${props => props.theme.colors.white};

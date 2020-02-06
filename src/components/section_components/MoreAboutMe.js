@@ -17,7 +17,7 @@ const AppWrapper = styled.div`
   overflow: hidden;
   transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
-        transform: translateX(35px);
+        transform: translateX(-35px);
         opacity: .3;
     }
 
@@ -26,11 +26,10 @@ const AppWrapper = styled.div`
         transform: translateY(-35px);
         opacity: .3;
     }
-    height: unset;
-
+    height: inherit;
     position: initial;
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
     
     }
 `;
@@ -38,16 +37,16 @@ const AppWrapper = styled.div`
 const AboutImage = styled.div`
     width: 100%;
     position: relative;
-    height: 500px;
-    margin-bottom: -40px;
+    height: 60vh;
     @media (max-width: 750px) {
-      height: 400px
+      height: 60vh;
+      margin-bottom: -50px;
     }
 `;
 
 const AboutTxt = styled.div`
-  width: 800px;
-  height: 50%;
+  width: 900px;
+  height: 40%;
   position: absolute;
   left: 10%;
   top: 40%;
@@ -66,19 +65,6 @@ const AboutTxt = styled.div`
     top: 0;
     left: 0;
     box-shadow: none;
-  }
-`;
-
-const BgLinearGradient = styled.div`
-    /* width: 100%;
-    height: 100px;
-    background: linear-gradient( #fff, transparent);
-  position: absolute; */
-
-  @media (max-width: 750px) {
-    width: 100%;
-    height: 100px;
-    background: linear-gradient( #fff, transparent);
   }
 `;
 
@@ -165,12 +151,11 @@ const MoreAboutMe = () => {
         `)
   return (
     <AppWrapper className={isNavOpen && 'blurred'}>
-      <Parallax y={[-45, 20]}>
+      <Parallax y={[-60, 30]}>
         <AboutImage>
           <StyledImg
             fluid={data.file.childImageSharp.fluid}
           />
-          <BgLinearGradient />
           <BigHeader>o mnie</BigHeader>
         </AboutImage>
       </Parallax>
@@ -187,8 +172,7 @@ const MoreAboutMe = () => {
             adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore
+            consequat.
                     </Para>
         </TextWrapper>
       </AboutTxt>

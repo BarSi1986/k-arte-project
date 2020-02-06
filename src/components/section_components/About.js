@@ -25,7 +25,7 @@ const AboutWrapper = styled.section`
     }
     transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
-        transform: translateX(35px);
+        transform: translateX(-35px);
         opacity: .3;
     }
     @media (max-width: 750px) {
@@ -55,9 +55,9 @@ const StoryWrapper = styled.div`
 `
 
 const AboutPara = styled.p`
-    font-family: ${props => props.theme.fonts.titillium};
-    font-size: 1.3em;
-    font-weight: 200;
+    font-family: ${props => props.theme.fonts.montserrat};
+    font-size: 1em;
+    font-weight: 100;
     color: ${props => props.theme.colors.white};
     letter-spacing: 1px;
     /* text-align: center; */
@@ -73,7 +73,7 @@ position: relative;
 `
 
 const Ornament = styled.img`
-    width: 150px;
+    width: 130px;
     margin: 20px 0;
 `
 

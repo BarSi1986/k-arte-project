@@ -127,7 +127,7 @@ const Background = styled.div`
 `
 
 const Ornament = styled.img`
-    width: 150px;
+    width: 130px;
     margin-bottom: 30px;
     @media (max-width: 750px){
         margin-bottom: 20px;

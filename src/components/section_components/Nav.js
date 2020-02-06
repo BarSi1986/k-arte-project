@@ -13,7 +13,7 @@ const NavWrapper = styled.section`
     background: rgba(1, 1, 1, 0);
     bottom: calc(100%-70px);
     right: 0;
-    z-index: 20;
+    z-index: 50;
     @media (max-width: 750px) {
         position: fixed;
         left: 0;
@@ -52,7 +52,7 @@ const StyledBtn = styled.button`
     width: 50px;
     height: 50px;
     background: transparent;
-    border: 3px solid ${props => props.theme.colors.beige};
+    border: none;
     opacity: .7;
     border-radius: 50%;
     outline: none;
@@ -68,7 +68,7 @@ const StyledBtn = styled.button`
     @media (max-width: 750px) {
         position: initial;
         text-align: center;
-        border: 2px solid ${props => props.theme.colors.beige};
+        border: none;
         &:hover{
             transform: translateY(0px);
         }
@@ -83,7 +83,7 @@ const Nav = () => {
         <NavWrapper>
             <StyledBtn
                 onClick={handleNavOpen}
-                style={{ top: '10px', right: '50px' }}>
+                style={{ top: '10px', right: '50px', zIndex: '150' }}>
                 <StyledIcon icon={isNavOpen ? faTimes : faBars} />
             </StyledBtn>
 

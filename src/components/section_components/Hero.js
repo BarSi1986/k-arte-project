@@ -8,12 +8,12 @@ import { Parallax } from 'react-scroll-parallax'
 const HomeWrapper = styled.section`
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 105vh;
     overflow: hidden;
-    margin-bottom: -30px;
+    margin-bottom: -40px;
     transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
-        transform: translateX(35px);
+        transform: translateX(-35px);
         opacity: .3;
     }
     @media (max-width: 750px) {
@@ -52,10 +52,11 @@ const Header1 = styled.h1`
     font-family: ${props => props.theme.fonts.montserrat};
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 19%);
+    transform: translate(-50%, 15%);
     color: ${props => props.theme.colors.white};
-    font-size: 51vw;
+    font-size: 49vw;
     margin: 0;
+    font-weight: 600;
     @media (max-width: 750px) {
         position: absolute;
         bottom: 50%;
@@ -100,7 +101,7 @@ const Hero = () => {
 
 
     return (
-        <Parallax y={[-25, 20]}>
+        <Parallax y={[-30, 30]}>
             <HomeWrapper className={isNavOpen && 'blurred'}>
                 <StyldImg
                     fluid={data.file.childImageSharp.fluid}

@@ -12,7 +12,6 @@ import Img from 'gatsby-image'
 
 const GalleryWrapper = styled.section`
   overflow: hidden;
-  /* height: 112vh; */
   padding-top: 30px;
   @media (max-width: 750px){
     height: unset;
@@ -21,7 +20,7 @@ const GalleryWrapper = styled.section`
 
 transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
-        transform: translateX(35px);
+        transform: translateX(-35px);
         opacity: .3;
     }
     @media (max-width: 750px) {
@@ -56,16 +55,15 @@ const GridWrapper = styled.div`
 
 
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-gap: 10px;
 
   grid-template-areas:
     "a a b b b b e e"
-    "c c c d d f f f"
-    "g g g g g g h h";
+    "c c c d d f f f";
     @media (max-width: 750px) {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(5, 1fr);
+      grid-template-rows: repeat(6, 1fr);
  
       grid-template-areas:
         "a a"
@@ -73,9 +71,7 @@ const GridWrapper = styled.div`
         "c c"
         "d d"
         "e e"
-        "f f"
-        "g g"
-        "h h";
+        "f f";
 
         height: unset;
     }
@@ -92,8 +88,6 @@ const GridItem = styled.div`
   &:nth-of-type(4) {grid-area: d;}
   &:nth-of-type(5) {grid-area: e;}
   &:nth-of-type(6) {grid-area: f;}
-  &:nth-of-type(7) {grid-area: g;}
-  &:nth-of-type(8) {grid-area: h;}
 `
 
 const WordSkrojone = styled.h2`
@@ -123,7 +117,7 @@ const WordNaMiare = styled.h2`
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 120px;
+  height: 100px;
   align-items: center;
   width: 100%;
   z-index: 1;
@@ -142,7 +136,7 @@ const StyledHeader = styled(Header)`
   }
 `
 const Ornament = styled.img`
-    width: 150px;
+    width: 130px;
     position: static;
     transform: translateY(-10px);
     margin: auto;
@@ -213,20 +207,6 @@ const Gallery = () => {
             }
           }
         },
-        image7: file(relativePath: {eq: "Francuska Park (full)-33.jpg"}) {
-          childImageSharp {
-            fluid (quality: 100, maxWidth: 1440) {
-                ...GatsbyImageSharpFluid    
-            }
-          }
-        },
-        image8: file(relativePath: {eq: "IMG_9699.jpg"}) {
-          childImageSharp {
-            fluid (quality: 100, maxWidth: 1440) {
-                ...GatsbyImageSharpFluid    
-            }
-          }
-        },
     }
   `)
   const { isNavOpen } = useContext(AppContext)
@@ -272,18 +252,6 @@ const Gallery = () => {
           <GridItem>
             <StyledImg
               fluid={data.image6.childImageSharp.fluid}
-            />
-          </GridItem>
-
-          <GridItem>
-            <StyledImg
-              fluid={data.image7.childImageSharp.fluid}
-            />
-          </GridItem>
-
-          <GridItem>
-            <StyledImg
-              fluid={data.image8.childImageSharp.fluid}
             />
           </GridItem>
 
