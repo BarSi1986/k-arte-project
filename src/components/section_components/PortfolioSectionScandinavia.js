@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import AppContext from '../../context/AppContext'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
@@ -9,6 +10,18 @@ import ScrollContainer from "react-indiana-drag-scroll";
 const PortfolioWrapper = styled.div`
   width: 100%;
   position: relative;
+
+  transition: 1s ${props => props.theme.transitions.cubic_front};
+    &.blurred{
+        transform: translateX(-35px);
+        opacity: .3;
+    }
+    @media (max-width: 750px) {
+        &.blurred{
+        transform: translateY(-35px);
+        opacity: .3;
+    }
+    }
 `
 const StyledImg = styled(Img)`
   position: absolute !important;
@@ -196,8 +209,10 @@ const PortfolioSectionScandinavia = () => {
           },
       }
     `)
+
+  const { isNavOpen } = useContext(AppContext)
   return (
-    <PortfolioWrapper>
+    <PortfolioWrapper className={isNavOpen && 'blurred'}>
 
       <DekorialoveSection>
         <DekorialoveHero>
