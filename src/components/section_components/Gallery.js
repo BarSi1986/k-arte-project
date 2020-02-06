@@ -80,7 +80,7 @@ const GridWrapper = styled.div`
 const GridItem = styled.div`
   background-size: cover;
   background-position: center;
-  min-height: 400px;
+  min-height: 350px;
   position: relative;
   &:nth-of-type(1){grid-area: a;}
   &:nth-of-type(2) {grid-area: b;}
@@ -88,6 +88,9 @@ const GridItem = styled.div`
   &:nth-of-type(4) {grid-area: d;}
   &:nth-of-type(5) {grid-area: e;}
   &:nth-of-type(6) {grid-area: f;}
+  @media (max-width: 750px){
+    min-height: 280px;
+  }
 `
 
 const WordSkrojone = styled.h2`
