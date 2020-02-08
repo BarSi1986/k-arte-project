@@ -28,7 +28,7 @@ const HomeWrapper = styled.section`
 `
 const MixedBg = styled.div`
     position: absolute;
-    background: linear-gradient(50turn, #000, #fff);
+    background: #aaa;
     top: 0;
     left: 0;
     width: 100%;
