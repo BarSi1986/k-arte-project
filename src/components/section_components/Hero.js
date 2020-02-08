@@ -28,7 +28,7 @@ const HomeWrapper = styled.section`
 `
 const MixedBg = styled.div`
     position: absolute;
-    background: ${props => props.theme.colors.grey};
+    background: linear-gradient(50turn, #000, #fff);
     top: 0;
     left: 0;
     width: 100%;
@@ -42,7 +42,7 @@ const MixedBg = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        opacity: .8;
+        opacity: .4;
         z-index: -1;
         background: #000;
     }
@@ -90,7 +90,7 @@ const Hero = () => {
     query HeroImageQuery {
         file(relativePath: { eq: "bg.jpg" }) {
             childImageSharp {
-                fluid(quality: 100 maxWidth: 1440){
+                fluid(quality: 100 maxWidth: 1366){
                     ...GatsbyImageSharpFluid
                 }
             }

@@ -35,11 +35,10 @@ const AppWrapper = styled.div`
 `;
 
 const AboutImage = styled.div`
+    height: 60vh !important;
     width: 100%;
     position: relative;
-    height: 60vh;
     @media (max-width: 750px) {
-      height: 60vh;
       margin-bottom: -50px;
     }
 `;
@@ -142,7 +141,7 @@ const MoreAboutMe = () => {
     query MoreAboutImagesQuery {
             file(relativePath: { eq: "gallery2b.jpg" }) {
                 childImageSharp {
-                    fluid(quality: 100 maxWidth: 1400){
+                    fluid(quality: 100 maxWidth: 1200){
                         ...GatsbyImageSharpFluid
                     }
                 }

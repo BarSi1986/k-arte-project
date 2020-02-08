@@ -170,42 +170,42 @@ const Gallery = () => {
   query GalleryImagesQuery {
       image1: file(relativePath: {eq: "SCANDI  (www) (22 of 50).jpg"}) {
         childImageSharp {
-          fluid (quality: 100, maxWidth: 1440) {
+          fluid (quality: 100, maxWidth: 600) {
               ...GatsbyImageSharpFluid
           }
         }
       },
       image2: file(relativePath: {eq: "gallery3.jpg"}) {
         childImageSharp {
-          fluid (quality: 100, maxWidth: 1440) {
+          fluid (quality: 100, maxWidth: 600) {
               ...GatsbyImageSharpFluid    
           }
         }
       },
       image3: file(relativePath: {eq: "gallery4.jpg"}) {
           childImageSharp {
-            fluid (quality: 100, maxWidth: 1440) {
+            fluid (quality: 100, maxWidth: 600) {
                 ...GatsbyImageSharpFluid    
             }
           }
         },
         image4: file(relativePath: {eq: "gallery4b.jpg"}) {
           childImageSharp {
-            fluid (quality: 100, maxWidth: 1440) {
+            fluid (quality: 100, maxWidth: 600) {
                 ...GatsbyImageSharpFluid    
             }
           }
         },
         image5: file(relativePath: {eq: "gallery5f.jpg"}) {
           childImageSharp {
-            fluid (quality: 100, maxWidth: 1440) {
+            fluid (quality: 100, maxWidth: 600) {
                 ...GatsbyImageSharpFluid    
             }
           }
         },
         image6: file(relativePath: {eq: "gallery6c.jpg"}) {
           childImageSharp {
-            fluid (quality: 100, maxWidth: 1440) {
+            fluid (quality: 100, maxWidth: 600) {
                 ...GatsbyImageSharpFluid    
             }
           }
