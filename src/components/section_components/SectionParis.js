@@ -148,10 +148,10 @@ const GridItem = styled.div`
     }
 `
 
-const PortfolioSectionScandinavia = () => {
+const SectionParis = () => {
 
-  const data = useStaticQuery(graphql`
-    query ScandinaviaImagesQuery {
+    const data = useStaticQuery(graphql`
+    query ParisImagesQuery {
         image1: file(relativePath: {eq: "SCANDI (full) (30 of 50).jpg"}) {
           childImageSharp {
             fluid (quality: 100, maxWidth: 1300) {
@@ -211,74 +211,74 @@ const PortfolioSectionScandinavia = () => {
       }
     `)
 
-  const { isNavOpen } = useContext(AppContext)
-  return (
-    <PortfolioWrapper className={isNavOpen && 'blurred'}>
+    const { isNavOpen } = useContext(AppContext)
+    return (
+        <PortfolioWrapper className={isNavOpen && 'blurred'}>
 
-      <DekorialoveSection>
-        <DekorialoveHero>
-          <StyledImg
-            fluid={data.image1.childImageSharp.fluid}
-          />
-        </DekorialoveHero>
+            <DekorialoveSection>
+                <DekorialoveHero>
+                    <StyledImg
+                        fluid={data.image1.childImageSharp.fluid}
+                    />
+                </DekorialoveHero>
 
-        <ScandiTitle>
-          <div>
-            <p>vakkert lyst interiør</p>
-            <p>czyli Skandynawia w centrum Katowic. Mieszkanie inwestycyjne w sercu śląska, na osiedlu Francuska Prak</p>
-          </div>
-        </ScandiTitle>
-        <ScrollContainer className="scroll-container">
-          <ScandiGrid>
-            <GridItem>
-              <p>beroligende plass</p>
-              <p>og et åpent sinn</p>
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image4.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image2.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image5.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image3.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image6.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image7.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image8.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <p>et interiør</p>
-              <p>som inspirerer</p>
-            </GridItem>
-          </ScandiGrid>
-        </ScrollContainer>
+                <ScandiTitle>
+                    <div>
+                        <p>vakkert lyst interiør</p>
+                        <p>czyli Skandynawia w centrum Katowic. Mieszkanie inwestycyjne w sercu śląska, na osiedlu Francuska Prak</p>
+                    </div>
+                </ScandiTitle>
+                <ScrollContainer className="scroll-container">
+                    <ScandiGrid>
+                        <GridItem>
+                            <p>beroligende plass</p>
+                            <p>og et åpent sinn</p>
+                        </GridItem>
+                        <GridItem>
+                            <StyledImg
+                                fluid={data.image4.childImageSharp.fluid}
+                            />
+                        </GridItem>
+                        <GridItem>
+                            <StyledImg
+                                fluid={data.image2.childImageSharp.fluid}
+                            />
+                        </GridItem>
+                        <GridItem>
+                            <StyledImg
+                                fluid={data.image5.childImageSharp.fluid}
+                            />
+                        </GridItem>
+                        <GridItem>
+                            <StyledImg
+                                fluid={data.image3.childImageSharp.fluid}
+                            />
+                        </GridItem>
+                        <GridItem>
+                            <StyledImg
+                                fluid={data.image6.childImageSharp.fluid}
+                            />
+                        </GridItem>
+                        <GridItem>
+                            <StyledImg
+                                fluid={data.image7.childImageSharp.fluid}
+                            />
+                        </GridItem>
+                        <GridItem>
+                            <StyledImg
+                                fluid={data.image8.childImageSharp.fluid}
+                            />
+                        </GridItem>
+                        <GridItem>
+                            <p>et interiør</p>
+                            <p>som inspirerer</p>
+                        </GridItem>
+                    </ScandiGrid>
+                </ScrollContainer>
 
-      </DekorialoveSection>
-    </PortfolioWrapper>
-  )
+            </DekorialoveSection>
+        </PortfolioWrapper>
+    )
 }
 
-export default PortfolioSectionScandinavia
+export default SectionParis

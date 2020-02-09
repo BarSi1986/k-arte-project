@@ -16,7 +16,7 @@ const FormWrapper = styled.section`
 
     transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
-        transform: translateX(35px);
+        transform: translateX(-35px);
         opacity: .3;
     }
     @media (max-width: 750px) {

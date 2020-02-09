@@ -1,14 +1,13 @@
 import React from 'react'
 
 import Layout from '../layout/Layout'
-import PortfolioSection from '../components/section_components/PortfolioSectionScandinavia'
+import PortfolioItems from '../components/section_components/PortfolioWrapper'
 
 const portfolio = () => {
     return (
         <Layout>
-            <PortfolioSection />
+            <PortfolioItems />
         </Layout>
     )
 }
-
 export default portfolio
