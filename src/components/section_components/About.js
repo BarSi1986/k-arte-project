@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import AppContext from '../../context/AppContext'
 import { Link } from "gatsby"
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade';
 
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
@@ -121,14 +122,19 @@ const About = () => {
                 />
             </AboutImage>
             <StoryWrapper>
-                <HeaderWrapper>
-                    <Header text="Słowem wstępu" />
-                    <Ornament src={ornament} />
-                </HeaderWrapper>
-                <AboutPara>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel provident iste repellat dolorum, dolor hic perspiciatis facilis in porro delectus magnam adipisci, et fugit natus. Aliquid fuga explicabo natus odit veniam voluptas enim dolorum.</AboutPara>
-                <Link to="/o-mnie">
-                    <Button text="Dowiedz się więcej" />
-                </Link>
+                <Fade bottom cascade>
+                    <HeaderWrapper>
+                        <Header text="Słowem wstępu" />
+                        <Ornament src={ornament} />
+                    </HeaderWrapper>
+
+                    <AboutPara>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel provident iste repellat dolorum, dolor hic perspiciatis facilis in porro delectus magnam adipisci, et fugit natus. Aliquid fuga explicabo natus odit veniam voluptas enim dolorum.</AboutPara>
+                </Fade>
+                <Fade bottom>
+                    <Link to="/o-mnie">
+                        <Button text="Dowiedz się więcej" />
+                    </Link>
+                </Fade>
             </StoryWrapper>
 
         </AboutWrapper>

@@ -220,7 +220,6 @@ const Gallery = () => {
         <Ornament src={ornament} />
       </HeaderWrapper>
       <GridOuterWrapper>
-
         <GridWrapper>
           <GridItem>
             <StyledImg
@@ -262,7 +261,6 @@ const Gallery = () => {
 
         <WordSkrojone>Skrojone</WordSkrojone>
         <WordNaMiare>Na miarę</WordNaMiare>
-
       </GridOuterWrapper>
       <Link to="/portfolio">
         <StyledBtn text="Zobacz więcej" />
