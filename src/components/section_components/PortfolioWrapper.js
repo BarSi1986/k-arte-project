@@ -12,8 +12,8 @@ const ComponentWrapper = styled.section`
 const PortfolioWrapper = () => {
     return (
         <ComponentWrapper>
-            <Scandinavia />
             <Paris />
+            <Scandinavia />
         </ComponentWrapper>
     )
 }

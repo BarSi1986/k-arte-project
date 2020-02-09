@@ -58,11 +58,13 @@ const ScandiTitle = styled.div`
     flex-direction: column;
     p{
     font-family: ${props => props.theme.fonts.montserrat};
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     
     &:nth-of-type(1){
+      font-family: ${props => props.theme.fonts.playfair};
       font-size: 2.5em;
       font-weight: 100;
+      margin-bottom: 10px;
       }
     }
   }
@@ -109,7 +111,7 @@ const ScandiGrid = styled.div`
 const GridItem = styled.div`
   min-height: 170px;
   position: relative;
-  font-family: ${props => props.theme.fonts.montserrat};
+  font-family: ${props => props.theme.fonts.playfair};
   letter-spacing: 2px;
   font-size: 1.8em;
   font-weight: 100;
@@ -120,8 +122,10 @@ const GridItem = styled.div`
       justify-content: center;
       align-items: flex-end;
       padding: 0 40px;
-      background: lightgrey;
-      color: white;
+      background: none;
+      color: ${props => props.theme.colors.gold};
+      /* text-shadow: 0 0 30px ${props => props.theme.colors.gold}; */
+      border: 2px solid ${props => props.theme.colors.gold};
       }
     &:nth-of-type(2) {grid-area: b;}
     &:nth-of-type(3) {grid-area: c;}
@@ -134,8 +138,10 @@ const GridItem = styled.div`
       display: flex;
       flex-direction: column;
       padding: 30px;
-      background: lightgrey;
-      color: white;
+      background: none;
+      color: ${props => props.theme.colors.gold};
+      /* text-shadow: 0 0 30px ${props => props.theme.colors.gold}; */
+      border: 2px solid ${props => props.theme.colors.gold};
     }
     @media (max-width: 750px){
       min-height: 150px;
@@ -150,58 +156,58 @@ const GridItem = styled.div`
 
 const SectionParis = () => {
 
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query ParisImagesQuery {
-        image1: file(relativePath: {eq: "SCANDI (full) (30 of 50).jpg"}) {
+        image1: file(relativePath: {eq: "Paris (27).jpg"}) {
           childImageSharp {
             fluid (quality: 100, maxWidth: 1300) {
                 ...GatsbyImageSharpFluid
             }
           }
         },
-        image2: file(relativePath: {eq: "SCANDI  (www) (28 of 50).jpg"}) {
+        image2: file(relativePath: {eq: "Paris (8).jpg"}) {
           childImageSharp {
             fluid (quality: 100, maxWidth: 1440) {
                 ...GatsbyImageSharpFluid    
             }
           }
         },
-        image3: file(relativePath: {eq: "SCANDI  (www) (22 of 50).jpg"}) {
+        image3: file(relativePath: {eq: "Paris (17).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 1440) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
-          image4: file(relativePath: {eq: "SCANDI  (www) (14 of 50).jpg"}) {
+          image4: file(relativePath: {eq: "Paris (1).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 500) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
-          image5: file(relativePath: {eq: "SCANDI  (www) (7 of 50).jpg"}) {
+          image5: file(relativePath: {eq: "Paris (22).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 1440) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
-          image6: file(relativePath: {eq: "SCANDI  (www) (36 of 50).jpg"}) {
+          image6: file(relativePath: {eq: "Paris (6).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 1440) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
-          image7: file(relativePath: {eq: "SCANDI  (www) (40 of 50).jpg"}) {
+          image7: file(relativePath: {eq: "Paris (24).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 1440) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
-          image8: file(relativePath: {eq: "SCANDI  (www) (1 of 50).jpg"}) {
+          image8: file(relativePath: {eq: "Paris (26).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 1440) {
                   ...GatsbyImageSharpFluid    
@@ -211,74 +217,73 @@ const SectionParis = () => {
       }
     `)
 
-    const { isNavOpen } = useContext(AppContext)
-    return (
-        <PortfolioWrapper className={isNavOpen && 'blurred'}>
+  const { isNavOpen } = useContext(AppContext)
+  return (
+    <PortfolioWrapper className={isNavOpen && 'blurred'}>
 
-            <DekorialoveSection>
-                <DekorialoveHero>
-                    <StyledImg
-                        fluid={data.image1.childImageSharp.fluid}
-                    />
-                </DekorialoveHero>
+      <DekorialoveSection>
+        <DekorialoveHero>
+          <StyledImg
+            fluid={data.image1.childImageSharp.fluid}
+          />
+        </DekorialoveHero>
 
-                <ScandiTitle>
-                    <div>
-                        <p>vakkert lyst interiør</p>
-                        <p>czyli Skandynawia w centrum Katowic. Mieszkanie inwestycyjne w sercu śląska, na osiedlu Francuska Prak</p>
-                    </div>
-                </ScandiTitle>
-                <ScrollContainer className="scroll-container">
-                    <ScandiGrid>
-                        <GridItem>
-                            <p>beroligende plass</p>
-                            <p>og et åpent sinn</p>
-                        </GridItem>
-                        <GridItem>
-                            <StyledImg
-                                fluid={data.image4.childImageSharp.fluid}
-                            />
-                        </GridItem>
-                        <GridItem>
-                            <StyledImg
-                                fluid={data.image2.childImageSharp.fluid}
-                            />
-                        </GridItem>
-                        <GridItem>
-                            <StyledImg
-                                fluid={data.image5.childImageSharp.fluid}
-                            />
-                        </GridItem>
-                        <GridItem>
-                            <StyledImg
-                                fluid={data.image3.childImageSharp.fluid}
-                            />
-                        </GridItem>
-                        <GridItem>
-                            <StyledImg
-                                fluid={data.image6.childImageSharp.fluid}
-                            />
-                        </GridItem>
-                        <GridItem>
-                            <StyledImg
-                                fluid={data.image7.childImageSharp.fluid}
-                            />
-                        </GridItem>
-                        <GridItem>
-                            <StyledImg
-                                fluid={data.image8.childImageSharp.fluid}
-                            />
-                        </GridItem>
-                        <GridItem>
-                            <p>et interiør</p>
-                            <p>som inspirerer</p>
-                        </GridItem>
-                    </ScandiGrid>
-                </ScrollContainer>
+        <ScandiTitle>
+          <div>
+            <p>à couper le souffle</p>
+            <p>Francuski eklektyzm. Jeśli jesteście fanami gatunku to z pewnością zachwyci was klasyczne mieszkanie przełamujące codzienność pięknymi antykami rodem z belle epoque.</p>
+          </div>
+        </ScandiTitle>
+        <ScrollContainer className="scroll-container">
+          <ScandiGrid>
+            <GridItem>
+              <p>intérieurs lumineux</p>
 
-            </DekorialoveSection>
-        </PortfolioWrapper>
-    )
+            </GridItem>
+            <GridItem>
+              <StyledImg
+                fluid={data.image4.childImageSharp.fluid}
+              />
+            </GridItem>
+            <GridItem>
+              <StyledImg
+                fluid={data.image2.childImageSharp.fluid}
+              />
+            </GridItem>
+            <GridItem>
+              <StyledImg
+                fluid={data.image5.childImageSharp.fluid}
+              />
+            </GridItem>
+            <GridItem>
+              <StyledImg
+                fluid={data.image3.childImageSharp.fluid}
+              />
+            </GridItem>
+            <GridItem>
+              <StyledImg
+                fluid={data.image6.childImageSharp.fluid}
+              />
+            </GridItem>
+            <GridItem>
+              <StyledImg
+                fluid={data.image7.childImageSharp.fluid}
+              />
+            </GridItem>
+            <GridItem>
+              <StyledImg
+                fluid={data.image8.childImageSharp.fluid}
+              />
+            </GridItem>
+            <GridItem>
+              <p>combinaison parfaite</p>
+            </GridItem>
+          </ScandiGrid>
+        </ScrollContainer>
+
+      </DekorialoveSection>
+    </PortfolioWrapper>
+  )
 }
 
 export default SectionParis
