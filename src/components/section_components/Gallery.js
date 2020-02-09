@@ -98,7 +98,7 @@ const WordSkrojone = styled.h2`
   opacity: 0.08;
   position: absolute;
   margin: 0;
-  top: 180px;
+  top: 260px;
   left: -350px;
   transform: rotate(-90deg);
   font-family: ${props => props.theme.fonts.playfair};
@@ -112,7 +112,7 @@ const WordNaMiare = styled.h2`
   opacity: 0.08;
   position: absolute;
   margin: 0;
-  bottom: 200px;
+  bottom: 220px;
   right: -350px;
   transform: rotate(90deg);
   font-family: ${props => props.theme.fonts.playfair};

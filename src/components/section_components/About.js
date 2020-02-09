@@ -13,7 +13,9 @@ import Header from '../ui_components/H2_header'
 
 const AboutWrapper = styled.section`
     position: relative;
+    background: #fff;
     height: 50vh;
+    margin: 0 0px;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -33,7 +35,7 @@ const AboutWrapper = styled.section`
         transform: translateY(-35px);
         opacity: .3;
     }
-    border-radius: 40px 40px 0 0;
+    border-radius: 20px 20px 0 0;
     }
 `
 
@@ -46,8 +48,7 @@ const StoryWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
-
-    background: ${props => props.theme.colors.dark_red};
+    background: #fff;
     @media (max-width: 750px) {
        width: 100%;
        padding: 20px;
@@ -58,7 +59,7 @@ const AboutPara = styled.p`
     font-family: ${props => props.theme.fonts.montserrat};
     font-size: 1em;
     font-weight: 100;
-    color: ${props => props.theme.colors.white};
+    color: #000;
     letter-spacing: 1px;
     /* text-align: center; */
 `

@@ -50,7 +50,7 @@ const SideMeuButton = styled.button`
     }
     &:hover{
         a{
-            color: ${props => props.theme.colors.dark_red};
+            color: ${props => props.theme.colors.gold};
         }
     }
     @media (max-width: 750px){
@@ -79,13 +79,13 @@ const SideMenu = () => {
     return (
         <SideMenuWrapper className={isNavOpen && 'nav__open'}>
             <SideMeuButton onClick={handleNavOpen}>
-                <Link to="/" activeStyle={{ color: '#6A0B0B' }}>home</Link>
+                <Link to="/" activeStyle={{ color: '#DFBA7F' }}>home</Link>
             </SideMeuButton>
             <SideMeuButton onClick={handleNavOpen}>
-                <Link to="/o-mnie" activeStyle={{ color: '#6A0B0B' }}>o mnie</Link>
+                <Link to="/o-mnie" activeStyle={{ color: '#DFBA7F' }}>o mnie</Link>
             </SideMeuButton>
             <SideMeuButton onClick={handleNavOpen}>
-                <Link to="/portfolio" activeStyle={{ color: '#6A0B0B' }}>portfolio</Link>
+                <Link to="/portfolio" activeStyle={{ color: '#DFBA7F' }}>portfolio</Link>
             </SideMeuButton>
             <Logo src={logo} />
 
