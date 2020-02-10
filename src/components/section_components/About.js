@@ -27,7 +27,8 @@ const AboutWrapper = styled.section`
         flex-direction: column-reverse;
         align-items: center;
         height: unset;
-        padding: 0;
+        width: 100%;
+        margin: -50px auto 0px auto;
     }
     transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
@@ -54,7 +55,7 @@ const StoryWrapper = styled.div`
     background: #fff;
     @media (max-width: 750px) {
        width: 100%;
-       padding: 20px;
+       padding: 50px 20px;
     }
 `
 

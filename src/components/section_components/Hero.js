@@ -65,10 +65,9 @@ const Header1 = styled.h1`
     z-index: 10;
     @media (max-width: 750px) {
         position: absolute;
-        bottom: 50%;
-        transform: translate(-50%, 45%);
         display: flex;
         flex-direction: column;
+        transform: translate(-50%,-55%);
         /* justify-content: flex-start;
         align-items: center; */
         font-size: 60vw;
