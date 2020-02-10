@@ -17,14 +17,16 @@ const AboutWrapper = styled.section`
     background: #fff;
     height: 50vh;
     margin: 0 0px;
+    padding: 0 50px;
     display: flex;
     justify-content: center;
     overflow: hidden;
 
     @media (max-width: 750px) {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         height: unset;
+        padding: 0;
     }
     transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
@@ -92,11 +94,17 @@ const AboutImage = styled.div`
 
 const StyledImg = styled(Img)`
 position: absolute !important;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 70%;
+height: 80%;
 z-index: 1;
+@media (max-width: 750px){
+    width: 100%;
+height: 100%;
+}
+
 `
 
 
@@ -138,6 +146,7 @@ const About = () => {
             </StoryWrapper>
 
         </AboutWrapper>
+
     )
 }
 
