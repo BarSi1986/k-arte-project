@@ -17,8 +17,8 @@ const AboutWrapper = styled.section`
     width: 80%;
     position: relative;
     background: #fff;
-    height: 70vh;
-    margin: -150px auto 0px auto;
+    height: 75vh;
+    margin: -100px auto 0px auto;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -47,7 +47,7 @@ const AboutWrapper = styled.section`
 const StoryWrapper = styled.div`
     width: 50%;
     height: 100%;
-    padding: 120px;
+    padding: 140px 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -103,10 +103,9 @@ const Submit = styled.input`
     outline-color: ${props => props.theme.colors.gold};
     border: none;
     background:${props => props.theme.colors.gold};
-    width: 300px;
+    width: 230px;
     margin: 30px;
     font-size: 1em;
-    color: #000;
     cursor: pointer;
     z-index: 1;
     @media (max-width: 750px){
@@ -165,7 +164,7 @@ const Contact = () => {
                 />
             </Background>
             <Form>
-                <StyledHeader text='Napisz do nas' />
+                <StyledHeader text='NAPISZ DO NAS' />
                 <Ornament src={ornament} />
                 <InputWrapper>
                     <Input type='text' placeholder="Twoje imię" />
