@@ -13,11 +13,12 @@ import Button from '../ui_components/GoldenButton'
 import Header from '../ui_components/H2_header'
 
 const AboutWrapper = styled.section`
+    box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1);
+    width: 80%;
     position: relative;
     background: #fff;
-    height: 50vh;
-    margin: 0 0px;
-    padding: 0 50px;
+    height: 70vh;
+    margin: -150px auto 0px auto;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -45,8 +46,7 @@ const AboutWrapper = styled.section`
 const StoryWrapper = styled.div`
     width: 50%;
     height: 100%;
-    padding: 40px;
-
+    padding: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,8 +97,8 @@ position: absolute !important;
 top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
-width: 70%;
-height: 80%;
+width: 100%;
+height: 100%;
 z-index: 1;
 @media (max-width: 750px){
     width: 100%;

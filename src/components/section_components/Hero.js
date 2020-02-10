@@ -5,10 +5,15 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import { Parallax } from 'react-scroll-parallax'
 
-const HomeWrapper = styled.section`
+
+const OuterWrapper = styled.section`
+position: relative;
+`
+
+const HomeWrapper = styled.div`
     position: relative;
     width: 100%;
-    height: 105vh;
+    height: 101vh;
     overflow: hidden;
     margin-bottom: -40px;
     transition: 1s ${props => props.theme.transitions.cubic_front};
@@ -28,7 +33,7 @@ const HomeWrapper = styled.section`
 `
 const MixedBg = styled.div`
     position: absolute;
-    background: #aaa;
+    background: #666;
     top: 0;
     left: 0;
     width: 100%;
@@ -50,13 +55,14 @@ const MixedBg = styled.div`
 const Header1 = styled.h1`
     position: absolute;
     font-family: ${props => props.theme.fonts.montserrat};
-    bottom: 0;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 15%);
+    transform: translate(-50%, -80%);
     color: ${props => props.theme.colors.white};
-    font-size: 49vw;
+    font-size: 10vw;
     margin: 0;
-    font-weight: 600;
+    font-weight: 200;
+    z-index: 10;
     @media (max-width: 750px) {
         position: absolute;
         bottom: 50%;
@@ -101,16 +107,19 @@ const Hero = () => {
 
 
     return (
-        <Parallax y={[-30, 30]}>
-            <HomeWrapper className={isNavOpen && 'blurred'}>
-                <StyldImg
-                    fluid={data.file.childImageSharp.fluid}
-                />
-                <MixedBg>
-                    <Header1><span>ar</span><span>te</span></Header1>
-                </MixedBg>
-            </HomeWrapper>
-        </Parallax>
+        <OuterWrapper>
+            <Header1><span>ar</span><span>te</span></Header1>
+            <Parallax y={[-30, 30]}>
+                <HomeWrapper className={isNavOpen && 'blurred'}>
+                    <StyldImg
+                        fluid={data.file.childImageSharp.fluid}
+                    />
+                    <MixedBg>
+
+                    </MixedBg>
+                </HomeWrapper>
+            </Parallax>
+        </OuterWrapper>
     )
 }
 
