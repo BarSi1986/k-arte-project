@@ -33,7 +33,7 @@ const HomeWrapper = styled.div`
 `
 const MixedBg = styled.div`
     position: absolute;
-    background: #666;
+    background: rgba(0, 0, 0, 0.4);
     top: 0;
     left: 0;
     width: 100%;
@@ -108,7 +108,7 @@ const Hero = () => {
     return (
         <OuterWrapper>
             <Header1><span>ar</span><span>te</span></Header1>
-            <Parallax y={[-30, 30]}>
+            <Parallax y={[-20, 20]}>
                 <HomeWrapper className={isNavOpen && 'blurred'}>
                     <StyldImg
                         fluid={data.file.childImageSharp.fluid}

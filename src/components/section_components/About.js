@@ -102,8 +102,8 @@ width: 100%;
 height: 100%;
 z-index: 1;
 @media (max-width: 750px){
-    width: 100%;
-height: 100%;
+    width: calc(100% - 20px);
+    height: 100%;
 }
 
 `
@@ -112,9 +112,9 @@ height: 100%;
 const About = () => {
     const data = useStaticQuery(graphql`
     query AboutImagesQuery {
-            file(relativePath: { eq: "about_img.jpg" }) {
+            file(relativePath: { eq: "gallery5f.jpg" }) {
                 childImageSharp {
-                    fluid(quality: 100 maxWidth: 600){
+                    fluid(quality: 100 maxWidth: 800){
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -133,7 +133,7 @@ const About = () => {
             <StoryWrapper>
                 <Fade bottom cascade>
                     <HeaderWrapper>
-                        <Header text="Słowem wstępu" />
+                        <Header text="SŁOWEM WSTĘPU" />
                         <Ornament src={ornament} />
                     </HeaderWrapper>
 

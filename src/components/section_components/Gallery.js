@@ -13,9 +13,12 @@ import Img from 'gatsby-image'
 const GalleryWrapper = styled.section`
   overflow: hidden;
   padding-top: 30px;
+  margin: 40px 0;
+  text-align: center;
   @media (max-width: 750px){
     height: unset;
     margin-bottom: 30px;
+    text-align: unset;
 }
 
 transition: 1s ${props => props.theme.transitions.cubic_front};
@@ -29,19 +32,19 @@ transition: 1s ${props => props.theme.transitions.cubic_front};
         opacity: .3;
     }
     }
-   text-align: center;
+   
 `
 
 
 
 const GridOuterWrapper = styled.div`
-  width: 85%;
+  width: 80%;
   margin: auto;
   position: relative;
 
   @media (max-width: 750px){
     height: unset;
-    width: 95%;
+    width: calc(100% - 20px);
 }
 `
 const GridWrapper = styled.div`
@@ -131,9 +134,7 @@ const HeaderWrapper = styled.div`
     align-items: flex-start;
   }
 `
-const StyledHeader = styled(Header)`
-  color: ${props => props.theme.colors.grey};   
-  font-weight: bold;
+const StyledHeader = styled(Header)`  
   @media (max-width: 750px) {
     margin-bottom: 20px;
   }
@@ -160,6 +161,9 @@ z-index: -1;
 
 const StyledBtn = styled(Button)`
   margin: 30px;
+  @media (max-width: 750px){
+    margin: 30px 10px;
+  }
 `
 
 
@@ -196,7 +200,7 @@ const Gallery = () => {
             }
           }
         },
-        image5: file(relativePath: {eq: "gallery5f.jpg"}) {
+        image5: file(relativePath: {eq: "gallery1.jpg"}) {
           childImageSharp {
             fluid (quality: 100, maxWidth: 600) {
                 ...GatsbyImageSharpFluid    
@@ -216,7 +220,7 @@ const Gallery = () => {
   return (
     <GalleryWrapper className={isNavOpen && 'blurred'}>
       <HeaderWrapper>
-        <StyledHeader text='Realizacje' />
+        <StyledHeader text='REALIZACJE' />
         <Ornament src={ornament} />
       </HeaderWrapper>
       <GridOuterWrapper>
