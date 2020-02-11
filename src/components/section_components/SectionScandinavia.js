@@ -10,7 +10,6 @@ import ScrollContainer from "react-indiana-drag-scroll";
 const PortfolioWrapper = styled.div`
   width: 100%;
   position: relative;
-
   transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
         transform: translateX(-35px);
@@ -40,6 +39,9 @@ const DekorialoveSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 750px){
+    
+  }
 `
 const DekorialoveHero = styled.div`
   width: 100%;
@@ -70,7 +72,9 @@ const ScandiTitle = styled.div`
   @media (max-width: 750px) {
     padding: 20px 20px;
     width: 100%;
+    text-align: left;
     div{
+      
       p{
         letter-spacing: 1px;
         font-size: 1em;
@@ -99,6 +103,7 @@ const ScandiGrid = styled.div`
   "h h i";
   margin-bottom: 50px;
     @media (max-width: 750px) {
+
         width: 400%;
         grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
         grid-template-rows: 2fr 1fr;
@@ -107,6 +112,14 @@ const ScandiGrid = styled.div`
         "a h h h f g i i i";
       }
 `
+
+const ScWrapper = styled.div`
+  width: 100vw;
+  overflow: hidden;
+  padding: 10px;
+`
+
+
 const GridItem = styled.div`
   min-height: 170px;
   position: relative;
@@ -226,57 +239,58 @@ const SectionScandinavia = () => {
         <ScandiTitle>
           <div>
             <p>vakkert lyst interiør</p>
-            <p>czyli Skandynawia w centrum Katowic. Mieszkanie inwestycyjne w sercu śląska, na osiedlu Francuska Prak</p>
+            <p>czyli Skandynawia w centrum Katowic. Mieszkanie inwestycyjne w sercu śląska, na osiedlu Francuska Park</p>
           </div>
         </ScandiTitle>
-        <ScrollContainer className="scroll-container">
-          <ScandiGrid>
-            <GridItem>
-              <p>beroligende plass</p>
-              <p>og et åpent sinn</p>
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image4.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image2.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image5.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image3.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image6.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image7.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <StyledImg
-                fluid={data.image8.childImageSharp.fluid}
-              />
-            </GridItem>
-            <GridItem>
-              <p>et interiør</p>
-              <p>som inspirerer</p>
-            </GridItem>
-          </ScandiGrid>
-        </ScrollContainer>
-
+        <ScWrapper>
+          <ScrollContainer className="scroll-container">
+            <ScandiGrid>
+              <GridItem>
+                <p>beroligende plass</p>
+                <p>og et åpent sinn</p>
+              </GridItem>
+              <GridItem>
+                <StyledImg
+                  fluid={data.image4.childImageSharp.fluid}
+                />
+              </GridItem>
+              <GridItem>
+                <StyledImg
+                  fluid={data.image2.childImageSharp.fluid}
+                />
+              </GridItem>
+              <GridItem>
+                <StyledImg
+                  fluid={data.image5.childImageSharp.fluid}
+                />
+              </GridItem>
+              <GridItem>
+                <StyledImg
+                  fluid={data.image3.childImageSharp.fluid}
+                />
+              </GridItem>
+              <GridItem>
+                <StyledImg
+                  fluid={data.image6.childImageSharp.fluid}
+                />
+              </GridItem>
+              <GridItem>
+                <StyledImg
+                  fluid={data.image7.childImageSharp.fluid}
+                />
+              </GridItem>
+              <GridItem>
+                <StyledImg
+                  fluid={data.image8.childImageSharp.fluid}
+                />
+              </GridItem>
+              <GridItem>
+                <p>et interiør</p>
+                <p>som inspirerer</p>
+              </GridItem>
+            </ScandiGrid>
+          </ScrollContainer>
+        </ScWrapper>
       </DekorialoveSection>
     </PortfolioWrapper>
   )
