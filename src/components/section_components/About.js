@@ -7,13 +7,13 @@ import Fade from 'react-reveal/Fade';
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import ornament from '../../images/ornament1.svg'
+// import ornament from '../../images/ornament1.svg'
 
 import Button from '../ui_components/GoldenButton'
 import Header from '../ui_components/H2_header'
 
 const AboutWrapper = styled.section`
-    box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.2);
     width: 80%;
     position: relative;
     background: #fff;
@@ -77,9 +77,15 @@ align-items: flex-start;
 position: relative;
 `
 
-const Ornament = styled.img`
+const Ornament = styled.div`
     width: 130px;
     margin: 20px 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 50px;
+    background: ${props => props.theme.colors.gold};
 `
 
 const AboutImage = styled.div`
@@ -134,7 +140,7 @@ const About = () => {
                 <Fade bottom cascade>
                     <HeaderWrapper>
                         <Header text="SŁOWEM WSTĘPU" />
-                        <Ornament src={ornament} />
+                        <Ornament />
                     </HeaderWrapper>
 
                     <AboutPara>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel provident iste repellat dolorum, dolor hic perspiciatis facilis in porro delectus magnam adipisci, et fugit natus. Aliquid fuga explicabo natus odit veniam voluptas enim dolorum.</AboutPara>

@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import Fade from 'react-reveal/Fade';
 
-import ornament from '../../images/ornament1.svg'
+// import ornament from '../../images/ornament1.svg'
 import Header from '../ui_components/H2_header'
 import Button from '../ui_components/GoldenButton'
 
@@ -49,21 +50,22 @@ const GridOuterWrapper = styled.div`
 `
 const GridWrapper = styled.div`
   display: grid;
-  border: 3px solid ${props => props.theme.colors.gold};
-  padding: 10px;
+  /* border: 3px solid ${props => props.theme.colors.gold}; */
+  /* padding: 10px; */
   /* height: 90vh; */
   width: 100%;
   margin: auto;
   /* overflow: scroll; */
 
 
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 50px;
 
   grid-template-areas:
-    "a a b b b b e e"
-    "c c c d d f f f";
+    "b b b a "
+    "d d c c"
+    "f f f e";
     @media (max-width: 750px) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(6, 1fr);
@@ -139,15 +141,16 @@ const StyledHeader = styled(Header)`
     margin-bottom: 20px;
   }
 `
-const Ornament = styled.img`
+
+const Ornament = styled.div`
     width: 130px;
-    position: static;
-    transform: translateY(-10px);
-    margin: auto;
-    @media (max-width: 750px) {
-    margin: 0;
-    transform: translateY(0px);
-  }
+    margin: 20px 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 50px;
+    background: ${props => props.theme.colors.gold};
 `
 
 const StyledImg = styled(Img)`
@@ -219,10 +222,12 @@ const Gallery = () => {
   const { isNavOpen } = useContext(AppContext)
   return (
     <GalleryWrapper className={isNavOpen && 'blurred'}>
-      <HeaderWrapper>
-        <StyledHeader text='REALIZACJE' />
-        <Ornament src={ornament} />
-      </HeaderWrapper>
+      <Fade bottom cascade>
+        <HeaderWrapper>
+          <StyledHeader text='REALIZACJE' />
+          <Ornament />
+        </HeaderWrapper>
+      </Fade>
       <GridOuterWrapper>
         <GridWrapper>
           <GridItem>
@@ -263,8 +268,8 @@ const Gallery = () => {
 
         </GridWrapper>
 
-        <WordSkrojone>Skrojone</WordSkrojone>
-        <WordNaMiare>Na miarę</WordNaMiare>
+        {/* <WordSkrojone>Skrojone</WordSkrojone>
+        <WordNaMiare>Na miarę</WordNaMiare> */}
       </GridOuterWrapper>
       <Link to="/portfolio">
         <StyledBtn text="Zobacz więcej" />

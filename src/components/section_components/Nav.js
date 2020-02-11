@@ -34,7 +34,7 @@ const NavWrapper = styled.section`
 
 const StyledIcon = styled(FontAwesomeIcon)`
     position: absolute;
-    color: ${props => props.theme.colors.beige};
+    color: ${props => props.theme.colors.white};
     font-size: 1.3em;
     top: 50%;
     left: 50%;

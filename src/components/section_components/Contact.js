@@ -2,7 +2,8 @@ import React, { useContext } from 'react'
 import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 
-import ornament from '../../images/ornament1.svg'
+
+// import ornament from '../../images/ornament1.svg'
 
 import Header from '../ui_components/H2_header'
 
@@ -125,13 +126,15 @@ const Background = styled.div`
     /* background-attachment: fixed; */
 `
 
-const Ornament = styled.img`
+const Ornament = styled.div`
     width: 130px;
-    margin-bottom: 30px;
-    @media (max-width: 750px){
-        margin-bottom: 20px;
-        transform: translateY(-10px);
-    }
+    margin: 20px 0;
+    position: relative;
+    bottom: 15px;
+    left: 0;
+    height: 4px;
+    width: 50px;
+    background: ${props => props.theme.colors.gold};
 `
 
 const StyldImg = styled(Img)`
@@ -165,7 +168,7 @@ const Contact = () => {
             </Background>
             <Form>
                 <StyledHeader text='NAPISZ DO NAS' />
-                <Ornament src={ornament} />
+                <Ornament />
                 <InputWrapper>
                     <Input type='text' placeholder="Twoje imię" />
                     <Input type='email' placeholder="Twój email" />
