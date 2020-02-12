@@ -54,18 +54,18 @@ const GridWrapper = styled.div`
   /* padding: 10px; */
   /* height: 90vh; */
   width: 100%;
-  margin: auto;
+  margin: 30px auto;
   /* overflow: scroll; */
 
 
   grid-template-columns: 1fr 1fr 1fr 2fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 50px;
 
   grid-template-areas:
     "b b b a "
-    "d d c c"
-    "f f f e";
+    "d d c c";
+
     @media (max-width: 750px) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(6, 1fr);
@@ -74,9 +74,7 @@ const GridWrapper = styled.div`
         "a a"
         "b b"
         "c c"
-        "d d"
-        "e e"
-        "f f";
+        "d d";
 
         height: unset;
     }
@@ -85,42 +83,17 @@ const GridWrapper = styled.div`
 const GridItem = styled.div`
   background-size: cover;
   background-position: center;
-  min-height: 350px;
+  min-height: 400px;
   position: relative;
   &:nth-of-type(1){grid-area: a;}
   &:nth-of-type(2) {grid-area: b;}
   &:nth-of-type(3) {grid-area: c;}
   &:nth-of-type(4) {grid-area: d;}
-  &:nth-of-type(5) {grid-area: e;}
-  &:nth-of-type(6) {grid-area: f;}
+  /* &:nth-of-type(5) {grid-area: e;}
+  &:nth-of-type(6) {grid-area: f;} */
   @media (max-width: 750px){
     min-height: 280px;
   }
-`
-
-const WordSkrojone = styled.h2`
-  font-size: 10em;
-  opacity: 0.08;
-  position: absolute;
-  margin: 0;
-  top: 260px;
-  left: -350px;
-  transform: rotate(-90deg);
-  font-family: ${props => props.theme.fonts.playfair};
-  @media (max-width: 750px) {
-    top: 250px;
-  }
-`
-
-const WordNaMiare = styled.h2`
-  font-size: 10em;
-  opacity: 0.08;
-  position: absolute;
-  margin: 0;
-  bottom: 220px;
-  right: -350px;
-  transform: rotate(90deg);
-  font-family: ${props => props.theme.fonts.playfair};
 `
 const HeaderWrapper = styled.div`
   display: flex;
@@ -151,6 +124,9 @@ const Ornament = styled.div`
     height: 4px;
     width: 50px;
     background: ${props => props.theme.colors.gold};
+    @media (max-width: 750px) {
+      margin: 5px 0;
+    }
 `
 
 const StyledImg = styled(Img)`
@@ -182,7 +158,7 @@ const Gallery = () => {
           }
         }
       },
-      image2: file(relativePath: {eq: "gallery3.jpg"}) {
+      image2: file(relativePath: {eq: "gallery6c.jpg"}) {
         childImageSharp {
           fluid (quality: 100, maxWidth: 600) {
               ...GatsbyImageSharpFluid    
@@ -224,7 +200,7 @@ const Gallery = () => {
     <GalleryWrapper className={isNavOpen && 'blurred'}>
       <Fade bottom cascade>
         <HeaderWrapper>
-          <StyledHeader text='REALIZACJE' />
+          <StyledHeader text='WYBRANE REALIZACJE' />
           <Ornament />
         </HeaderWrapper>
       </Fade>
@@ -253,23 +229,7 @@ const Gallery = () => {
               fluid={data.image4.childImageSharp.fluid}
             />
           </GridItem>
-
-          <GridItem>
-            <StyledImg
-              fluid={data.image5.childImageSharp.fluid}
-            />
-          </GridItem>
-
-          <GridItem>
-            <StyledImg
-              fluid={data.image6.childImageSharp.fluid}
-            />
-          </GridItem>
-
         </GridWrapper>
-
-        {/* <WordSkrojone>Skrojone</WordSkrojone>
-        <WordNaMiare>Na miarę</WordNaMiare> */}
       </GridOuterWrapper>
       <Link to="/portfolio">
         <StyledBtn text="Zobacz więcej" />

@@ -135,6 +135,9 @@ const Ornament = styled.div`
     height: 4px;
     width: 50px;
     background: ${props => props.theme.colors.gold};
+    @media (max-width: 750px) {
+      margin: 0px 0 20px 0;
+    }
 `
 
 const StyldImg = styled(Img)`
