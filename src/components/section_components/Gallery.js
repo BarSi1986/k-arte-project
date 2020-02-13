@@ -80,9 +80,25 @@ const GridWrapper = styled.div`
     }
 `
 
+const StyledImg = styled(Img)`
+position: absolute !important;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 100%;
+height: 100%;
+z-index: -1;
+img{
+  transition: .3s ease !important;
+}
+`
+
 const GridItem = styled.div`
   background-size: cover;
   background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .3s ease !important;
   min-height: 400px;
   position: relative;
   &:nth-of-type(1){grid-area: a;}
@@ -93,6 +109,13 @@ const GridItem = styled.div`
   &:nth-of-type(6) {grid-area: f;} */
   @media (max-width: 750px){
     min-height: 280px;
+  }
+  &:hover{
+      img{
+        width: 110% !important;
+        height: 110% !important;
+        transform: translate(-5%,-5%);
+      }
   }
 `
 const HeaderWrapper = styled.div`
@@ -127,15 +150,6 @@ const Ornament = styled.div`
     @media (max-width: 750px) {
       margin: 5px 0;
     }
-`
-
-const StyledImg = styled(Img)`
-position: absolute !important;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
 `
 
 const StyledBtn = styled(Button)`
