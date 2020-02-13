@@ -68,7 +68,7 @@ const GridWrapper = styled.div`
 
     @media (max-width: 750px) {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(6, 1fr);
+      grid-template-rows: repeat(4, 1fr);
  
       grid-template-areas:
         "a a"
