@@ -81,6 +81,75 @@ const GridWrapper = styled.div`
     }
 `
 
+const GridHover = styled.div`
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 2%;
+height: 0%;
+
+/* width: 85%;
+height: 85%; */
+
+background: rgba(0,0,0,.4);
+z-index: 5;
+padding: 0px;
+transition: height .2s ease, width .3s ease .2s;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+
+const GridHoverHeader = styled.h2`
+  position: relative;
+  font-family: ${props => props.theme.fonts.montserrat};
+  font-weight: 100;
+  color: #fff;
+  transform: translateY(5px);
+  opacity: 0;
+    &::after{
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 4px;
+      width: 50px;
+      background: ${props => props.theme.colors.gold};
+}
+  
+`
+
+const GridItem = styled.div`
+background-size: cover;
+background-position: center;
+overflow: hidden;
+cursor: pointer;
+min-height: 400px;
+position: relative;
+&:nth-of-type(1){grid-area: a;}
+&:nth-of-type(2) {grid-area: b;}
+&:nth-of-type(3) {grid-area: c;}
+&:nth-of-type(4) {grid-area: d;}
+@media (max-width: 750px){
+min-height: 280px;
+}
+&:hover{
+& ${GridHover}{
+  height: 85%;
+  width: 85%;
+  }
+& ${GridHoverHeader}{
+  transition: .3s ease-in .4s;
+  opacity: 1;
+  transform: translateY(0px);
+}
+}
+`
+
 const StyledImg = styled(Img)`
 position: absolute !important;
 top: 50%;
@@ -156,28 +225,14 @@ const Gallery = () => {
           }
         }
       },
-      image3: file(relativePath: {eq: "gallery4.jpg"}) {
+      image3: file(relativePath: {eq: "gallery3.jpg"}) {
           childImageSharp {
             fluid (quality: 100, maxWidth: 600) {
                 ...GatsbyImageSharpFluid    
             }
           }
         },
-        image4: file(relativePath: {eq: "gallery4b.jpg"}) {
-          childImageSharp {
-            fluid (quality: 100, maxWidth: 600) {
-                ...GatsbyImageSharpFluid    
-            }
-          }
-        },
-        image5: file(relativePath: {eq: "gallery1.jpg"}) {
-          childImageSharp {
-            fluid (quality: 100, maxWidth: 600) {
-                ...GatsbyImageSharpFluid    
-            }
-          }
-        },
-        image6: file(relativePath: {eq: "gallery6c.jpg"}) {
+        image4: file(relativePath: {eq: "gallery4.jpg"}) {
           childImageSharp {
             fluid (quality: 100, maxWidth: 600) {
                 ...GatsbyImageSharpFluid    
@@ -188,40 +243,7 @@ const Gallery = () => {
   `)
   const { isNavOpen } = useContext(AppContext)
 
-  const GridHover = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 85%;
-    height: 0%;
-    background: rgba(0,0,0,.4);
-    z-index: 5;
-    transition: .5s ease;
-`
 
-  const GridItem = styled.div`
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  cursor: pointer;
-  min-height: 400px;
-  position: relative;
-  &:nth-of-type(1){grid-area: a;}
-  &:nth-of-type(2) {grid-area: b;}
-  &:nth-of-type(3) {grid-area: c;}
-  &:nth-of-type(4) {grid-area: d;}
-  /* &:nth-of-type(5) {grid-area: e;}
-  &:nth-of-type(6) {grid-area: f;} */
-  @media (max-width: 750px){
-    min-height: 280px;
-  }
-  &:hover{
-  & ${GridHover}{
-      height: 85%;
-      }
-    }
-`
 
   return (
     <GalleryWrapper className={isNavOpen && 'blurred'}>
@@ -237,21 +259,29 @@ const Gallery = () => {
             <StyledImg
               fluid={data.image1.childImageSharp.fluid}
             />
-            <GridHover></GridHover>
+            <GridHover>
+              <GridHoverHeader>LYST INTERIØR</GridHoverHeader>
+            </GridHover>
           </GridItem>
 
           <GridItem>
             <StyledImg
               fluid={data.image2.childImageSharp.fluid}
             />
-            <GridHover></GridHover>
+            <GridHover>
+              <GridHoverHeader>
+                ÉCLECTISME FRANÇAIS</GridHoverHeader>
+            </GridHover>
           </GridItem>
 
           <GridItem>
             <StyledImg
               fluid={data.image3.childImageSharp.fluid}
             />
-            <GridHover></GridHover>
+            <GridHover>
+              <GridHoverHeader>
+                WEIMAR BAUHAUS</GridHoverHeader>
+            </GridHover>
           </GridItem>
 
           <GridItem>
