@@ -225,14 +225,14 @@ const Gallery = () => {
           }
         }
       },
-      image3: file(relativePath: {eq: "gallery3.jpg"}) {
+      image3: file(relativePath: {eq: "gallery-bauhaus.jpg"}) {
           childImageSharp {
             fluid (quality: 100, maxWidth: 600) {
                 ...GatsbyImageSharpFluid    
             }
           }
         },
-        image4: file(relativePath: {eq: "gallery4.jpg"}) {
+        image4: file(relativePath: {eq: "gallery-london.jpg"}) {
           childImageSharp {
             fluid (quality: 100, maxWidth: 600) {
                 ...GatsbyImageSharpFluid    
@@ -288,7 +288,10 @@ const Gallery = () => {
             <StyledImg
               fluid={data.image4.childImageSharp.fluid}
             />
-            <GridHover></GridHover>
+            <GridHover>
+              <GridHoverHeader>
+                LONDON BABY !</GridHoverHeader>
+            </GridHover>
           </GridItem>
         </GridWrapper>
       </GridOuterWrapper>

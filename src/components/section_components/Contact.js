@@ -6,6 +6,7 @@ import styled from 'styled-components'
 // import ornament from '../../images/ornament1.svg'
 
 import Header from '../ui_components/H2_header'
+import Button from '../ui_components/GoldenButton'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
@@ -97,24 +98,6 @@ const TextArea = styled.textarea`
     }
 `
 
-const Submit = styled.input`
-    color: ${props => props.theme.colors.white};
-    font-family: ${props => props.theme.fonts.montserrat};
-    padding: 15px 0px;
-    outline-color: ${props => props.theme.colors.gold};
-    border: none;
-    background:${props => props.theme.colors.gold};
-    width: 230px;
-    margin: 30px;
-    font-size: 1em;
-    cursor: pointer;
-    z-index: 1;
-    @media (max-width: 750px){
-        width: 70%;
-        margin: 30px auto;
-    }
-`
-
 const Background = styled.div`
     position: absolute;
     width: 100%;
@@ -178,7 +161,7 @@ const Contact = () => {
                     <Input type='text' placeholder="Tytuł wiadomości" />
                 </InputWrapper>
                 <TextArea placeholder='Twoja wiadomość' />
-                <Submit type='submit' />
+                <Button text="Prześlij" />
             </Form>
         </FormWrapper>
     )
