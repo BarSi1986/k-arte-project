@@ -4,12 +4,13 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Fade from 'react-reveal/Fade';
 
-// import ornament from '../../images/ornament1.svg'
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+
 import Header from '../ui_components/H2_header'
 import Button from '../ui_components/GoldenButton'
 
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+
 
 const GalleryWrapper = styled.section`
   overflow: hidden;
@@ -89,35 +90,11 @@ width: 100%;
 height: 100%;
 z-index: -1;
 img{
-  transition: .3s ease !important;
+  transition: 1s ease !important;
 }
 `
 
-const GridItem = styled.div`
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  cursor: pointer;
-  transition: .3s ease !important;
-  min-height: 400px;
-  position: relative;
-  &:nth-of-type(1){grid-area: a;}
-  &:nth-of-type(2) {grid-area: b;}
-  &:nth-of-type(3) {grid-area: c;}
-  &:nth-of-type(4) {grid-area: d;}
-  /* &:nth-of-type(5) {grid-area: e;}
-  &:nth-of-type(6) {grid-area: f;} */
-  @media (max-width: 750px){
-    min-height: 280px;
-  }
-  &:hover{
-      img{
-        width: 110% !important;
-        height: 110% !important;
-        transform: translate(-5%,-5%);
-      }
-  }
-`
+
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -210,6 +187,42 @@ const Gallery = () => {
     }
   `)
   const { isNavOpen } = useContext(AppContext)
+
+  const GridHover = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 85%;
+    height: 0%;
+    background: rgba(0,0,0,.4);
+    z-index: 5;
+    transition: .5s ease;
+`
+
+  const GridItem = styled.div`
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 400px;
+  position: relative;
+  &:nth-of-type(1){grid-area: a;}
+  &:nth-of-type(2) {grid-area: b;}
+  &:nth-of-type(3) {grid-area: c;}
+  &:nth-of-type(4) {grid-area: d;}
+  /* &:nth-of-type(5) {grid-area: e;}
+  &:nth-of-type(6) {grid-area: f;} */
+  @media (max-width: 750px){
+    min-height: 280px;
+  }
+  &:hover{
+  & ${GridHover}{
+      height: 85%;
+      }
+    }
+`
+
   return (
     <GalleryWrapper className={isNavOpen && 'blurred'}>
       <Fade bottom cascade>
@@ -224,24 +237,28 @@ const Gallery = () => {
             <StyledImg
               fluid={data.image1.childImageSharp.fluid}
             />
+            <GridHover></GridHover>
           </GridItem>
 
           <GridItem>
             <StyledImg
               fluid={data.image2.childImageSharp.fluid}
             />
+            <GridHover></GridHover>
           </GridItem>
 
           <GridItem>
             <StyledImg
               fluid={data.image3.childImageSharp.fluid}
             />
+            <GridHover></GridHover>
           </GridItem>
 
           <GridItem>
             <StyledImg
               fluid={data.image4.childImageSharp.fluid}
             />
+            <GridHover></GridHover>
           </GridItem>
         </GridWrapper>
       </GridOuterWrapper>

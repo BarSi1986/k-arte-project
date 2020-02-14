@@ -35,7 +35,6 @@ const theme = {
 const Layout = ({ children }) => {
     // states
     const [isNavOpen, setIsNavOpen] = useState(false)
-    const [YOffset, setYOffset] = useState(null)
     // functions
     const handleNavOpen = () => {
         setIsNavOpen(!isNavOpen)
@@ -44,7 +43,7 @@ const Layout = ({ children }) => {
 
 
     return (
-        <AppContext.Provider value={{ isNavOpen, setIsNavOpen, handleNavOpen, YOffset, setYOffset }}>
+        <AppContext.Provider value={{ isNavOpen, setIsNavOpen, handleNavOpen }}>
             <ThemeProvider theme={theme}>
                 <ParallaxProvider>
                     <SideMenu />
