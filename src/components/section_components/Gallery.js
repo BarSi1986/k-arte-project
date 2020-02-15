@@ -55,7 +55,7 @@ const GridWrapper = styled.div`
   /* padding: 10px; */
   /* height: 90vh; */
   width: 100%;
-  margin: 30px auto;
+  margin: 10px auto;
   /* overflow: scroll; */
 
 
@@ -70,7 +70,6 @@ const GridWrapper = styled.div`
     @media (max-width: 750px) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(4, 1fr);
- 
       grid-template-areas:
         "a a"
         "b b"
@@ -147,6 +146,9 @@ min-height: 280px;
   opacity: 1;
   transform: translateY(0px);
 }
+}
+@media (min-width: 1560px){
+  min-height: 450px;
 }
 `
 

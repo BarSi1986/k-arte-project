@@ -1,182 +1,114 @@
 import React, { useContext } from 'react'
-import styled from "styled-components";
-import { graphql, useStaticQuery } from 'gatsby'
 import AppContext from '../../context/AppContext'
+import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-
-import Header from '../ui_components/H2_header'
-import ornament from '../../images/ornament1.svg'
-
 import { Parallax } from 'react-scroll-parallax'
 
-const AppWrapper = styled.div`
-  height: 95vh;
-  position: relative;
-  width: 100%;
-  margin: auto;
-  overflow: hidden;
-  transition: 1s ${props => props.theme.transitions.cubic_front};
+
+const OuterWrapper = styled.section`
+position: relative;
+height: 100vh;
+`
+
+const HomeWrapper = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
         transform: translateX(-35px);
         opacity: .3;
     }
-
     @media (max-width: 750px) {
         &.blurred{
         transform: translateY(-35px);
         opacity: .3;
     }
-    height: inherit;
-    position: initial;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: -50px;
+    }
     
-    }
-`;
-
-const AboutImage = styled.div`
-    height: 60vh !important;
-    width: 100%;
-    position: relative;
-    @media (max-width: 750px) {
-      margin-bottom: -50px;
-    }
-`;
-
-const AboutTxt = styled.div`
-  width: 900px;
-  height: 40%;
-  position: absolute;
-  left: 10%;
-  top: 40%;
-  box-shadow: -5px 15px 15px -5px lightgrey;
-  padding: 50px;
-  background: #fff;
-  display: flex;
-  @media (max-width: 1000px) {
-    width: 550px;
-  }
-  @media (max-width: 750px) {
-    width: 100%;
-    padding: 40px 20px;
-    border-radius: 40px 40px 0 0;
-    position: relative;
+   
+`
+const MixedBg = styled.div`
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
     top: 0;
     left: 0;
-    box-shadow: none;
-  }
-`;
-
-const BigHeader = styled.h1`
-  font-family: ${props => props.theme.fonts.playfair};
-  font-size: 150px;
-  letter-spacing: 5px;
-  opacity: 0.1;
-  position: absolute;
-  z-index: 1;
-  right: -190px;
-  bottom: -150px;
-  transform: rotate(-90deg);
-  @media (max-width: 750px) {
-    font-size: 80px;
-    right: -110px;
-    bottom: 190px;
-  }
-`;
-
-const GoldLine2 = styled.div`
-  min-width: 3px;
-  height: 100%;
-  background: ${props => props.theme.colors.gold};
-  left: 45px;
-  top: 25%;
-  margin-right: 30px;
-  @media (max-width: 750px) {
-    display: none;
-  }
-`;
-
-const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  @media (max-width: 750px) {
-    justify-content: flex-start;
-    align-items: center;
-  }
-`;
-
-const StyledHeader = styled(Header)`
-  color: #000;
-  letter-spacing: 0;
-  margin-bottom: 30px;
+    width: 100%;
+    height: 100%;
+     
+    @media (min-width: 750px) {
+        mix-blend-mode: multiply;
+    }
+    @media (max-width: 750px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: .4;
+        z-index: -1;
+        background: #000;
+    }
+`
+const Header1 = styled.h1`
+    position: absolute;
+    font-family: ${props => props.theme.fonts.montserrat};
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    color: ${props => props.theme.colors.white};
+    font-size: 5em;
+    margin: 0;
+    font-weight: 200;
+    z-index: 10;
+    @media (max-width: 750px) {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        transform: translate(-50%,-70%);
+        font-size: 3em;
+        padding: 20px;
+        text-align: center;
+    }
 `
 
-const Para = styled.p`
-  font-family: ${props => props.theme.fonts.montserrat};
-  @media (max-width: 750px){
-    text-align: center;
-  }
-`;
-
-const StyledImg = styled(Img)`
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-`
-
-const Ornament = styled.img`
-  margin-bottom: 30px;
-  @media (min-width: 750px) {
-      display: none;
-  }
+const StyldImg = styled(Img)`
+position: absolute !important;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
 `
 
 const MoreAboutMe = () => {
-  const { isNavOpen } = useContext(AppContext)
   const data = useStaticQuery(graphql`
-    query MoreAboutImagesQuery {
-            file(relativePath: { eq: "gallery2b.jpg" }) {
-                childImageSharp {
-                    fluid(quality: 100 maxWidth: 1200){
-                        ...GatsbyImageSharpFluid
-                    }
+    query MoreAboutImageQuery {
+        file(relativePath: { eq: "more-about-me.jpg" }) {
+            childImageSharp {
+                fluid(quality: 100 maxWidth: 1366){
+                    ...GatsbyImageSharpFluid
                 }
             }
         }
-        `)
+    }
+    `)
+  const { isNavOpen } = useContext(AppContext)
   return (
-    <AppWrapper className={isNavOpen && 'blurred'}>
-      <Parallax y={[-60, 30]}>
-        <AboutImage>
-          <StyledImg
+    <OuterWrapper>
+      <Header1>more about me</Header1>
+      <Parallax y={[-20, 20]}>
+        <HomeWrapper className={isNavOpen && 'blurred'}>
+          <StyldImg
             fluid={data.file.childImageSharp.fluid}
           />
-          <BigHeader>o mnie</BigHeader>
-        </AboutImage>
+          <MixedBg />
+        </HomeWrapper>
       </Parallax>
-      <AboutTxt>
-        <GoldLine2 />
-        <TextWrapper>
-          <StyledHeader text="Kto za tym stoi ?" />
-          <Ornament src={ornament} />
-          <Para>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-                    </Para>
-        </TextWrapper>
-      </AboutTxt>
-    </AppWrapper>
-  );
+    </OuterWrapper >
+  )
 }
 
 export default MoreAboutMe

@@ -88,7 +88,7 @@ height: 100%;
 z-index: -1;
 `
 
-const Hero = () => {
+const Hero = ({ className }) => {
     const data = useStaticQuery(graphql`
     query HeroImageQuery {
         file(relativePath: { eq: "bg.jpg" }) {
@@ -104,7 +104,7 @@ const Hero = () => {
 
 
     return (
-        <OuterWrapper>
+        <OuterWrapper className={className}>
             <Header1><span>ar</span><span>te</span></Header1>
             <Parallax y={[-20, 20]}>
                 <HomeWrapper className={isNavOpen && 'blurred'}>
