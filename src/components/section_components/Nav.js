@@ -3,7 +3,7 @@ import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhone, faTimes, faStream } from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faTimes, faStream, faHome } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const NavWrapper = styled.section`
@@ -19,11 +19,10 @@ const NavWrapper = styled.section`
         left: 0;
         bottom: 0;
         z-index: 50;
-        height: 10vh;
+        height: 8vh;
         background: ${props => props.theme.colors.white};
         /* opacity: .9; */
         width: 100%;
-
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-around;
@@ -76,6 +75,37 @@ const StyledBtn = styled.button`
     }
 `
 
+const StyledBtn2 = styled.button`
+    display: none;
+    position: absolute;
+    z-index: 50;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    opacity: .7;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: all 1s ${props => props.theme.transitions.cubic_back};
+    &:hover{
+        border-color: ${props => props.theme.colors.gold};
+        transform: translateY(5px);
+        svg{
+            color: ${props => props.theme.colors.gold};
+        }
+    }
+    @media (max-width: 750px) {
+        display: initial;
+        position: initial;
+        text-align: center;
+        border: none;
+        &:hover{
+            transform: translateY(0px);
+        }
+    }
+`
+
 const Nav = () => {
 
     const { isNavOpen, handleNavOpen } = useContext(AppContext)
@@ -91,6 +121,10 @@ const Nav = () => {
             <StyledBtn style={{ top: '10px', right: '150px' }}>
                 <StyledIcon icon={faFacebookF} />
             </StyledBtn>
+
+            <StyledBtn2 style={{ top: '10px', right: '150px' }}>
+                <StyledIcon icon={faHome} />
+            </StyledBtn2>
 
             <StyledBtn style={{ top: '10px', right: '250px' }}>
                 <StyledIcon icon={faInstagram} />
