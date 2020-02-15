@@ -18,9 +18,10 @@ const SideMenuWrapper = styled.div`
         transform: translateY(100%);
         width: 100%;
         height: 60vh;
+        background: #fff;
         &.nav__open{
-        transform: translateY(0);
-    }
+            transform: translateY(0);
+            }
     }
     &.nav__open{
         transform: translateX(0%);
@@ -56,6 +57,7 @@ const SideMeuButton = styled.button`
     @media (max-width: 750px){
         a{
         font-size: 1.5em;
+        color: ${props => props.theme.colors.gold};
     }
     }
 `

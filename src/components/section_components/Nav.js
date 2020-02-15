@@ -20,7 +20,7 @@ const NavWrapper = styled.section`
         bottom: 0;
         z-index: 50;
         height: 10vh;
-        background: #111;
+        background: ${props => props.theme.colors.white};
         /* opacity: .9; */
         width: 100%;
 
@@ -43,6 +43,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
     @media (max-width: 750px) {
         position: initial;
         transform: translate(0, 0);
+        color: ${props => props.theme.colors.gold};
     }
 `
 
