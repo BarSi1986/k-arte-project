@@ -23,6 +23,7 @@ const theme = {
         grey: '#3F3F3F',
         lightgrey: '#4D4D4D',
         darkgrey: '#313131',
+        material_grey: '#121212',
         dark_red: '#6A0B0B',
     },
     transitions: {
@@ -35,6 +36,7 @@ const theme = {
 const Layout = ({ children }) => {
     // states
     const [isNavOpen, setIsNavOpen] = useState(false)
+
     // functions
     const handleNavOpen = () => {
         setIsNavOpen(!isNavOpen)

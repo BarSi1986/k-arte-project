@@ -43,7 +43,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
     @media (max-width: 750px) {
         position: initial;
         transform: translate(0, 0);
-        color: ${props => props.theme.colors.gold};
+        color: ${props => props.theme.colors.material_grey};
     }
 `
 

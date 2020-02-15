@@ -63,7 +63,7 @@ const AboutPara = styled.p`
     font-family: ${props => props.theme.fonts.montserrat};
     font-size: 1em;
     font-weight: 100;
-    color: #000;
+    color: ${props => props.theme.colors.dark_grey};
     letter-spacing: 1px;
     /* text-align: center; */
 `

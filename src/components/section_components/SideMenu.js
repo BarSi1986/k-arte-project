@@ -57,7 +57,7 @@ const SideMeuButton = styled.button`
     @media (max-width: 750px){
         a{
         font-size: 1.5em;
-        color: ${props => props.theme.colors.gold};
+        color: ${props => props.theme.colors.material_grey};
     }
     }
 `
