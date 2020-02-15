@@ -67,9 +67,7 @@ const Header1 = styled.h1`
         position: absolute;
         display: flex;
         flex-direction: column;
-        transform: translate(-50%,-55%);
-        /* justify-content: flex-start;
-        align-items: center; */
+        transform: translate(-50%,-70%);
         font-size: 60vw;
         padding: 20px;
         border: 8px solid white;
