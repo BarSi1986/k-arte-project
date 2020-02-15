@@ -3,7 +3,7 @@ import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faPhone, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faTimes, faStream } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const NavWrapper = styled.section`
@@ -85,7 +85,7 @@ const Nav = () => {
             <StyledBtn
                 onClick={handleNavOpen}
                 style={{ top: '10px', right: '50px', zIndex: '150' }}>
-                <StyledIcon icon={isNavOpen ? faTimes : faBars} />
+                <StyledIcon icon={isNavOpen ? faTimes : faStream} />
             </StyledBtn>
 
             <StyledBtn style={{ top: '10px', right: '150px' }}>
