@@ -95,7 +95,6 @@ background: rgba(0,0,0,.4);
 z-index: 5;
 padding: 0px;
 transition: height .2s ease, width .3s ease .2s;
-
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -107,7 +106,7 @@ const GridHoverHeader = styled.h2`
   font-family: ${props => props.theme.fonts.montserrat};
   font-weight: 100;
   color: #fff;
-  transform: translateY(5px);
+  transform: translateY(-45px);
   opacity: 0;
     &::after{
       content: "";
@@ -119,14 +118,24 @@ const GridHoverHeader = styled.h2`
       width: 50px;
       background: ${props => props.theme.colors.gold};
 }
-  
+`
+
+const GridHoverButton = styled(Button)`
+  position: absolute;
+  opacity: 0;
+  transform: translateY(35px);
+  background: transparent;
+  font-size: .9em;
+  font-weight: 400;
+  &::after{
+        border: 1.5px solid ${props => props.theme.white};
+    }
 `
 
 const GridItem = styled.div`
 background-size: cover;
 background-position: center;
 overflow: hidden;
-cursor: pointer;
 min-height: 400px;
 position: relative;
 &:nth-of-type(1){grid-area: a;}
@@ -144,7 +153,12 @@ min-height: 280px;
 & ${GridHoverHeader}{
   transition: .3s ease-in .4s;
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(-50px);
+}
+& ${GridHoverButton}{
+  opacity: 1;
+  transition: .3s ease .6s;
+  transform: translateY(30px);
 }
 }
 @media (min-width: 1560px){
@@ -251,7 +265,7 @@ const Gallery = () => {
     <GalleryWrapper className={isNavOpen && 'blurred'}>
       <Fade bottom cascade>
         <HeaderWrapper>
-          <StyledHeader text='WYBRANE REALIZACJE' />
+          <StyledHeader text='WYBRANE PROJEKTY' />
           <Ornament />
         </HeaderWrapper>
       </Fade>
@@ -263,6 +277,7 @@ const Gallery = () => {
             />
             <GridHover>
               <GridHoverHeader>LYST INTERIØR</GridHoverHeader>
+              <GridHoverButton text="ZOBACZ REALIZACJĘ" />
             </GridHover>
           </GridItem>
 
@@ -273,6 +288,7 @@ const Gallery = () => {
             <GridHover>
               <GridHoverHeader>
                 ÉCLECTISME FRANÇAIS</GridHoverHeader>
+              <GridHoverButton text="ZOBACZ REALIZACJĘ" />
             </GridHover>
           </GridItem>
 
@@ -283,6 +299,7 @@ const Gallery = () => {
             <GridHover>
               <GridHoverHeader>
                 WEIMAR BAUHAUS</GridHoverHeader>
+              <GridHoverButton text="ZOBACZ REALIZACJĘ" />
             </GridHover>
           </GridItem>
 
@@ -293,12 +310,13 @@ const Gallery = () => {
             <GridHover>
               <GridHoverHeader>
                 LONDON BABY !</GridHoverHeader>
+              <GridHoverButton text="ZOBACZ REALIZACJĘ" />
             </GridHover>
           </GridItem>
         </GridWrapper>
       </GridOuterWrapper>
       <Link to="/portfolio">
-        <StyledBtn text="Zobacz więcej" />
+        <StyledBtn text="WIĘCEJ" />
       </Link>
     </GalleryWrapper >
 

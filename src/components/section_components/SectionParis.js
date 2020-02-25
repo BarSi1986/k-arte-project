@@ -8,9 +8,9 @@ import Img from 'gatsby-image'
 import ScrollContainer from "react-indiana-drag-scroll";
 
 const PortfolioWrapper = styled.div`
-  width: 100%;
+  width: 85%;
   position: relative;
-
+  margin: auto;
   transition: 1s ${props => props.theme.transitions.cubic_front};
     &.blurred{
         transform: translateX(-35px);
@@ -35,7 +35,6 @@ const StyledImg = styled(Img)`
 const DekorialoveSection = styled.div`
   width: 100%;
   position: relative;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,15 +85,15 @@ const ScandiTitle = styled.div`
       }
 `
 const ScandiGrid = styled.div`
-  width: 92%;
+  width: 100%;
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 50px;
   margin: auto;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 2fr 1fr 1fr 2.4fr;
   grid-template-areas:
-  "a c c"
-  "b c c"
+  "c c a"
+  "c c a"
   "d e f"
   "d e g"
   "h h i";
@@ -229,15 +228,16 @@ const SectionParis = () => {
         </DekorialoveHero>
 
         <ScandiTitle>
-          <div>
-            <p>à couper le souffle</p>
-            <p>Francuski eklektyzm. Jeśli jesteście fanami gatunku to z pewnością zachwyci was klasyczne mieszkanie przełamujące codzienność pięknymi antykami rodem z belle epoque.</p>
-          </div>
+
         </ScandiTitle>
         <ScrollContainer className="scroll-container">
           <ScandiGrid>
             <GridItem>
-              <p>intérieurs lumineux</p>
+              {/* <p>intérieurs lumineux</p> */}
+              <div>
+                <p>à couper le souffle</p>
+                <p>Francuski eklektyzm. Jeśli jesteście fanami gatunku to z pewnością zachwyci was klasyczne mieszkanie przełamujące codzienność pięknymi antykami rodem z belle epoque.</p>
+              </div>
 
             </GridItem>
             <GridItem>
