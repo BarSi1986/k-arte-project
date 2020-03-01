@@ -12,7 +12,7 @@ const ComponentWrapper = styled.section`
 const PortfolioWrapper = () => {
     return (
         <ComponentWrapper>
-            {/* <Paris /> */}
+            <Paris />
             {/* <Scandinavia /> */}
         </ComponentWrapper>
     )
