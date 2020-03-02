@@ -130,6 +130,9 @@ const GridHoverButton = styled(Button)`
   &::after{
         border: 1.5px solid ${props => props.theme.white};
     }
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
 `
 
 const GridItem = styled.div`
@@ -158,7 +161,7 @@ min-height: 280px;
 & ${GridHoverButton}{
   opacity: 1;
   transition: .3s ease .6s;
-  transform: translateY(30px);
+  transform: translateY(-5px) translateX(-50%);
 }
 }
 @media (min-width: 1560px){
@@ -277,7 +280,9 @@ const Gallery = () => {
             />
             <GridHover>
               <GridHoverHeader>LYST INTERIØR</GridHoverHeader>
-              <GridHoverButton text="ZOBACZ REALIZACJĘ" />
+              <Link to="/portfolio">
+                <GridHoverButton text="ZOBACZ REALIZACJĘ" />
+              </Link>
             </GridHover>
           </GridItem>
 
@@ -288,7 +293,9 @@ const Gallery = () => {
             <GridHover>
               <GridHoverHeader>
                 ÉCLECTISME FRANÇAIS</GridHoverHeader>
-              <GridHoverButton text="ZOBACZ REALIZACJĘ" />
+              <Link to="/portfolio">
+                <GridHoverButton text="ZOBACZ REALIZACJĘ" />
+              </Link>
             </GridHover>
           </GridItem>
 
@@ -299,7 +306,9 @@ const Gallery = () => {
             <GridHover>
               <GridHoverHeader>
                 WEIMAR BAUHAUS</GridHoverHeader>
-              <GridHoverButton text="ZOBACZ REALIZACJĘ" />
+              <Link to="/portfolio">
+                <GridHoverButton text="ZOBACZ REALIZACJĘ" />
+              </Link>
             </GridHover>
           </GridItem>
 
@@ -310,13 +319,15 @@ const Gallery = () => {
             <GridHover>
               <GridHoverHeader>
                 LONDON BABY !</GridHoverHeader>
-              <GridHoverButton text="ZOBACZ REALIZACJĘ" />
+              <Link to="/portfolio">
+                <GridHoverButton text="ZOBACZ REALIZACJĘ" />
+              </Link>
             </GridHover>
           </GridItem>
         </GridWrapper>
       </GridOuterWrapper>
       <Link to="/portfolio">
-        <StyledBtn text="WIĘCEJ" />
+        <StyledBtn text="więcej" />
       </Link>
     </GalleryWrapper >
 
