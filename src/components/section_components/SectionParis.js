@@ -28,9 +28,10 @@ const PhotoGrid = styled.div`
   grid-gap: 5px;
   grid-template-areas:
     "a a a a a a a a"
-    "b b b c c c c c"
+    "b b b b c c c c"
     "d d d d d e e e"
-    "f f f g g g g g";
+    "f f f g g g g g"
+    "h h h h i i i i";
   ;
 
 `
@@ -44,6 +45,8 @@ const GridItem = styled.div`
   &:nth-of-type(5) {grid-area: e; min-height: 60vh;}
   &:nth-of-type(6) {grid-area: f; min-height: 60vh;}
   &:nth-of-type(7) {grid-area: g; min-height: 60vh;}
+  &:nth-of-type(8) {grid-area: h; min-height: 60vh;}
+  &:nth-of-type(9) {grid-area: i; min-height: 60vh;}
 `
 
 const StyledImg = styled(Img)`
@@ -58,56 +61,63 @@ const SectionParis = () => {
 
   const data = useStaticQuery(graphql`
     query ParisImagesQuery {
-        image1: file(relativePath: {eq: "Paris (27).jpg"}) {
+        image1: file(relativePath: {eq: "paris (27).jpg"}) {
           childImageSharp {
             fluid (quality: 100, maxWidth: 1440) {
                 ...GatsbyImageSharpFluid    
             }
           }
         },
-        image2: file(relativePath: {eq: "Paris (8).jpg"}) {
+        image2: file(relativePath: {eq: "paris (8).jpg"}) {
           childImageSharp {
             fluid (quality: 100, maxWidth: 1440) {
                 ...GatsbyImageSharpFluid    
             }
           }
         },
-        image3: file(relativePath: {eq: "Paris (17).jpg"}) {
+        image3: file(relativePath: {eq: "paris (17).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 1440) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
-          image4: file(relativePath: {eq: "Paris (1).jpg"}) {
-            childImageSharp {
-              fluid (quality: 100, maxWidth: 500) {
-                  ...GatsbyImageSharpFluid    
-              }
-            }
-          },
-          image5: file(relativePath: {eq: "Paris (22).jpg"}) {
+          image4: file(relativePath: {eq: "paris (23).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 1440) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
-          image6: file(relativePath: {eq: "Paris (6).jpg"}) {
+          image5: file(relativePath: {eq: "paris (22).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 1440) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
-          image7: file(relativePath: {eq: "Paris (24).jpg"}) {
+          image6: file(relativePath: {eq: "paris (6).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 1440) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
-          image8: file(relativePath: {eq: "Paris (18).jpg"}) {
+          image8: file(relativePath: {eq: "paris (2).jpg"}) {
+            childImageSharp {
+              fluid (quality: 100, maxWidth: 1440) {
+                  ...GatsbyImageSharpFluid    
+              }
+            }
+          },
+          image7: file(relativePath: {eq: "paris (24).jpg"}) {
+            childImageSharp {
+              fluid (quality: 100, maxWidth: 1440) {
+                  ...GatsbyImageSharpFluid    
+              }
+            }
+          },
+          image9: file(relativePath: {eq: "paris (13).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 1440) {
                   ...GatsbyImageSharpFluid    
@@ -137,10 +147,16 @@ const SectionParis = () => {
           <StyledImg fluid={data.image6.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
-          <StyledImg fluid={data.image8.childImageSharp.fluid} />
+          <StyledImg fluid={data.image4.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
           <StyledImg fluid={data.image7.childImageSharp.fluid} />
+        </GridItem>
+        <GridItem>
+          <StyledImg fluid={data.image8.childImageSharp.fluid} />
+        </GridItem>
+        <GridItem>
+          <StyledImg fluid={data.image9.childImageSharp.fluid} />
         </GridItem>
       </PhotoGrid>
     </PortfolioWrapper>
