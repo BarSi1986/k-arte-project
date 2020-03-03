@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import AppContext from '../../context/AppContext'
 import { graphql, useStaticQuery } from 'gatsby'
@@ -54,6 +54,35 @@ position: absolute !important;
 width: 100%;
 height: 100%;
 z-index: -1;
+`
+
+const Caption = styled.p`
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  width: 250px;
+  color: white;
+  opacity: 0;
+  transition: .4s ease;
+  &:nth-of-type(1){
+    &::after{
+      content: "";
+      width: 0px;
+      height: 2px;
+      background: #fff;
+      position: absolute;
+      bottom: 5px;
+      left: 220px;
+      transition: .9s ease;
+    }
+    &.loaded{
+      opacity: 1;
+      bottom: 20px;
+      &::after{
+      width: 200px;
+      }
+    }
+  }
 `
 
 const SectionParis = () => {
@@ -128,10 +157,18 @@ const SectionParis = () => {
     `)
 
   const { isNavOpen } = useContext(AppContext)
+  const [load, setLoad] = useState(false)
+
   return (
     <PortfolioWrapper className={isNavOpen && 'blurred'}>
       <PhotoGrid>
         <GridItem>
+          <Caption onLoad={
+            setTimeout(() => { setLoad(true) }, 500)
+
+          }
+            className={load && "loaded"}
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate repellendus quod ab architecto commodi impedit sit earum provident temporibus!</Caption>
           <StyledImg fluid={data.image1.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
