@@ -96,7 +96,62 @@ const SectionParis = () => {
             }
           }
         },
-
+        image2: file(relativePath: {eq: "paris8.jpg"}) {
+          childImageSharp {
+            fluid (quality: 100, maxWidth: 981) {
+                ...GatsbyImageSharpFluid    
+            }
+          }
+        },
+        image3: file(relativePath: {eq: "paris17.jpg"}) {
+            childImageSharp {
+              fluid (quality: 100, maxWidth: 981) {
+                  ...GatsbyImageSharpFluid    
+              }
+            }
+          },
+          image4: file(relativePath: {eq: "paris23.jpg"}) {
+            childImageSharp {
+              fluid (quality: 100, maxWidth: 981) {
+                  ...GatsbyImageSharpFluid    
+              }
+            }
+          },
+          image5: file(relativePath: {eq: "paris22.jpg"}) {
+            childImageSharp {
+              fluid (quality: 100, maxWidth: 981) {
+                  ...GatsbyImageSharpFluid    
+              }
+            }
+          },
+          image6: file(relativePath: {eq: "paris6.jpg"}) {
+            childImageSharp {
+              fluid (quality: 100, maxWidth: 981) {
+                  ...GatsbyImageSharpFluid    
+              }
+            }
+          },
+          image8: file(relativePath: {eq: "paris2.jpg"}) {
+            childImageSharp {
+              fluid (quality: 100, maxWidth: 981) {
+                  ...GatsbyImageSharpFluid    
+              }
+            }
+          },
+          image7: file(relativePath: {eq: "paris24.jpg"}) {
+            childImageSharp {
+              fluid (quality: 100, maxWidth: 981) {
+                  ...GatsbyImageSharpFluid    
+              }
+            }
+          },
+          image9: file(relativePath: {eq: "paris13.jpg"}) {
+            childImageSharp {
+              fluid (quality: 100, maxWidth: 981) {
+                  ...GatsbyImageSharpFluid    
+              }
+            }
+          },
       }
     `)
 
@@ -115,7 +170,7 @@ const SectionParis = () => {
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate repellendus quod ab architecto commodi impedit sit earum provident temporibus!</Caption>
           <StyledImg fluid={data.image1.childImageSharp.fluid} />
         </GridItem>
-        {/* <GridItem>
+        <GridItem>
           <StyledImg fluid={data.image5.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
@@ -138,7 +193,7 @@ const SectionParis = () => {
         </GridItem>
         <GridItem>
           <StyledImg fluid={data.image9.childImageSharp.fluid} />
-        </GridItem> */}
+        </GridItem>
       </PhotoGrid>
     </PortfolioWrapper>
   )
