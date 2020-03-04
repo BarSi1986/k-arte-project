@@ -93,7 +93,7 @@ const Hero = ({ className }) => {
     query HeroImageQuery {
         file(relativePath: { eq: "bg.jpg" }) {
             childImageSharp {
-                fluid(quality: 100 maxWidth: 1366){
+                fluid(quality: 80 maxWidth: 1300){
                     ...GatsbyImageSharpFluid
                 }
             }
