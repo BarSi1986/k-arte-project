@@ -88,7 +88,7 @@ const MoreAboutMe = () => {
     query MoreAboutImageQuery {
         file(relativePath: { eq: "more-about-me.jpg" }) {
             childImageSharp {
-                fluid(quality: 100 maxWidth: 1366){
+                fluid(quality: 80 maxWidth: 1300){
                     ...GatsbyImageSharpFluid
                 }
             }
