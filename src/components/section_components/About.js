@@ -120,7 +120,7 @@ const About = () => {
     query AboutImagesQuery {
             file(relativePath: { eq: "gallery5f.jpg" }) {
                 childImageSharp {
-                    fluid(quality: 90 maxWidth: 568){
+                    fluid(quality: 90 maxWidth: 1000){
                         ...GatsbyImageSharpFluid
                     }
                 }

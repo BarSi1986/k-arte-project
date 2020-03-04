@@ -56,15 +56,14 @@ height: 100%;
 z-index: -1;
 `
 
-const Caption = styled.p`
+const Caption1 = styled.p`
   position: absolute;
-  left: 20px;
-  bottom: 10px;
-  width: 250px;
   color: white;
-  opacity: 0;
   transition: .4s ease;
-  &:nth-of-type(1){
+    left: 20px;
+    bottom: 10px;
+    width: 250px;
+    opacity: 0;
     &::after{
       content: "";
       width: 0px;
@@ -82,10 +81,29 @@ const Caption = styled.p`
       width: 200px;
       }
     }
-  }
+`
+
+const Caption2 = styled.p`
+  position: absolute;
+  color: white;
+  transition: .4s ease;
+    left: 20px;
+    bottom: 10px;
+    width: 220px;
+    &::after{
+      content: "";
+      width: 2px;
+      height: 150px;
+      background: #fff;
+      position: absolute;
+      top: -160px;
+      left: 95px;
+      transition: .9s ease;
+    }
 `
 
 const SectionParis = () => {
+  const [pageYOffset, setPageYOffset] = useState(null)
 
   const data = useStaticQuery(graphql`
     query ParisImagesQuery {
@@ -162,12 +180,12 @@ const SectionParis = () => {
     <PortfolioWrapper className={isNavOpen && 'blurred'}>
       <PhotoGrid>
         <GridItem>
-          <Caption onLoad={
-            setTimeout(() => { setLoad(true) }, 500)
+          <Caption1 onLoad={
+            setTimeout(() => { setLoad(true) }, 700)
 
           }
             className={load && "loaded"}
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate repellendus quod ab architecto commodi impedit sit earum provident temporibus!</Caption>
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate repellendus quod ab architecto commodi impedit sit earum provident temporibus!</Caption1>
           <StyledImg fluid={data.image1.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
@@ -180,6 +198,8 @@ const SectionParis = () => {
           <StyledImg fluid={data.image3.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
+          <Caption2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sit earum provident temporibus!</Caption2>
           <StyledImg fluid={data.image6.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
