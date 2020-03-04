@@ -171,7 +171,7 @@ const SectionParis = () => {
           <StyledImg fluid={data.image1.childImageSharp.fluid} />
         </GridItem> */}
         <GridItem>
-          <StyledImg fluid={data.image5.childImageSharp.fluid} />
+          <StyledImg fluid={data.image5.file.childImageSharp.fluid} />
         </GridItem>
         {/* <GridItem>
           <StyledImg fluid={data.image2.childImageSharp.fluid} />
