@@ -163,12 +163,6 @@ const SectionParis = () => {
     <PortfolioWrapper className={isNavOpen && 'blurred'}>
       <PhotoGrid>
         <GridItem>
-          {/* <Caption onLoad={
-            setTimeout(() => { setLoad(true) }, 500)
-
-          }
-            className={load && "loaded"}
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate repellendus quod ab architecto commodi impedit sit earum provident temporibus!</Caption> */}
           <StyledImg fluid={data.image1.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
