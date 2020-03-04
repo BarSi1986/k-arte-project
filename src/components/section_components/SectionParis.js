@@ -87,7 +87,6 @@ const Caption = styled.p`
 
 const SectionParis = () => {
 
-
   const data = useStaticQuery(graphql`
     query ParisImagesQuery {
         image1: file(relativePath: {eq: "paris (27).jpg"}) {
@@ -118,7 +117,7 @@ const SectionParis = () => {
               }
             }
           },
-          image5: file(relativePath: {eq: "paris (23).jpg"}) {
+          image5: file(relativePath: {eq: "paris (22).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 981) {
                   ...GatsbyImageSharpFluid    
@@ -163,10 +162,16 @@ const SectionParis = () => {
     <PortfolioWrapper className={isNavOpen && 'blurred'}>
       <PhotoGrid>
         <GridItem>
+          <Caption onLoad={
+            setTimeout(() => { setLoad(true) }, 500)
+
+          }
+            className={load && "loaded"}
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate repellendus quod ab architecto commodi impedit sit earum provident temporibus!</Caption>
           <StyledImg fluid={data.image1.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
-          <StyledImg fluid={data.image1.childImageSharp.fluid} />
+          <StyledImg fluid={data.image5.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
           <StyledImg fluid={data.image2.childImageSharp.fluid} />
