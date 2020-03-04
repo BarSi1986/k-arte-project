@@ -99,56 +99,56 @@ const SectionParis = () => {
         },
         image2: file(relativePath: {eq: "paris (8).jpg"}) {
           childImageSharp {
-            fluid (quality: 100, maxWidth: 1440) {
+            fluid (quality: 100, maxWidth: 981) {
                 ...GatsbyImageSharpFluid    
             }
           }
         },
         image3: file(relativePath: {eq: "paris (17).jpg"}) {
             childImageSharp {
-              fluid (quality: 100, maxWidth: 1440) {
+              fluid (quality: 100, maxWidth: 981) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
           image4: file(relativePath: {eq: "paris (23).jpg"}) {
             childImageSharp {
-              fluid (quality: 100, maxWidth: 1440) {
+              fluid (quality: 100, maxWidth: 981) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
           image5: file(relativePath: {eq: "paris (22).jpg"}) {
             childImageSharp {
-              fluid (quality: 100, maxWidth: 1440) {
+              fluid (quality: 100, maxWidth: 981) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
           image6: file(relativePath: {eq: "paris (6).jpg"}) {
             childImageSharp {
-              fluid (quality: 100, maxWidth: 1440) {
+              fluid (quality: 100, maxWidth: 981) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
           image8: file(relativePath: {eq: "paris (2).jpg"}) {
             childImageSharp {
-              fluid (quality: 100, maxWidth: 1440) {
+              fluid (quality: 100, maxWidth: 981) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
           image7: file(relativePath: {eq: "paris (24).jpg"}) {
             childImageSharp {
-              fluid (quality: 100, maxWidth: 1440) {
+              fluid (quality: 100, maxWidth: 981) {
                   ...GatsbyImageSharpFluid    
               }
             }
           },
           image9: file(relativePath: {eq: "paris (13).jpg"}) {
             childImageSharp {
-              fluid (quality: 100, maxWidth: 1440) {
+              fluid (quality: 100, maxWidth: 981) {
                   ...GatsbyImageSharpFluid    
               }
             }
