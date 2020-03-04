@@ -118,7 +118,7 @@ const SectionParis = () => {
               }
             }
           },
-          image5: file(relativePath: {eq: "paris (22).jpg"}) {
+          image4: file(relativePath: {eq: "paris (23).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 981) {
                   ...GatsbyImageSharpFluid    
