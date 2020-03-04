@@ -169,11 +169,11 @@ const SectionParis = () => {
             className={load && "loaded"}
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate repellendus quod ab architecto commodi impedit sit earum provident temporibus!</Caption>
           <StyledImg fluid={data.image1.childImageSharp.fluid} />
-        </GridItem>
+        </GridItem> */}
         <GridItem>
           <StyledImg fluid={data.image5.childImageSharp.fluid} />
         </GridItem>
-        <GridItem>
+        {/* <GridItem>
           <StyledImg fluid={data.image2.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
