@@ -118,7 +118,7 @@ const SectionParis = () => {
               }
             }
           },
-          image4: file(relativePath: {eq: "paris (23).jpg"}) {
+          image5: file(relativePath: {eq: "paris (23).jpg"}) {
             childImageSharp {
               fluid (quality: 100, maxWidth: 981) {
                   ...GatsbyImageSharpFluid    
@@ -172,7 +172,7 @@ const SectionParis = () => {
           <StyledImg fluid={data.image1.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
-          <StyledImg fluid={data.image5.childImageSharp.fluid} />
+          <StyledImg fluid={data.image1.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
           <StyledImg fluid={data.image2.childImageSharp.fluid} />
