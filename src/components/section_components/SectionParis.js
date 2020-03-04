@@ -91,7 +91,7 @@ const SectionParis = () => {
     query ParisImagesQuery {
         image1: file(relativePath: {eq: "paris27.jpg"}) {
           childImageSharp {
-            fluid (quality: 100, maxWidth: 1440) {
+            fluid (quality: 80, maxWidth: 1440) {
                 ...GatsbyImageSharpFluid    
             }
           }
