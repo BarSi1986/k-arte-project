@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import AppContext from '../../context/AppContext'
 import { graphql, useStaticQuery } from 'gatsby'
@@ -57,9 +57,9 @@ z-index: -1;
 `
 
 const Caption1 = styled.p`
-  position: absolute;
-  color: white;
-  transition: .4s ease;
+    position: absolute;
+    color: white;
+    transition: .4s ease;
     left: 20px;
     bottom: 10px;
     width: 250px;
@@ -71,39 +71,74 @@ const Caption1 = styled.p`
       background: #fff;
       position: absolute;
       bottom: 5px;
-      left: 220px;
-      transition: .9s ease;
+      left: 130px;
+      transition: .9s ease .2s;
     }
     &.loaded{
       opacity: 1;
       bottom: 20px;
       &::after{
-      width: 200px;
+      width: 300px;
       }
     }
 `
 
 const Caption2 = styled.p`
-  position: absolute;
-  color: white;
-  transition: .4s ease;
+    position: absolute;
+    color: white;
+    transition: .4s ease;
     left: 20px;
     bottom: 10px;
     width: 220px;
+    opacity: 0;
     &::after{
       content: "";
       width: 2px;
-      height: 150px;
+      height: 0px;
       background: #fff;
       position: absolute;
       top: -160px;
-      left: 95px;
-      transition: .9s ease;
+      left: 108px;
+      transition: .9s ease .2s;
+    }
+    &.loaded{
+      opacity: 1;
+      bottom: 20px;
+      &::after{
+      height: 150px;
+      }
+    }
+`
+
+const Caption3 = styled.p`
+    position: absolute;
+    color: white;
+    transition: .4s ease;
+    left: 20px;
+    bottom: 10px;
+    width: 220px;
+    opacity: 0;
+    &::after{
+      content: "";
+      width: 0px;
+      height: 2px;
+      background: #fff;
+      position: absolute;
+      top: 10px;
+      right: -135px;
+      transition: .9s ease .3s;
+    }
+    &.loaded{
+      opacity: 1;
+      bottom: 20px;
+      &::after{
+      width: 150px;
+      }
     }
 `
 
 const SectionParis = () => {
-  const [pageYOffset, setPageYOffset] = useState(null)
+
 
   const data = useStaticQuery(graphql`
     query ParisImagesQuery {
@@ -175,17 +210,25 @@ const SectionParis = () => {
 
   const { isNavOpen } = useContext(AppContext)
   const [load, setLoad] = useState(false)
+  const [caption2, setCaption2] = useState(false)
+  const [caption3, setCaption3] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => { setLoad(true) }, 700);
+    window.addEventListener('scroll', () => {
+      window.pageYOffset > 900 && setCaption2(true)
+      window.pageYOffset > 2000 && setCaption3(true)
+    })
+
+  }, []);
 
   return (
     <PortfolioWrapper className={isNavOpen && 'blurred'}>
       <PhotoGrid>
         <GridItem>
-          <Caption1 onLoad={
-            setTimeout(() => { setLoad(true) }, 700)
-
-          }
+          <Caption1
             className={load && "loaded"}
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate repellendus quod ab architecto commodi impedit sit earum provident temporibus!</Caption1>
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate repellendus quod ab architecto commodi impedit sit earum provident temporibus! and the scroll index is</Caption1>
           <StyledImg fluid={data.image1.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
@@ -198,7 +241,7 @@ const SectionParis = () => {
           <StyledImg fluid={data.image3.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
-          <Caption2>
+          <Caption2 className={caption2 && 'loaded'}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sit earum provident temporibus!</Caption2>
           <StyledImg fluid={data.image6.childImageSharp.fluid} />
         </GridItem>
@@ -212,6 +255,8 @@ const SectionParis = () => {
           <StyledImg fluid={data.image8.childImageSharp.fluid} />
         </GridItem>
         <GridItem>
+          <Caption3 className={caption3 && 'loaded'}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sit earum provident temporibus!</Caption3>
           <StyledImg fluid={data.image9.childImageSharp.fluid} />
         </GridItem>
       </PhotoGrid>
