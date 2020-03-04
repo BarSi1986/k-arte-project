@@ -89,7 +89,7 @@ const SectionParis = () => {
 
   const data = useStaticQuery(graphql`
     query ParisImagesQuery {
-        image1: file(relativePath: {eq: "paris (27).jpg"}) {
+        image1: file(relativePath: {eq: "paris27.jpg"}) {
           childImageSharp {
             fluid (quality: 100, maxWidth: 1440) {
                 ...GatsbyImageSharpFluid    
