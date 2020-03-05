@@ -11,7 +11,6 @@ const NavWrapper = styled.div`
     width: 100%;
     height: 60px;
     transition: .5s ease;
-    background: rgba(255, 255, 255, 0);
     bottom: calc(100%-70px);
     right: 0;
     z-index: 50;
