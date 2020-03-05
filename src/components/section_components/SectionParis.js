@@ -59,10 +59,10 @@ z-index: -1;
 const Caption1 = styled.p`
     position: absolute;
     color: white;
-    transition: .4s ease;
+    transition: .6s ease;
     left: 20px;
     bottom: 10px;
-    width: 250px;
+    width: 210px;
     opacity: 0;
     &::after{
       content: "";
@@ -71,14 +71,14 @@ const Caption1 = styled.p`
       background: #fff;
       position: absolute;
       bottom: 5px;
-      left: 130px;
+      left: 210px;
       transition: .9s ease .2s;
     }
     &.loaded{
       opacity: 1;
       bottom: 20px;
       &::after{
-      width: 300px;
+      width: 150px;
       }
     }
 `
@@ -86,7 +86,7 @@ const Caption1 = styled.p`
 const Caption2 = styled.p`
     position: absolute;
     color: white;
-    transition: .4s ease;
+    transition: .6s ease;
     left: 20px;
     bottom: 10px;
     width: 220px;
@@ -113,7 +113,7 @@ const Caption2 = styled.p`
 const Caption3 = styled.p`
     position: absolute;
     color: white;
-    transition: .4s ease;
+    transition: .6s ease;
     left: 20px;
     bottom: 10px;
     width: 220px;
@@ -125,7 +125,7 @@ const Caption3 = styled.p`
       background: #fff;
       position: absolute;
       top: 10px;
-      right: -135px;
+      right: -130px;
       transition: .9s ease .3s;
     }
     &.loaded{
@@ -219,7 +219,6 @@ const SectionParis = () => {
       window.pageYOffset > 900 && setCaption2(true)
       window.pageYOffset > 2000 && setCaption3(true)
     })
-
   }, []);
 
   return (
@@ -228,7 +227,7 @@ const SectionParis = () => {
         <GridItem>
           <Caption1
             className={load && "loaded"}
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate repellendus quod ab architecto commodi impedit sit earum provident temporibus! and the scroll index is</Caption1>
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate repellendus quod ab architecto commodi</Caption1>
           <StyledImg fluid={data.image1.childImageSharp.fluid} />
         </GridItem>
         <GridItem>

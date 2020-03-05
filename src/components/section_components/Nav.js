@@ -6,11 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faTimes, faStream, faHome } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
-const NavWrapper = styled.section`
+const NavWrapper = styled.div`
     position: fixed;
     width: 100%;
-    height: 70px;
-    background: rgba(1, 1, 1, 0);
+    height: 60px;
+    transition: .5s ease;
+    background: rgba(255, 255, 255, 0);
     bottom: calc(100%-70px);
     right: 0;
     z-index: 50;
@@ -28,7 +29,16 @@ const NavWrapper = styled.section`
         justify-content: space-around;
         align-items: center;
     }
-   
+    @media (min-width: 751px) {
+        &.scrolled{
+            button{
+                svg{
+            color: #484848;
+            }   
+        }
+
+    }
+}
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -48,7 +58,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 
 const StyledBtn = styled.button`
     position: absolute;
-    z-index: 50;
+    z-index: 55;
     width: 50px;
     height: 50px;
     background: transparent;
@@ -61,9 +71,9 @@ const StyledBtn = styled.button`
     &:hover{
         border-color: ${props => props.theme.colors.gold};
         transform: translateY(5px);
-        svg{
+        /* svg{
             color: ${props => props.theme.colors.gold};
-        }
+        } */
     }
     @media (max-width: 750px) {
         position: initial;
@@ -91,9 +101,9 @@ const StyledBtn2 = styled.button`
     &:hover{
         border-color: ${props => props.theme.colors.gold};
         transform: translateY(5px);
-        svg{
+        /* svg{
             color: ${props => props.theme.colors.gold};
-        }
+        } */
     }
     @media (max-width: 750px) {
         display: initial;
@@ -106,34 +116,52 @@ const StyledBtn2 = styled.button`
     }
 `
 
+const WhiteBg = styled.div`
+  width: 100%;
+  position: fixed;
+  height: 60px;
+  top: 0;
+  background: transparent;
+  transition: .5s ease;
+  z-index: 30;
+  @media (min-width: 751px){
+        &.scrolled{
+            background: rgba(255, 255, 255, .9);
+        }
+    }
+`
+
 const Nav = () => {
 
-    const { isNavOpen, handleNavOpen } = useContext(AppContext)
+    const { isNavOpen, handleNavOpen, scrolled } = useContext(AppContext)
 
     return (
-        <NavWrapper>
-            <StyledBtn
-                onClick={handleNavOpen}
-                style={{ top: '10px', right: '50px', zIndex: '150' }}>
-                <StyledIcon icon={isNavOpen ? faTimes : faStream} />
-            </StyledBtn>
+        <>
+            <WhiteBg className={scrolled && "scrolled"} />
+            <NavWrapper className={scrolled && "scrolled"}>
+                <StyledBtn
+                    onClick={handleNavOpen}
+                    style={{ top: '10px', right: '50px', zIndex: '150' }}>
+                    <StyledIcon icon={isNavOpen ? faTimes : faStream} />
+                </StyledBtn>
 
-            <StyledBtn style={{ top: '10px', right: '150px' }}>
-                <StyledIcon icon={faFacebookF} />
-            </StyledBtn>
+                <StyledBtn style={{ top: '10px', right: '150px' }}>
+                    <StyledIcon icon={faFacebookF} />
+                </StyledBtn>
 
-            <StyledBtn2 style={{ top: '10px', right: '150px' }}>
-                <StyledIcon icon={faHome} />
-            </StyledBtn2>
+                <StyledBtn2 style={{ top: '10px', right: '150px' }}>
+                    <StyledIcon icon={faHome} />
+                </StyledBtn2>
 
-            <StyledBtn style={{ top: '10px', right: '250px' }}>
-                <StyledIcon icon={faInstagram} />
-            </StyledBtn>
+                <StyledBtn style={{ top: '10px', right: '250px' }}>
+                    <StyledIcon icon={faInstagram} />
+                </StyledBtn>
 
-            <StyledBtn style={{ top: '10px', right: '350px' }}>
-                <StyledIcon icon={faPhone} />
-            </StyledBtn>
-        </NavWrapper>
+                <StyledBtn style={{ top: '10px', right: '350px' }}>
+                    <StyledIcon icon={faPhone} />
+                </StyledBtn>
+            </NavWrapper>
+        </>
     )
 }
 

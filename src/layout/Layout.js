@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import AppContext from '../context/AppContext'
 import { ParallaxProvider } from 'react-scroll-parallax';
@@ -36,16 +36,25 @@ const theme = {
 const Layout = ({ children }) => {
     // states
     const [isNavOpen, setIsNavOpen] = useState(false)
-
+    const [scrolled, setScrolled] = useState(false)
     // functions
     const handleNavOpen = () => {
         setIsNavOpen(!isNavOpen)
         window.navigator.vibrate(50);
     }
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            window.pageYOffset > 50 ? setScrolled(true) : setScrolled(false)
+        })
+
+        window.removeEventListener('scroll', () => {
+            window.pageYOffset > 50 ? setScrolled(true) : setScrolled(false);
+        })
+    }, [])
 
 
     return (
-        <AppContext.Provider value={{ isNavOpen, setIsNavOpen, handleNavOpen }}>
+        <AppContext.Provider value={{ isNavOpen, setIsNavOpen, handleNavOpen, scrolled }}>
             <ThemeProvider theme={theme}>
                 <ParallaxProvider>
                     <SideMenu />
