@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import AppContext from '../../context/AppContext'
 import styled from 'styled-components'
 
-import logo from '../../images/logo.png'
+import logo from '../../images/logo2.png'
 
 const FooterWrapper = styled.footer`
     width: 100%;

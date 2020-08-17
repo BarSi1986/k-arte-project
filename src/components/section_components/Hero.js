@@ -5,6 +5,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import { Parallax } from 'react-scroll-parallax'
 
+import logo from '../../images/logo2.png'
+
 
 const OuterWrapper = styled.section`
 position: relative;
@@ -52,32 +54,32 @@ const MixedBg = styled.div`
         background: #000;
     }
 `
-const Header1 = styled.h1`
-    position: absolute;
-    font-family: ${props => props.theme.fonts.montserrat};
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -80%);
-    color: ${props => props.theme.colors.white};
-    font-size: 10vw;
-    margin: 0;
-    font-weight: 200;
-    z-index: 10;
-    @media (max-width: 750px) {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        transform: translate(-50%,-70%);
-        font-size: 60vw;
-        padding: 20px;
-        border: 8px solid white;
-        opacity: .9;
-        span{
-            height: 180px;
-            transform: translateY(-60px);
-        }
-    }
-`
+// const Header1 = styled.h1`
+//     position: absolute;
+//     font-family: ${props => props.theme.fonts.montserrat};
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -80%);
+//     color: ${props => props.theme.colors.white};
+//     font-size: 10vw;
+//     margin: 0;
+//     font-weight: 200;
+//     z-index: 10;
+//     @media (max-width: 750px) {
+//         position: absolute;
+//         display: flex;
+//         flex-direction: column;
+//         transform: translate(-50%,-70%);
+//         font-size: 60vw;
+//         padding: 20px;
+//         border: 8px solid white;
+//         opacity: .9;
+//         span{
+//             height: 180px;
+//             transform: translateY(-60px);
+//         }
+//     }
+// `
 
 const StyldImg = styled(Img)`
 position: absolute !important;
@@ -86,6 +88,16 @@ left: 0;
 width: 100%;
 height: 100%;
 z-index: -1;
+`
+
+const HeroLogo = styled.img`
+    width: 200px;
+    margin-bottom: 15px;
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
 `
 
 const Hero = ({ className }) => {
@@ -105,7 +117,8 @@ const Hero = ({ className }) => {
 
     return (
         <OuterWrapper className={className}>
-            <Header1><span>ar</span><span>te</span></Header1>
+            {/* <Header1><span>ar</span><span>te</span></Header1> */}
+            <HeroLogo src={logo} />
             <Parallax y={[-20, 20]}>
                 <HomeWrapper className={isNavOpen && 'blurred'}>
                     <StyldImg
